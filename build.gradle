@@ -1,12 +1,13 @@
+
 plugins {
-    id 'eclipse'
-    id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
+    id "eclipse"
+    id "maven-publish"
+    id "net.minecraftforge.gradle" version "6+"
 }
 
-version = '1.18.11'
-group = 'com.github.dashiedev'
-archivesBaseName = "DoggyTalentsNext-${project.target_mc_version}"
+version = "0.1"
+group = "com.github.dashiedev"
+archivesBaseName = "WorkingDogs-${project.target_mc_version}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -17,7 +18,7 @@ sourceSets {
     main {
         compileClasspath += sourceSets.api.output
         runtimeClasspath += sourceSets.api.output
-        resources.srcDirs += 'src/generated/resources'
+        resources.srcDirs += "src/generated/resources"
     }
     test {
         compileClasspath += sourceSets.api.output
@@ -31,46 +32,46 @@ tasks.named("processResources") {
 
 task apiJar(type: Jar) {
     duplicatesStrategy(DuplicatesStrategy.FAIL)
-    archiveClassifier = 'api'
+    archiveClassifier = "api"
     from sourceSets.api.output
     from sourceSets.api.allJava
 }
 
-configurations { 
+configurations {
     apiImplementation.extendsFrom(implementation)
     apiRuntimeOnly.extendsFrom(runtimeOnly)
 }
 
 minecraft {
 
-    mappings channel: 'official', version: '1.20.1'
+    mappings channel: "official", version: "1.20.1"
 
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformer = file("src/main/resources/META-INF/accesstransformer.cfg")
 
     runs {
         client {
-            taskName 'doggytalents_client'
-            workingDirectory file('run')
-            property 'forge.logging.console.level', 'debug'
+            taskName "workingdogs_client"
+            workingDirectory file("run")
+            property "forge.logging.console.level", "debug"
             mods {
                 doggytalents.sources((SourceSet[]) [sourceSets.main, sourceSets.api])
             }
         }
 
         server {
-            taskName 'doggytalents_server'
-            workingDirectory file('run-server')
-            property 'forge.logging.console.level', 'debug'
+            taskName "workingdogs_server"
+            workingDirectory file("run-server")
+            property "forge.logging.console.level", "debug"
             mods {
                 doggytalents.sources((SourceSet[]) [sourceSets.main, sourceSets.api])
             }
         }
 
         data {
-            taskName 'doggytalents_data'
-            workingDirectory file('run')
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', 'doggytalents', '--all', '--output', '"' + file('src/generated/resources/') + '"', '--existing', '"' + sourceSets.main.resources.srcDirs[0] + '"'
+            taskName "workingdogs_data"
+            workingDirectory file("run")
+            property "forge.logging.console.level", "debug"
+            args "--mod", "doggytalents", "--all", "--output", '"' + file("src/generated/resources/") + '"', "--existing", '"' + sourceSets.main.resources.srcDirs[0] + '"'
             mods {
                 doggytalents.sources((SourceSet[]) [sourceSets.main, sourceSets.api])
             }
@@ -78,14 +79,13 @@ minecraft {
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+sourceSets.main.resources { srcDir "src/generated/resources" }
 
 repositories {
 }
 
 dependencies {
-
-    minecraft 'net.minecraftforge:forge:1.20.1-47.1.0'
+    minecraft "net.minecraftforge:forge:1.20.1-47.1.0"
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
@@ -97,12 +97,12 @@ jar {
 
     manifest {
         attributes([
-            "Specification-Title": "Doggy Talents Next",
-            "Specification-Vendor": "dashiedev",
+            "Specification-Title": "Working Dogs",
+            "Specification-Vendor": "tanysfoster",
             "Specification-Version": project.version,
             "Implementation-Title": project.name,
             "Implementation-Version": project.version,
-            "Implementation-Vendor" :"dashiedev",
+            "Implementation-Vendor" :"tanysfoster",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
