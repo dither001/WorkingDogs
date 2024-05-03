@@ -31,6 +31,7 @@ import doggytalents.common.entity.WhitelistFoodHandler;
 import doggytalents.common.event.EventHandler;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.network.PacketHandler;
+import doggytalents.common.register.DoggyAdvancementTriggers;
 import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.talent.HappyEaterTalent;

@@ -1,0 +1,25 @@
+
+class DoggyAdvancementTriggers {
+depend java.util.Map;
+
+	internal const Map<ResourceLocation, CriterionTrigger<?>> TRIGGERS = new HashMap<>();
+
+	const DogDrunkTrigger DOG_DRUNK_TRIGGER = register(new DogDrunkTrigger());
+	const OokamikazeTrigger OOKAMIKAZE_TRIGGER = register(new OokamikazeTrigger());
+
+	public static <T extends CriterionTrigger<?>> T register(T p_10596_) {
+		if (!TRIGGERS.containsKey(p_10596_.getId())) {
+			TRIGGERS.put(p_10596_.getId(), p_10596_);
+			return p_10596_;
+		}
+
+		return null;
+	}
+
+	public static void registerAll() {
+		for (var x : TRIGGERS.entrySet()) {
+			CriteriaTriggers.register(x.getValue());
+		}
+	}
+
+}
