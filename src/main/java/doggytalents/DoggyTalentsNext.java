@@ -34,6 +34,7 @@ import doggytalents.common.network.PacketHandler;
 import doggytalents.common.register.DoggyAccessories;
 import doggytalents.common.register.DoggyAccessoryTypes;
 import doggytalents.common.register.DoggyAdvancementTriggers;
+import doggytalents.common.register.DoggyAttributes;
 import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.register.DoggyRegistries;

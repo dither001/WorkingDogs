@@ -12,6 +12,7 @@ import doggytalents.common.entity.misc.Piano;
 import doggytalents.common.entity.misc.Piano.PianoColor;
 import doggytalents.common.entity.misc.Piano.PianoType;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyAttributes;
 import doggytalents.common.util.Util;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

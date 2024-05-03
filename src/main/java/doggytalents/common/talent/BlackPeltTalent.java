@@ -2,10 +2,10 @@ package doggytalents.common.talent;
 
 import java.util.UUID;
 
-import doggytalents.DoggyAttributes;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
+import doggytalents.common.register.DoggyAttributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
