@@ -1,65 +1,19 @@
-# Doggy Talents Next 
-[![Curseforge](http://cf.way2muchnoise.eu/full_doggy-talents-next_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/doggy-talents-next) [![Curseforge](http://cf.way2muchnoise.eu/versions/For%20MC_doggy-talents-next_all.svg)](https://www.curseforge.com/minecraft/mc-mods/doggy-talents-next)
+#### Working Dogs (FIXME: Rework intended mod features)
+* (Enhancements to the experience of having dogs as companions throughout the game)
+* (Improvements to the Dogs A.I which make them more reliable and refined than vanilla Wolves/Dogs)
+* (Train your dogs with Talents!)
+* (Reduce the fear of losing your beloved dogs with a Tracking System and a Revival System.)
 
-![DT Logo](https://github.com/DashieDev/DoggyTalentsNext/blob/225f4b95d39e4890046bcf6ac30ad8e6b467a9a5/images/logo_curse4.png?raw=true)
-
-**Doggy Talents Next** - Minecraft Wolf, reimagined.
-
-
-* 🦴 Enhancements to the experience of having dogs as companions throughout the game 
-* 🦴 Improvements to the Dogs A.I which make them more reliable and refined than vanilla Wolves/Dogs
-* 🦴 Train your dogs with Talents!
-* 🦴 Provide your dogs some style and make him stands out with the Accessory System
-* 🦴 Reduce the fear of losing your beloved dogs with a Tracking System and a Revival System.
-
-A Big Thanks to everyone that has contributed. This includes but is not limited to...
- * ❤️**ProPercivalalb** for the outstanding work of re-coding and perfecting the mod from the old and relatively buggy version and for continuing the developement until 1.18.2
- * ❤️**RaustBlackDragon** for creating the original mod and ideas back in 2013
- * ❤️**NovaViper** for coding help and maintaining order in the DoggyTalents Project until 1.18.2
- * ❤️**SimonMeskens** for some of the textures
-
- * 💚**zNexwr** for Translation in "FR"
- * 💚**Arkathus** for Translation in "ES"
-    
-**Mod Authors:**
-* 🦴 **DashieDev** - ダシデーブ
-* 🦴 **MashXP** - マッシーXP
-
-For more informations, please consult the [wiki](https://github.com/DashieDev/DoggyTalentsNext/wiki)
+Credit to all the developers who have come before me (if you contributed to Doggy Talents or DTN and you don't see yourself listed, please send me a note and I will update this list). Before I so much as publish an alpha build for distribution or testing, I will track down as many of the developers who have contributed to this project.
+ * **RaustBlackDragon** for creating the original mod and ideas back in 2013
+ * **ProPercivalalb** for the outstanding work of re-coding and perfecting the mod from the old and relatively buggy version and for continuing the developement until 1.18.2
+ * **NovaViper** for coding help and maintaining order in the DoggyTalents Project until 1.18.2
+ * **DashieDev** for development of Doggy Talents Next
+ * **MashXP** for development of Doggy Talents Next
 
 -----------------
 
-#### Our Vision
- * Our vision is to make the dogs Harmonize with the player throughout the game, like two hands on the piano, when the two sound come together, it produce a harmony, which is pleasant to the ear, the Player and the Dogs is like the two hands, the dog should be able to be an accompaniment to the player well while not be overpowered in the context, although when on-demand, the Dog can have those abilities, but he should work to get it, and you, the Player, should help training him to achieve the abilities.
+#### Short-, and Long-term Goals
+ * I initially forked this project from Doggy Talents Next with the intention of "Umplifying" the code, removing copyright-protected material, generalizing, streamlining, and eventually expanding the codebase to create a wholly original mod. My wife and I have been playing Minecraft together and while we both enjoy encountering mobs in the wild, we feel they are significantly lacking in "presence." Starting with tameable mobs, I hope to eventually overhaul the entire mob ecosystem with homes, behaviors, items, and so forth.
 
------------------
-
-### FAQ
- - **Q:** Are dogs no longer immortal?  
-   **A:** Unlike the old versions, dog is not immortal by default, you can link them to a bed and they will respawn there. However, if you want immortal dogs, you can still enable the feature in your world. Visit [Immortal Dogs](https://github.com/DashieDev/DoggyTalentsNext/wiki/Immortal-Dogs) for more info.
- - **Q:** I have a wolf, how to get started?  
-   **A:** Use a **Training Treat** to turn him into a **DoggyTalents Dog**. Visit the [Getting Started wiki](https://github.com/DashieDev/DoggyTalentsNext/wiki/Getting-Started) for more info.
-
------------------
-### License
-Part of the project that is still present on DoggyTalents's sources.
- - [![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) 
-
-All right reserved: 
-A large portion of the project containing features that is DTN 
-exclusive remains Copyrighted and unless stated otherwise,
-the Copyright belongs to its author, MashXP and DashieDev. 
-These features include, but not limited to:
-  + DTN's Gui Framework and any DTN Gui that implements or make use of it.
-  + All DTN exclusive Talents.
-  + All DTN exclusive Accessories.
-  + All DTN exclusive Models (Copyright for each model belongs to their respective owners).
-  + All DTN Dog Animation Definitions.
-  + DTN's Animation System.
-  + DTN Skin System.
-  + All DTN Exclusive behaviour source code
-    such as: Dog Greet Owner, Dog Play Tag With Owner, etc
-  + All DTN Exclusive Items Textures.
-  + All DTN Exclusive Textures.
-  + Internationalization(i18n) files other than en_us.json (each file copyrights belongs
-  to their respective Owners.) 
+Umple is a declarative template language used to generate code in any of several different possible programming languages, including Java. I have been using Umple to assist my programming since 2019 and I have learned a great deal about how to leverage Umple for managing large and complex projects. To "Umplify" code means to translate raw Java classes into the declarative format of Umple. Some Java code is preserved, and indeed some programming paradigms are difficult to duplicate in Umple.
