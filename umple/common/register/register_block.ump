@@ -29,12 +29,8 @@ depend net.minecraft.world.level.block.Block;
 	}
 
 	public static void logError() {
-		// Only try to register if blocks were successfully registered
-		// Trying to avoid as reports like DoggyTalents#242, where it says
-		// DoggyTalents crashed but is not the CAUSE of the crash
-
-		DoggyTalentsNext.LOGGER
-				.info("Items/Blocks were not registered for some reason... probably beacuse we are c...r..a..s.hing");
+		/* Only attempt register if blocks already successfully registered */
+		DoggyTalentsNext.LOGGER.info("Items/Blocks not registered");
 	}
 
 	/* */

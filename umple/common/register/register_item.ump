@@ -158,102 +158,6 @@ depend net.minecraft.world.level.block.Block;
 /* helpers */
 class DoggyItems {
 
-	private static Item.Properties createInitialProp() {
-		return new Item.Properties();
-	}
-
-	private static RegistryObject<Item> registerThrowBone(final String name) {
-		return register(name,
-				() -> new ThrowableItem(THROW_BONE_WET, () -> Items.BONE, createInitialProp().stacksTo(2)));
-	}
-
-	private static RegistryObject<Item> registerThrowStick(final String name) {
-		return register(name, () -> new ThrowableItem(THROW_STICK_WET, THROW_STICK, createInitialProp().stacksTo(8)));
-	}
-
-	private static RegistryObject<Item> registerFrisbee(final String name) {
-		return register(name, () -> new FrisbeeItem(FRISBEE_WET, FRISBEE, createInitialProp().stacksTo(1)));
-	}
-
-	private static RegistryObject<Item> registerThrowBoneWet(final String name) {
-		return register(name, () -> new DroolBoneItem(THROW_BONE, createInitialProp().stacksTo(1)));
-	}
-
-	private static RegistryObject<Item> registerThrowStickWet(final String name) {
-		return register(name, () -> new DroolBoneItem(THROW_STICK, createInitialProp().stacksTo(1)));
-	}
-
-	private static RegistryObject<Item> registerFrisbeeWet(final String name) {
-		return register(name, () -> new FrisbeeDroolItem(FRISBEE, createInitialProp().stacksTo(1)));
-	}
-
-	private static RegistryObject<Item> registerSizeBone(final String name, final DogResizeItem.Type typeIn) {
-		return register(name, () -> new DogResizeItem(typeIn, createInitialProp().stacksTo(1).durability(10)));
-	}
-
-	private static RegistryObject<Item> registerTreat(final String name, final DogLevel.Type typeIn, int maxLevel) {
-		return register(name, () -> new TreatItem(maxLevel, typeIn, createInitialProp()));
-	}
-
-	private static RegistryObject<DyeableAccessoryItem> registerAccessoryDyed(final String name,
-			Supplier<? extends DyeableAccessory> type) {
-		return register(name, () -> new DyeableAccessoryItem(type, createInitialProp()));
-	}
-
-	private static RegistryObject<AccessoryItem> registerAccessory(final String name,
-			Supplier<? extends Accessory> type) {
-		return register(name, () -> new AccessoryItem(type, createInitialProp()));
-	}
-
-	private static RegistryObject<AccessoryItem> registerSnorkel(final String name,
-			Supplier<? extends Accessory> type) {
-		return register(name, () -> new SnorkelAccessoryItem(type, createInitialProp()));
-	}
-
-	private static RegistryObject<AccessoryItem> registerLocatorOrb(final String name,
-			Supplier<? extends LocatorOrbAccessory> type) {
-		return register(name, () -> new LocatorOrbItem(type, createInitialProp()));
-	}
-
-	private static RegistryObject<AccessoryItem> registerHeadBand(final String name,
-			Supplier<? extends HeadBandAccessory> type) {
-		return register(name, () -> new HeadBandItem(type, createInitialProp()));
-	}
-
-	private static <T extends Item> RegistryObject<T> registerWith(final String name,
-			Function<Item.Properties, T> itemConstructor, int maxStackSize) {
-		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(maxStackSize)));
-	}
-
-	private static <T extends Item> RegistryObject<T> registerWithFireResistant(final String name,
-			Function<Item.Properties, T> itemConstructor, int maxStackSize) {
-		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(maxStackSize).fireResistant()));
-	}
-
-	private static <T extends Item> RegistryObject<T> registerTool(final String name,
-			Function<Item.Properties, T> itemConstructor, int durability) {
-		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(1).durability(durability)));
-	}
-
-	private static <T extends Item> RegistryObject<T> register(final String name,
-			Function<Item.Properties, T> itemConstructor) {
-		return register(name, () -> itemConstructor.apply(createInitialProp()));
-	}
-
-	private static RegistryObject<Item> register(final String name) {
-		return registerWith(name, (Function<Item.Properties, Item.Properties>) null);
-	}
-
-	private static RegistryObject<Item> registerWith(final String name,
-			@Nullable Function<Item.Properties, Item.Properties> extraPropFunc) {
-		Item.Properties prop = createInitialProp();
-		return register(name, () -> new Item(extraPropFunc != null ? extraPropFunc.apply(prop) : prop));
-	}
-
-	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> sup) {
-		return ITEMS.register(name, sup);
-	}
-
 	public static void registerItemColours(final RegisterColorHandlersEvent.Item event) {
 		ItemColors itemColors = event.getItemColors();
 		Util.acceptOrElse(DoggyItems.WOOL_COLLAR, (item) -> {
@@ -356,6 +260,103 @@ class DoggyItems {
 				return 4159204;
 			}, item);
 		}, DoggyBlocks::logError);
+	}
+
+	/* */
+	private static Item.Properties createInitialProp() {
+		return new Item.Properties();
+	}
+
+	private static RegistryObject<Item> registerThrowBone(final String name) {
+		return register(name,
+				() -> new ThrowableItem(THROW_BONE_WET, () -> Items.BONE, createInitialProp().stacksTo(2)));
+	}
+
+	private static RegistryObject<Item> registerThrowStick(final String name) {
+		return register(name, () -> new ThrowableItem(THROW_STICK_WET, THROW_STICK, createInitialProp().stacksTo(8)));
+	}
+
+	private static RegistryObject<Item> registerFrisbee(final String name) {
+		return register(name, () -> new FrisbeeItem(FRISBEE_WET, FRISBEE, createInitialProp().stacksTo(1)));
+	}
+
+	private static RegistryObject<Item> registerThrowBoneWet(final String name) {
+		return register(name, () -> new DroolBoneItem(THROW_BONE, createInitialProp().stacksTo(1)));
+	}
+
+	private static RegistryObject<Item> registerThrowStickWet(final String name) {
+		return register(name, () -> new DroolBoneItem(THROW_STICK, createInitialProp().stacksTo(1)));
+	}
+
+	private static RegistryObject<Item> registerFrisbeeWet(final String name) {
+		return register(name, () -> new FrisbeeDroolItem(FRISBEE, createInitialProp().stacksTo(1)));
+	}
+
+	private static RegistryObject<Item> registerSizeBone(final String name, final DogResizeItem.Type typeIn) {
+		return register(name, () -> new DogResizeItem(typeIn, createInitialProp().stacksTo(1).durability(10)));
+	}
+
+	private static RegistryObject<Item> registerTreat(final String name, final DogLevel.Type typeIn, int maxLevel) {
+		return register(name, () -> new TreatItem(maxLevel, typeIn, createInitialProp()));
+	}
+
+	private static RegistryObject<DyeableAccessoryItem> registerAccessoryDyed(final String name,
+			Supplier<? extends DyeableAccessory> type) {
+		return register(name, () -> new DyeableAccessoryItem(type, createInitialProp()));
+	}
+
+	private static RegistryObject<AccessoryItem> registerAccessory(final String name,
+			Supplier<? extends Accessory> type) {
+		return register(name, () -> new AccessoryItem(type, createInitialProp()));
+	}
+
+	private static RegistryObject<AccessoryItem> registerSnorkel(final String name,
+			Supplier<? extends Accessory> type) {
+		return register(name, () -> new SnorkelAccessoryItem(type, createInitialProp()));
+	}
+
+	private static RegistryObject<AccessoryItem> registerLocatorOrb(final String name,
+			Supplier<? extends LocatorOrbAccessory> type) {
+		return register(name, () -> new LocatorOrbItem(type, createInitialProp()));
+	}
+
+	private static RegistryObject<AccessoryItem> registerHeadBand(final String name,
+			Supplier<? extends HeadBandAccessory> type) {
+		return register(name, () -> new HeadBandItem(type, createInitialProp()));
+	}
+
+	private static <T extends Item> RegistryObject<T> registerWith(final String name,
+			Function<Item.Properties, T> itemConstructor, int maxStackSize) {
+		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(maxStackSize)));
+	}
+
+	private static <T extends Item> RegistryObject<T> registerWithFireResistant(final String name,
+			Function<Item.Properties, T> itemConstructor, int maxStackSize) {
+		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(maxStackSize).fireResistant()));
+	}
+
+	private static <T extends Item> RegistryObject<T> registerTool(final String name,
+			Function<Item.Properties, T> itemConstructor, int durability) {
+		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(1).durability(durability)));
+	}
+
+	private static <T extends Item> RegistryObject<T> register(final String name,
+			Function<Item.Properties, T> itemConstructor) {
+		return register(name, () -> itemConstructor.apply(createInitialProp()));
+	}
+
+	private static RegistryObject<Item> register(final String name) {
+		return registerWith(name, (Function<Item.Properties, Item.Properties>) null);
+	}
+
+	private static RegistryObject<Item> registerWith(final String name,
+			@Nullable Function<Item.Properties, Item.Properties> extraPropFunc) {
+		Item.Properties prop = createInitialProp();
+		return register(name, () -> new Item(extraPropFunc != null ? extraPropFunc.apply(prop) : prop));
+	}
+
+	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> sup) {
+		return ITEMS.register(name, sup);
 	}
 
 }

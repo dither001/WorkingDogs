@@ -5,3 +5,14 @@ external AdvancementProvider {
 	internal CompletableFuture<HolderLookup.Provider> holderLookupProvider;
 	internal List<AdvancementSubProvider> providerList;
 }
+
+external ItemTagsProvider {
+abstract;
+
+	internal PackOutput packOutput;
+	internal CompletableFuture<HolderLookup.Provider> holderLookup;
+	internal CompletableFuture<TagsProvider.TagLookup<Block>> tagLookup;
+	internal String modId;
+	internal ExistingFileHelper fileHelper;
+
+}

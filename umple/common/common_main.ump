@@ -3,8 +3,12 @@ namespace doggytalents.common;
 use common_setup.ump;
 namespace-;
 
-namespace doggytalents.common.advancement;
-use advancement/advancement_provider.ump;
+namespace doggytalents.common.data.advancement;
+use data/data_advancement.ump;
+namespace-;
+
+namespace doggytalents.common.data.tags;
+use data/data_tags.ump;
 namespace-;
 
 namespace doggytalents.common.register;
