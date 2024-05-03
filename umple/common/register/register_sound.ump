@@ -1,0 +1,53 @@
+
+/** FIXME: remove all copyright-protected sounds before/upon release of Alpha */
+class DoggySounds {
+depend java.util.function.Function;
+depend java.util.function.Supplier;
+depend net.minecraft.sounds.SoundEvent;
+
+	const DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.Keys.SOUND_EVENTS,
+			Constants.MOD_ID);
+
+	const RegistryObject<SoundEvent> WHISTLE_SHORT = register("whistle_short");
+	const RegistryObject<SoundEvent> WHISTLE_LONG = register("whistle_long");
+
+	/*
+	 * Recordings obtained via The Open Well-Tempered Clavier Project by Kimiko
+	 * Ishizaka, which, according to the project, licensed with the CC0 - Public
+	 * Domain. Project website: https://www.welltemperedclavier.org/index.html
+	 */
+	const RegistryObject<SoundEvent> BWV_849_FUGUE_KIMIKO = register("bwv_849_fugue_kimiko");
+
+	/*
+	 * Recordings obtained via The Art Of Fugue Recordings Set by Kimiko Ishizaka,
+	 * which, according to the set, licensed with the CC0 - Public Domain. Project
+	 * website:
+	 * https://kimikoishizaka.bandcamp.com/album/j-s-bach-the-art-of-the-fugue-kunst
+	 * -der-fuge-bwv-1080
+	 */
+	const RegistryObject<SoundEvent> BWV_1080_FUGUE_11_KIMIKO = register("bwv_1080_fugue_11_kimiko");
+
+	const RegistryObject<SoundEvent> OKAMI_RYOSHIMA_COAST_ARR = register("okami_ryoshima_coast_arr");
+
+	/*
+	 * Performed and recorded by DashieDev (one of the authors of the mod) himself
+	 * on his Kawai Upright Piano. Recorded using his smartphone. Audio
+	 * post-processing by MashXP (the other author).
+	 */
+	const RegistryObject<SoundEvent> CHOPIN_OP64_NO1 = register("chopin_op64_no1");
+
+	/* */
+	private static RegistryObject<SoundEvent> register(final String name) {
+		// TODO 1.19.3 ??
+		return register(name, () -> SoundEvent.createVariableRangeEvent(Util.getResource(name)));
+	}
+
+	private static <T extends SoundEvent> RegistryObject<T> register(final String name, final Function<ResourceLocation, T> factory) {
+		return register(name, () -> factory.apply(Util.getResource(name)));
+	}
+
+	private static <T extends SoundEvent> RegistryObject<T> register(final String name, final Supplier<T> sup) {
+		return SOUNDS.register(name, sup);
+	}
+
+}

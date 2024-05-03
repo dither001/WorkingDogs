@@ -25,5 +25,6 @@ use register/register_item.ump;
 use register/register_itemgroup.ump;
 use register/register_main.ump;
 /* use register/register_skill.ump; */
+use register/register_sound.ump;
 use register/register_tag.ump;
 namespace-;

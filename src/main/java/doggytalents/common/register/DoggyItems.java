@@ -8,7 +8,6 @@ import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggySounds;
 import doggytalents.api.feature.DogLevel;
 import doggytalents.api.registry.Accessory;
 import doggytalents.common.artifacts.FeatheredMantleArtifact;
