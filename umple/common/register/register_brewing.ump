@@ -1,0 +1,22 @@
+
+class DoggyBrewingRecipes {
+depend java.util.function.Supplier;
+depend net.minecraft.world.item.Items;
+
+	internal const ArrayList<Supplier<BrewingRecipe>> RECIPES = new ArrayList<>();
+
+	const Supplier<BrewingRecipe> SAKE_BREW = register(() -> new BrewingRecipe(Ingredient.of(Items.POTION),
+			Ingredient.of(DoggyItems.KOJI.get()), new ItemStack(DoggyItems.SAKE.get())));
+
+	private static Supplier<BrewingRecipe> register(Supplier<BrewingRecipe> recipe) {
+		RECIPES.add(recipe);
+		return recipe;
+	}
+
+	public static void registerAll() {
+		for (var x : RECIPES) {
+			BrewingRecipeRegistry.addRecipe(x.get());
+		}
+	}
+
+}

@@ -17,6 +17,7 @@ use register/register_accessorytype.ump;
 use register/register_advancement.ump;
 use register/register_attribute.ump;
 use register/register_block.ump;
+use register/register_brewing.ump;
 use register/register_item.ump;
 use register/register_main.ump;
 /* use register/register_skill.ump; */
