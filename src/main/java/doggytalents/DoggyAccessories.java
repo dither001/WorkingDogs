@@ -1,17 +1,47 @@
 package doggytalents;
 
+import java.util.function.Supplier;
+
 import doggytalents.api.registry.Accessory;
 import doggytalents.api.registry.Accessory.AccessoryRenderType;
-import doggytalents.common.entity.accessory.*;
+import doggytalents.common.entity.accessory.BachWig;
+import doggytalents.common.entity.accessory.BakerHat;
+import doggytalents.common.entity.accessory.Band;
+import doggytalents.common.entity.accessory.BatWings;
+import doggytalents.common.entity.accessory.BeastarsUniformFemale;
+import doggytalents.common.entity.accessory.BeastarsUniformMale;
+import doggytalents.common.entity.accessory.BirthdayHatAccessory;
+import doggytalents.common.entity.accessory.BowTie;
+import doggytalents.common.entity.accessory.CeremonialGarb;
+import doggytalents.common.entity.accessory.ChefHat;
+import doggytalents.common.entity.accessory.Clothing;
+import doggytalents.common.entity.accessory.Collar;
+import doggytalents.common.entity.accessory.Contacts;
+import doggytalents.common.entity.accessory.CrowWings;
+import doggytalents.common.entity.accessory.DemonHornsAccessory;
+import doggytalents.common.entity.accessory.DyeableAccessory;
+import doggytalents.common.entity.accessory.Fedora;
+import doggytalents.common.entity.accessory.FieryReflector;
+import doggytalents.common.entity.accessory.FlatCap;
+import doggytalents.common.entity.accessory.FlyingCape;
+import doggytalents.common.entity.accessory.GiantStick;
+import doggytalents.common.entity.accessory.Glasses;
+import doggytalents.common.entity.accessory.HeadBandAccessory;
+import doggytalents.common.entity.accessory.HotDog;
+import doggytalents.common.entity.accessory.KitsuneMask;
+import doggytalents.common.entity.accessory.LabCoat;
+import doggytalents.common.entity.accessory.LocatorOrbAccessory;
+import doggytalents.common.entity.accessory.PlagueDoctorMaskAccessory;
+import doggytalents.common.entity.accessory.Propellar;
+import doggytalents.common.entity.accessory.SmartyGlasses;
+import doggytalents.common.entity.accessory.Snorkel;
+import doggytalents.common.entity.accessory.TenguMask;
+import doggytalents.common.entity.accessory.Wig;
+import doggytalents.common.entity.accessory.WitchHatAccessory;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.lib.Resources;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggyAccessories {
 

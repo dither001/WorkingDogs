@@ -1,19 +1,16 @@
 package doggytalents;
 
+import java.util.function.Supplier;
+
 import doggytalents.common.inventory.recipe.DogBedRecipe;
 import doggytalents.common.inventory.recipe.DoubleDyableRecipe;
 import doggytalents.common.lib.Constants;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.CraftingRecipe;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.Function;
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggyRecipeSerializers {
 

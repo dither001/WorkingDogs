@@ -1,10 +1,11 @@
 package doggytalents;
 
 import doggytalents.api.DoggyTalentsAPI;
-import doggytalents.api.registry.*;
+import doggytalents.api.registry.Accessory;
+import doggytalents.api.registry.AccessoryType;
+import doggytalents.api.registry.Talent;
 import doggytalents.common.util.Util;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.NewRegistryEvent;
 import net.minecraftforge.registries.RegistryBuilder;
 

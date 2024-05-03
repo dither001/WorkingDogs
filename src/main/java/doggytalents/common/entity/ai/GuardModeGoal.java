@@ -1,7 +1,6 @@
 package doggytalents.common.entity.ai;
 
 import java.util.EnumSet;
-import java.util.List;
 
 import doggytalents.DoggyTags;
 import doggytalents.DoggyTalents;
@@ -15,12 +14,9 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
-import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.phys.AABB;
 
 public class GuardModeGoal extends NearestAttackableTargetGoal<Mob> {

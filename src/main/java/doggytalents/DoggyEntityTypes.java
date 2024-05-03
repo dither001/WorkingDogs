@@ -1,5 +1,8 @@
 package doggytalents;
 
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.DogFoodProjectile;
 import doggytalents.common.entity.DogGunpowderProjectile;
@@ -16,12 +19,9 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.Function;
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggyEntityTypes {
 

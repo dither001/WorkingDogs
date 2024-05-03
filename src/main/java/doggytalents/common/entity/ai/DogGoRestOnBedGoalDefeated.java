@@ -3,10 +3,10 @@ package doggytalents.common.entity.ai;
 import java.util.EnumSet;
 import java.util.List;
 
-import doggytalents.DoggyBlocks;
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.anim.DogPose;
+import doggytalents.common.register.DoggyBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.ai.goal.Goal;

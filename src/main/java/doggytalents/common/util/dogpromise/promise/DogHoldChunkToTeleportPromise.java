@@ -2,17 +2,10 @@ package doggytalents.common.util.dogpromise.promise;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Constants;
-import doggytalents.common.util.DogUtil;
-import doggytalents.common.util.CachedSearchUtil.CachedSearchUtil;
-import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.Entity.RemovalReason;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraftforge.common.world.ForgeChunkManager;
 

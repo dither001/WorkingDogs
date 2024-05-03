@@ -1,5 +1,9 @@
 package doggytalents;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+
 import doggytalents.common.entity.Dog;
 import doggytalents.common.inventory.container.DogArmorContainer;
 import doggytalents.common.inventory.container.DogInventoriesContainer;
@@ -13,16 +17,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.network.IContainerFactory;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggyContainerTypes {
 

@@ -1,19 +1,17 @@
 package doggytalents.common.talent.doggy_tools.tool_actions;
 
-import doggytalents.DoggyBlocks;
 import doggytalents.DoggyItems;
 import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.ai.triggerable.TriggerableAction;
+import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.talent.doggy_tools.DoggyToolsTalent;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 public class DogFarmerAction extends ToolAction {

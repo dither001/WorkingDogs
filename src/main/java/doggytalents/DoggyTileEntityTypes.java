@@ -1,17 +1,18 @@
 package doggytalents;
 
+import java.util.function.Supplier;
+
 import doggytalents.common.block.tileentity.DogBedTileEntity;
 import doggytalents.common.block.tileentity.FoodBowlTileEntity;
 import doggytalents.common.block.tileentity.RiceMillBlockEntity;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyBlocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggyTileEntityTypes {
 

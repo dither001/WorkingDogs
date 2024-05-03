@@ -1,5 +1,9 @@
 package doggytalents.common.entity.ai;
 
+import java.util.EnumSet;
+
+import javax.annotation.Nullable;
+
 import doggytalents.common.util.EntityUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
@@ -10,9 +14,6 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-
-import javax.annotation.Nullable;
-import java.util.EnumSet;
 
 public class FindWaterGoal extends Goal {
 

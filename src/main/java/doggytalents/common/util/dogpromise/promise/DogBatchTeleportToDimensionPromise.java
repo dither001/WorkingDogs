@@ -8,16 +8,14 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.Nullable;
+
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Constants;
-import doggytalents.common.util.DogUtil;
 import doggytalents.common.util.CachedSearchUtil.CachedSearchUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.Entity.RemovalReason;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.PortalInfo;

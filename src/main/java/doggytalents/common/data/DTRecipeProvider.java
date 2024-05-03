@@ -1,25 +1,26 @@
 package doggytalents.common.data;
 
-import com.google.gson.JsonObject;
-import doggytalents.DoggyBlocks;
+import java.util.function.Consumer;
+
 import doggytalents.DoggyItems;
 import doggytalents.DoggyRecipeSerializers;
+import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.util.Util;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.HashCache;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.*;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.SpecialRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.nio.file.Path;
-import java.util.function.Consumer;
 
 public class DTRecipeProvider extends RecipeProvider {
 

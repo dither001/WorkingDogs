@@ -1,20 +1,15 @@
 package doggytalents.common.entity.ai;
 
 import java.util.EnumSet;
-import java.util.Optional;
 
 import doggytalents.api.impl.IDogRangedAttackManager.UsingWeaponContext;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.Dog.CombatReturnStrategy;
 import doggytalents.common.entity.Dog.LowHealthStrategy;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.BowItem;
 import net.minecraft.world.phys.Vec3;
 
 public class DogRangedAttackGoal extends Goal {

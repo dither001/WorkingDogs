@@ -1,5 +1,11 @@
 package doggytalents.common.util;
 
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.function.Predicate;
+
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
@@ -14,11 +20,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.world.phys.Vec3;
-
-import javax.annotation.Nullable;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.function.Predicate;
 
 public class EntityUtil {
 

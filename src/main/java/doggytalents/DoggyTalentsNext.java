@@ -1,12 +1,13 @@
 package doggytalents;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import doggytalents.api.feature.FoodHandler;
-import doggytalents.api.feature.InteractHandler;
 import doggytalents.client.ClientSetup;
 import doggytalents.client.DoggyKeybinds;
 import doggytalents.client.data.DTBlockstateProvider;
 import doggytalents.client.data.DTItemModelProvider;
-import doggytalents.client.entity.render.DoggyArmorMapping;
 import doggytalents.client.entity.render.world.BedFinderRenderer;
 import doggytalents.client.entity.render.world.CanineTrackerLocateRenderer;
 import doggytalents.client.event.ClientEventHandler;
@@ -15,22 +16,30 @@ import doggytalents.common.chunk.GarbageChunkCollector;
 //import doggytalents.common.addon.AddonManager;
 import doggytalents.common.command.DoggyCommands;
 import doggytalents.common.config.ConfigHandler;
-import doggytalents.common.data.*;
+import doggytalents.common.data.DTAdvancementProvider;
+import doggytalents.common.data.DTBlockTagsProvider;
+import doggytalents.common.data.DTEntityTagsProvider;
+import doggytalents.common.data.DTItemTagsProvider;
+import doggytalents.common.data.DTLootModifierProvider;
+import doggytalents.common.data.DTLootTableProvider;
+import doggytalents.common.data.DTRecipeProvider;
 import doggytalents.common.entity.BoostingFoodHandler;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.entity.DogDrinkMilkHandler;
 import doggytalents.common.entity.MeatFoodHandler;
 import doggytalents.common.entity.WhitelistFoodHandler;
-import doggytalents.common.entity.DogDrinkMilkHandler;
 import doggytalents.common.event.EventHandler;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.network.PacketHandler;
+import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.talent.HappyEaterTalent;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.tags.BlockTags;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -40,11 +49,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.data.event.GatherDataEvent;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(Constants.MOD_ID)
 public class DoggyTalentsNext {

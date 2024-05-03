@@ -1,20 +1,49 @@
 package doggytalents;
 
+import java.util.Optional;
+import java.util.function.BiFunction;
+import java.util.function.Supplier;
+
 import doggytalents.api.feature.DogLevel;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.lib.Constants;
-import doggytalents.common.talent.*;
+import doggytalents.common.talent.BedFinderTalent;
+import doggytalents.common.talent.BlackPeltTalent;
+import doggytalents.common.talent.ChemiCanineTalent;
+import doggytalents.common.talent.CreeperSweeperTalent;
+import doggytalents.common.talent.DoggyArmorTalent;
+import doggytalents.common.talent.DoggyDashTalent;
+import doggytalents.common.talent.DoggyTorchTalent;
+import doggytalents.common.talent.FireDrillTalent;
+import doggytalents.common.talent.FisherDogTalent;
+import doggytalents.common.talent.FlyingFurballTalent;
+import doggytalents.common.talent.GatePasserTalent;
+import doggytalents.common.talent.GuardDogTalent;
+import doggytalents.common.talent.HappyEaterTalent;
+import doggytalents.common.talent.HellHoundTalent;
+import doggytalents.common.talent.MobRetrieverTalent;
+import doggytalents.common.talent.OokamiKazeTalent;
+import doggytalents.common.talent.PackPuppyTalent;
+import doggytalents.common.talent.PestFighterTalent;
+import doggytalents.common.talent.PillowPawTalent;
+import doggytalents.common.talent.PoisonFangTalent;
+import doggytalents.common.talent.PuppyEyesTalent;
+import doggytalents.common.talent.QuickHealerTalent;
+import doggytalents.common.talent.RescueDogTalent;
+import doggytalents.common.talent.RoaringGaleTalent;
+import doggytalents.common.talent.ShepherdDogTalent;
+import doggytalents.common.talent.ShockAbsorberTalent;
+import doggytalents.common.talent.SnifferDogTalent;
+import doggytalents.common.talent.SwimmerDogTalent;
+import doggytalents.common.talent.WaterHolderTalent;
+import doggytalents.common.talent.WolfMountTalent;
 import doggytalents.common.talent.doggy_tools.DoggyToolsTalent;
 import doggytalents.common.talent.talentclass.LowCostTalent;
 import doggytalents.common.talent.talentclass.SingleLevelTalent;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
-
-import java.util.Optional;
-import java.util.function.BiFunction;
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggyTalents {
 

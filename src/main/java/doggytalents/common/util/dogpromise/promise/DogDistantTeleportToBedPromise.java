@@ -1,8 +1,8 @@
 package doggytalents.common.util.dogpromise.promise;
 
-import doggytalents.DoggyBlocks;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -10,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraftforge.common.world.ForgeChunkManager;
 
 /**

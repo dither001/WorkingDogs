@@ -1,10 +1,10 @@
 package doggytalents.common.util;
 
-import net.minecraft.world.item.Item;
-import net.minecraftforge.items.IItemHandler;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import net.minecraft.world.item.Item;
+import net.minecraftforge.items.IItemHandler;
 
 public class ItemUtil {
 

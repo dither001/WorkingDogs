@@ -3,7 +3,6 @@ package doggytalents.common.util.dogpromise.promise;
 import javax.annotation.Nullable;
 
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.LivingEntity;
 
 /**
  * @author DashieDev

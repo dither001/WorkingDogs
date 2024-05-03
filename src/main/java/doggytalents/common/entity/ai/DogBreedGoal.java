@@ -1,15 +1,15 @@
 package doggytalents.common.entity.ai;
 
+import java.util.EnumSet;
+
+import javax.annotation.Nullable;
+
 import doggytalents.common.entity.Dog;
 import doggytalents.common.util.EntityUtil;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.level.Level;
-
-import javax.annotation.Nullable;
-import java.util.EnumSet;
-import java.util.List;
 
 public class DogBreedGoal extends Goal {
 

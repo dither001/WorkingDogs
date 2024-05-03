@@ -1,15 +1,22 @@
 package doggytalents;
 
-import doggytalents.common.entity.serializers.*;
-import doggytalents.common.lib.Constants;
-import net.minecraft.advancements.critereon.SerializationContext;
-import net.minecraft.network.syncher.EntityDataSerializer;
-import net.minecraftforge.registries.RegistryObject;
+import java.util.function.Supplier;
 
+import doggytalents.common.entity.serializers.BedLocationsSerializer;
+import doggytalents.common.entity.serializers.ClassicalVarSerializer;
+import doggytalents.common.entity.serializers.CollarSerializer;
+import doggytalents.common.entity.serializers.DogLevelSerializer;
+import doggytalents.common.entity.serializers.DogSizeSerializer;
+import doggytalents.common.entity.serializers.DogSkinDataSerializer;
+import doggytalents.common.entity.serializers.DoggyArtifactsSerializer;
+import doggytalents.common.entity.serializers.GenderSerializer;
+import doggytalents.common.entity.serializers.IncapacitatedSyncSerializer;
+import doggytalents.common.entity.serializers.ModeSerializer;
+import doggytalents.common.lib.Constants;
+import net.minecraft.network.syncher.EntityDataSerializer;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggySerializers {
 

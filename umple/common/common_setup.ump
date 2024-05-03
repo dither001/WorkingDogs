@@ -1,6 +1,10 @@
 
 @Mod(Constants.MOD_ID)
 class WorkingDogs {
+depend org.apache.logging.log4j.Logger;
+depend org.apache.logging.log4j.LogManager;
+depend net.minecraft.core.HolderLookup.Provider;
+depend doggytalents.common.event.EventHandler;
 
 	const Logger LOGGER = LogManager.getLogger(Constants.MOD_ID);
 

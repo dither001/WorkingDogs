@@ -1,0 +1,76 @@
+
+class DoggyBlocks {
+depend java.util.function.Function;
+depend java.util.function.Supplier;
+depend javax.annotation.Nullable;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.level.block.Block;
+
+    const DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.Keys.BLOCKS, Constants.MOD_ID);
+    const DeferredRegister<Item> ITEMS = DoggyItems.ITEMS;
+
+    const RegistryObject<DogBedBlock> DOG_BED = registerWithItem("dog_bed", DogBedBlock::new, (prop) -> prop);
+    const RegistryObject<DogBathBlock> DOG_BATH = registerWithItem("dog_bath", DogBathBlock::new);
+    const RegistryObject<FoodBowlBlock> FOOD_BOWL = registerWithItem("food_bowl", FoodBowlBlock::new);
+    const RegistryObject<RiceMillBlock> RICE_MILL = registerWithItem("rice_mill", RiceMillBlock::new);
+
+    const RegistryObject<RiceCropBlock> RICE_CROP = register("rice_crop", RiceCropBlock::new);
+    const RegistryObject<SoyCropBlock> SOY_CROP = register("soy_crop", SoyCropBlock::new);
+
+	/* */
+	public static void registerBlockColours(final RegisterColorHandlersEvent.Block event) {
+		BlockColors blockColors = event.getBlockColors();
+
+		Util.acceptOrElse(DoggyBlocks.DOG_BATH, (block) -> {
+			blockColors.register((state, world, pos, tintIndex) -> {
+				return world != null && pos != null ? BiomeColors.getAverageWaterColor(world, pos) : -1;
+			}, block);
+		}, DoggyBlocks::logError);
+	}
+
+	public static void logError() {
+		// Only try to register if blocks were successfully registered
+		// Trying to avoid as reports like DoggyTalents#242, where it says
+		// DoggyTalents crashed but is not the CAUSE of the crash
+
+		DoggyTalentsNext.LOGGER
+				.info("Items/Blocks were not registered for some reason... probably beacuse we are c...r..a..s.hing");
+	}
+
+	/* */
+	private static Item.Properties createInitialProp() {
+		return new Item.Properties();
+	}
+
+	private static BlockItem makeItemBlock(Block block) {
+		return makeItemBlock(block, null);
+	}
+
+	private static BlockItem makeItemBlock(Block block,
+			@Nullable Function<Item.Properties, Item.Properties> extraPropFunc) {
+		Item.Properties prop = createInitialProp();
+		return new BlockItem(block, extraPropFunc != null ? extraPropFunc.apply(prop) : prop);
+	}
+
+	private static <T extends Block> RegistryObject<T> registerWithItem(final String name,
+			final Supplier<T> blockSupplier, @Nullable Function<Item.Properties, Item.Properties> extraPropFunc) {
+		return register(name, blockSupplier, (b) -> makeItemBlock(b.get(), extraPropFunc));
+	}
+
+	private static <T extends Block> RegistryObject<T> registerWithItem(final String name,
+			final Supplier<T> blockSupplier) {
+		return register(name, blockSupplier, (b) -> makeItemBlock(b.get()));
+	}
+
+	private static <T extends Block> RegistryObject<T> register(final String name, final Supplier<T> blockSupplier,
+			final Function<RegistryObject<T>, Item> itemFunction) {
+		RegistryObject<T> blockObj = register(name, blockSupplier);
+		ITEMS.register(name, () -> itemFunction.apply(blockObj));
+		return blockObj;
+	}
+
+	private static <T extends Block> RegistryObject<T> register(final String name, final Supplier<T> blockSupplier) {
+		return BLOCKS.register(name, blockSupplier);
+	}
+
+}

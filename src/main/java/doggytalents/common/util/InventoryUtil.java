@@ -1,5 +1,13 @@
 package doggytalents.common.util;
 
+import java.util.Optional;
+import java.util.function.Predicate;
+
+import javax.annotation.Nullable;
+
+import org.apache.commons.lang3.tuple.Pair;
+import org.joml.Math;
+
 import doggytalents.api.feature.FoodHandler;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogFoodHandler;
@@ -13,13 +21,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.joml.Math;
-
-import javax.annotation.Nullable;
-import java.util.Optional;
-import java.util.function.Predicate;
 
 public class InventoryUtil {
 

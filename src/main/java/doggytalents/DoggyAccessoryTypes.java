@@ -1,11 +1,11 @@
 package doggytalents;
 
+import java.util.function.Supplier;
+
 import doggytalents.api.registry.AccessoryType;
 import doggytalents.common.lib.Constants;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
+import net.minecraftforge.registries.RegistryObject;
 
 public class DoggyAccessoryTypes {
 

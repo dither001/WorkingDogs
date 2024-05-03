@@ -1,9 +1,10 @@
 package doggytalents.client.data;
 
-import doggytalents.DoggyBlocks;
+import java.util.function.Supplier;
+
 import doggytalents.DoggyItems;
 import doggytalents.common.lib.Constants;
-import net.minecraft.data.DataGenerator;
+import doggytalents.common.register.DoggyBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -11,13 +12,10 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.Supplier;
 
 public class DTItemModelProvider extends ItemModelProvider {
 

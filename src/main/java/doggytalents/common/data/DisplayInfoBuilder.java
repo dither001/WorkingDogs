@@ -1,16 +1,14 @@
 package doggytalents.common.data;
 
-import net.minecraft.advancements.DisplayInfo;
-import net.minecraft.advancements.FrameType;
-import net.minecraft.network.chat.Component;
-
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
-
 import java.util.function.Supplier;
 
 import doggytalents.common.lib.Constants;
+import net.minecraft.advancements.DisplayInfo;
+import net.minecraft.advancements.FrameType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 
 /**
  * Defaults are to show toast, announce to chat and not to be hidden

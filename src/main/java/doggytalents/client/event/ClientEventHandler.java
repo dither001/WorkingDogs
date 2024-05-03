@@ -1,10 +1,15 @@
 package doggytalents.client.event;
 
+import java.util.List;
+
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
+import com.mojang.blaze3d.vertex.BufferBuilder;
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.Tesselator;
+import com.mojang.blaze3d.vertex.VertexFormat;
 
-import doggytalents.DoggyBlocks;
 import doggytalents.DoggyItems;
 import doggytalents.DoggyTalentsNext;
 import doggytalents.api.anim.DogAnimation;
@@ -25,8 +30,8 @@ import doggytalents.common.item.WhistleItem.WhistleMode;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.DogMountData;
 import doggytalents.common.network.packet.data.DogSyncData;
-import doggytalents.common.network.packet.data.OpenDogScreenData;
 import doggytalents.common.network.packet.data.WhistleUseData;
+import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.util.InventoryUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.LevelLoadingScreen;
@@ -45,15 +50,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.event.ScreenEvent;
-import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.client.event.MovementInputUpdateEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.List;
 
 public class ClientEventHandler {
 

@@ -1,5 +1,7 @@
 package doggytalents.common.entity.ai;
 
+import java.util.EnumSet;
+
 import doggytalents.api.inferface.IThrowableItem;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.util.DogUtil;
@@ -10,8 +12,6 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
-
-import java.util.EnumSet;
 
 /**
  * @author DashieDev

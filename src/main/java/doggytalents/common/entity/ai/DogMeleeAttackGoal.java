@@ -4,24 +4,17 @@ import java.util.EnumSet;
 
 import org.jetbrains.annotations.NotNull;
 
-import doggytalents.api.feature.EnumMode;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.Dog.CombatReturnStrategy;
 import doggytalents.common.entity.Dog.LowHealthStrategy;
 import doggytalents.common.entity.ai.nav.DogFlyingNavigation;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.world.phys.Vec3;
 

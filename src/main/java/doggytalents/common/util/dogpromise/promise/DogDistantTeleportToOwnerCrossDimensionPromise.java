@@ -9,7 +9,6 @@ import javax.annotation.Nullable;
 
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Constants;
-import doggytalents.common.util.DogUtil;
 import doggytalents.common.util.CachedSearchUtil.CachedSearchUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;

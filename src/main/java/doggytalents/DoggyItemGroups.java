@@ -1,33 +1,20 @@
 package doggytalents;
 
-import doggytalents.api.DoggyTalentsAPI;
+import java.util.Collections;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+
 import doggytalents.common.block.DogBedBlock;
 import doggytalents.common.block.DogBedMaterialManager;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.util.DogBedUtil;
-import doggytalents.common.util.Util;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.CreativeModeTabRegistry;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-
-import static doggytalents.DoggyItems.*;
-import static doggytalents.DoggyBlocks.*;
 
 public class DoggyItemGroups {
 
