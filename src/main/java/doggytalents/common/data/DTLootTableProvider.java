@@ -8,8 +8,8 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.register.DoggyItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.PackOutput;

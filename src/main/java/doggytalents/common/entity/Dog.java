@@ -22,7 +22,6 @@ import org.apache.commons.lang3.ObjectUtils;
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.DoggySerializers;
 import doggytalents.DoggyTalentsNext;
 import doggytalents.api.anim.DogAnimation;
@@ -84,6 +83,7 @@ import doggytalents.common.register.DoggyAccessories;
 import doggytalents.common.register.DoggyAttributes;
 import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.register.DoggyEffects;
+import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.storage.DogLocationStorage;
 import doggytalents.common.storage.DogRespawnStorage;

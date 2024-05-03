@@ -2,9 +2,9 @@ package doggytalents.common.item;
 
 import java.util.Objects;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.event.EventHandler;
+import doggytalents.common.register.DoggyEntityTypes;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -2,7 +2,6 @@ package doggytalents.client.screen.DogNewInfoScreen.store.slice;
 
 import java.util.List;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.client.DogTextureManager;
 import doggytalents.client.entity.skin.DogSkin;
 import doggytalents.client.screen.DogNewInfoScreen.store.UIActionTypes;
@@ -12,6 +11,7 @@ import doggytalents.client.screen.framework.CleanableSlice;
 import doggytalents.client.screen.framework.CommonUIActionTypes;
 import doggytalents.client.screen.framework.UIAction;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyEntityTypes;
 import net.minecraft.client.Minecraft;
 
 public class ActiveSkinSlice implements CleanableSlice {

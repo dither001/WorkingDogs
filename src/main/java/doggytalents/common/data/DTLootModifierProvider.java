@@ -5,8 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.register.DoggyTags;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;

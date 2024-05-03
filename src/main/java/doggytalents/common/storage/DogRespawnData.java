@@ -8,7 +8,6 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.common.config.ConfigHandler;
@@ -17,6 +16,7 @@ import doggytalents.common.entity.DogIncapacitatedMananger.BandaidState;
 import doggytalents.common.entity.DogIncapacitatedMananger.DefeatedType;
 import doggytalents.common.entity.DogIncapacitatedMananger.IncapacitatedSyncState;
 import doggytalents.common.entity.ai.triggerable.DogDrownAction;
+import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.util.NBTUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

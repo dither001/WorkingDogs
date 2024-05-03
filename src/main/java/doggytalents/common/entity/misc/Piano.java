@@ -1,6 +1,6 @@
 package doggytalents.common.entity.misc;
 
-import doggytalents.DoggyEntityTypes;
+import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.register.DoggyItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;

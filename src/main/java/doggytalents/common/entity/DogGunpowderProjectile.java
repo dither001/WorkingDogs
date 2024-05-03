@@ -1,8 +1,8 @@
 package doggytalents.common.entity;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.DoggyTalents;
 import doggytalents.common.network.packet.ParticlePackets;
+import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.talent.OokamiKazeTalent;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.server.level.ServerLevel;

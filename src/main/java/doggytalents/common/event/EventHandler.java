@@ -5,7 +5,6 @@ import java.util.UUID;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
-import doggytalents.DoggyEntityTypes;
 import doggytalents.common.block.DogBedMaterialManager;
 import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
@@ -15,6 +14,7 @@ import doggytalents.common.entity.ai.triggerable.DogPlayTagAction;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.TrainWolfToDogData;
 import doggytalents.common.register.DoggyAccessories;
+import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.storage.DogLocationStorage;
 import doggytalents.common.storage.DogRespawnStorage;
