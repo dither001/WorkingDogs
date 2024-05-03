@@ -2,10 +2,10 @@ package doggytalents.common.entity;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyTags;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogFoodHandler;
 import doggytalents.common.network.packet.ParticlePackets;
+import doggytalents.common.register.DoggyTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;

@@ -1,0 +1,24 @@
+
+class DoggyTags {
+depend net.minecraft.world.item.Item;
+
+	const TagKey<Item> BEG_ITEMS_TAMED = tag("beg_items_tamed");
+	const TagKey<Item> BEG_ITEMS_UNTAMED = tag("beg_items_untamed");
+	const TagKey<Item> BREEDING_ITEMS = tag("breeding_items");
+	const TagKey<Item> PACK_PUPPY_BLACKLIST = tag("pack_puppy_blacklist");
+	const TagKey<Item> TREATS = tag("treats");
+	const TagKey<Item> WHITELIST_FOOD = tag("whitelist_food");
+
+	const TagKey<EntityType<?>> DOG_SHOULD_IGNORE = tagEntity("dog_should_ignore");
+	const TagKey<EntityType<?>> DROP_SOY_WHEN_DOG_KILL = tagEntity("drop_soy_when_dog_kill");
+	const TagKey<EntityType<?>> MOB_RETRIEVER_MUST_IGNORE = tagEntity("mob_retriever_must_ignore");
+
+	private static TagKey<Item> tag(String name) {
+		return ItemTags.create(Util.getResource(name));
+	}
+
+	private static TagKey<EntityType<?>> tagEntity(String name) {
+		return ForgeRegistries.ENTITY_TYPES.tags().createTagKey(Util.getResource(name));
+	}
+
+}

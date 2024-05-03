@@ -1,8 +1,8 @@
 package doggytalents.common.entity.ai;
 
-import doggytalents.DoggyTags;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyTags;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Enemy;

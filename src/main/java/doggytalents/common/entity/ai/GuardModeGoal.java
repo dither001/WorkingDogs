@@ -2,10 +2,10 @@ package doggytalents.common.entity.ai;
 
 import java.util.EnumSet;
 
-import doggytalents.DoggyTags;
 import doggytalents.DoggyTalents;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyTags;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;

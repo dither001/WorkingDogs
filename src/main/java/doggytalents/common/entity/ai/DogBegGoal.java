@@ -2,10 +2,10 @@ package doggytalents.common.entity.ai;
 
 import java.util.EnumSet;
 
-import doggytalents.DoggyTags;
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.api.feature.FoodHandler;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
