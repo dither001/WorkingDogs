@@ -8,7 +8,6 @@ import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyAccessories;
 import doggytalents.DoggyEntityTypes;
 import doggytalents.DoggySounds;
 import doggytalents.api.feature.DogLevel;

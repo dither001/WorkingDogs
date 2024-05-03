@@ -5,7 +5,6 @@ import java.util.Optional;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import doggytalents.DoggyAccessories;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.screen.widget.SmallButton;
 import doggytalents.common.entity.accessory.DyeableAccessory.DyeableAccessoryInstance;
@@ -14,6 +13,7 @@ import doggytalents.common.inventory.container.slot.DogInventorySlot;
 import doggytalents.common.lib.Resources;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.DogInventoryPageData;
+import doggytalents.common.register.DoggyAccessories;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
