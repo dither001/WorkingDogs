@@ -12,7 +12,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.collect.Maps;
 
-import doggytalents.DoggyAccessoryTypes;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogAlteration;
 import doggytalents.api.registry.Accessory;
@@ -22,6 +21,7 @@ import doggytalents.client.entity.render.layer.accessory.modelrenderentry.Access
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.anim.DogPose;
+import doggytalents.common.register.DoggyAccessoryTypes;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;

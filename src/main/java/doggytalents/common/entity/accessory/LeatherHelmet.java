@@ -2,8 +2,8 @@ package doggytalents.common.entity.accessory;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyAccessoryTypes;
 import doggytalents.api.registry.AccessoryInstance;
+import doggytalents.common.register.DoggyAccessoryTypes;
 import net.minecraft.world.level.ItemLike;
 
 public class LeatherHelmet extends DyeableAccessory {

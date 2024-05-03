@@ -13,6 +13,7 @@ namespace-;
 
 namespace doggytalents.common.register;
 use register/register_accessory.ump;
+use register/register_accessorytype.ump;
 use register/register_advancement.ump;
 use register/register_block.ump;
 use register/register_item.ump;

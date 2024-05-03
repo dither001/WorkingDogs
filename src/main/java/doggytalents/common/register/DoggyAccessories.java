@@ -5,7 +5,6 @@ package doggytalents.common.register;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyAccessoryTypes;
 import doggytalents.api.registry.Accessory;
 import doggytalents.api.registry.Accessory.AccessoryRenderType;
 import doggytalents.common.entity.accessory.BachWig;

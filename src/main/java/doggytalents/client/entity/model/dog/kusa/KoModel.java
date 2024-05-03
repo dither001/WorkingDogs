@@ -1,9 +1,9 @@
 package doggytalents.client.entity.model.dog.kusa;
 
-import doggytalents.DoggyAccessoryTypes;
 import doggytalents.api.registry.Accessory;
 import doggytalents.client.entity.model.dog.DogModel;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyAccessoryTypes;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;

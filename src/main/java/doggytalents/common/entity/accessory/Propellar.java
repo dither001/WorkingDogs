@@ -5,13 +5,13 @@ import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyAccessoryTypes;
 import doggytalents.api.registry.Accessory;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.entity.render.AccessoryModelManager.Entry;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
 import doggytalents.common.item.AccessoryItem;
+import doggytalents.common.register.DoggyAccessoryTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.ItemStack;

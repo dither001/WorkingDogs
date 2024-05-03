@@ -1,0 +1,26 @@
+
+class DoggyAccessoryTypes {
+depend java.util.function.Supplier;
+
+	const DeferredRegister<AccessoryType> ACCESSORY_TYPES = DeferredRegister.create(DoggyRegistries.Keys.ACCESSORY_TYPE_REGISTRY, Constants.MOD_ID);
+
+	const RegistryObject<AccessoryType> COLLAR = register("collar");
+	const RegistryObject<AccessoryType> BOWTIE = register("bowtie");
+	const RegistryObject<AccessoryType> CLOTHING = register("clothing");
+	const RegistryObject<AccessoryType> GLASSES = register("glasses");
+	const RegistryObject<AccessoryType> CONTACTS = register("contacts");
+	const RegistryObject<AccessoryType> BAND = register("band");
+	const RegistryObject<AccessoryType> HEAD = register("head");
+	const RegistryObject<AccessoryType> FEET = register("feet");
+	const RegistryObject<AccessoryType> TAIL = register("tail");
+	const RegistryObject<AccessoryType> WINGS = register("wings");
+
+	private static RegistryObject<AccessoryType> register(final String name) {
+		return register(name, () -> new AccessoryType());
+	}
+
+	private static <T extends AccessoryType> RegistryObject<T> register(final String name, final Supplier<T> sup) {
+		return ACCESSORY_TYPES.register(name, sup);
+	}
+
+}

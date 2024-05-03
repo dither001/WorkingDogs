@@ -32,6 +32,7 @@ import doggytalents.common.event.EventHandler;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.register.DoggyAccessories;
+import doggytalents.common.register.DoggyAccessoryTypes;
 import doggytalents.common.register.DoggyAdvancementTriggers;
 import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.register.DoggyItems;

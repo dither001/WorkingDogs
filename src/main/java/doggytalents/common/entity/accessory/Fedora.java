@@ -2,13 +2,13 @@ package doggytalents.common.entity.accessory;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyAccessoryTypes;
 import doggytalents.api.registry.Accessory;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.entity.render.AccessoryModelManager.Entry;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
 import doggytalents.common.item.AccessoryItem;
+import doggytalents.common.register.DoggyAccessoryTypes;
 import net.minecraft.world.level.ItemLike;
 
 public class Fedora extends Accessory implements IAccessoryHasModel {

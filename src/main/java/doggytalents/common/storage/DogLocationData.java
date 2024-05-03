@@ -5,10 +5,10 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyAccessoryTypes;
 import doggytalents.api.feature.EnumGender;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.accessory.LocatorOrbAccessory;
+import doggytalents.common.register.DoggyAccessoryTypes;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.NBTUtil;
 import net.minecraft.core.registries.Registries;
