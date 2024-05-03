@@ -12,9 +12,11 @@ use data/data_tags.ump;
 namespace-;
 
 namespace doggytalents.common.register;
+use register/register_accessory.ump;
 use register/register_advancement.ump;
 use register/register_block.ump;
 use register/register_item.ump;
+use register/register_main.ump;
 /* use register/register_skill.ump; */
 use register/register_tag.ump;
 namespace-;

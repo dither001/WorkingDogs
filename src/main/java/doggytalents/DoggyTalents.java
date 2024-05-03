@@ -9,6 +9,7 @@ import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyRegistries;
 import doggytalents.common.talent.BedFinderTalent;
 import doggytalents.common.talent.BlackPeltTalent;
 import doggytalents.common.talent.ChemiCanineTalent;

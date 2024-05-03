@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import doggytalents.api.registry.AccessoryType;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
