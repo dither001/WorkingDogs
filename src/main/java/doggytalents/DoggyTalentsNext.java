@@ -40,6 +40,7 @@ import doggytalents.common.register.DoggyBrewingRecipes;
 import doggytalents.common.register.DoggyContainerTypes;
 import doggytalents.common.register.DoggyEffects;
 import doggytalents.common.register.DoggyEntityTypes;
+import doggytalents.common.register.DoggyItemGroups;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.register.DoggyRegistries;
 import doggytalents.common.talent.HappyEaterTalent;

@@ -22,6 +22,7 @@ use register/register_container.ump;
 use register/register_effect.ump;
 use register/register_entitytype.ump;
 use register/register_item.ump;
+use register/register_itemgroup.ump;
 use register/register_main.ump;
 /* use register/register_skill.ump; */
 use register/register_tag.ump;
