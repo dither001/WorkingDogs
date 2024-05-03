@@ -1,7 +1,5 @@
 package doggytalents.client.screen.DogNewInfoScreen.widget;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTabSlice;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTabSlice.Tab;
 import doggytalents.client.screen.framework.CommonUIActionTypes;
@@ -9,7 +7,6 @@ import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.widget.TextOnlyButton;
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

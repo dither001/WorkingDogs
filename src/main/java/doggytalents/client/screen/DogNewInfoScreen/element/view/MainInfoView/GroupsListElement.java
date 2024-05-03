@@ -1,10 +1,7 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView;
 
-import java.util.ArrayList;
-
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.dropdown.AddGroupMenu.AddGroupMenu;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.GroupChangeHandlerSlice;
@@ -13,20 +10,18 @@ import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.widget.FlatButton;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.DogGroupsManager;
+import doggytalents.common.entity.DogGroupsManager.DogGroup;
 import doggytalents.common.lib.Resources;
 import doggytalents.common.network.PacketHandler;
-import doggytalents.common.network.packet.data.DogForceSitData;
 import doggytalents.common.network.packet.data.DogGroupsData;
 import doggytalents.common.util.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.network.PacketDistributor;
-import doggytalents.common.entity.DogGroupsManager.DogGroup;
 
 public class GroupsListElement extends AbstractElement {
 

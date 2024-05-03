@@ -1,13 +1,10 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.DogNewInfoScreen.element.MainButtonToolboxRowElement;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.view.EditInfoView;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.view.ArtifactsView.ArtifactsView;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.MainPanelSlice;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.MainPanelSlice.MainTab;
-import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.element.DivElement;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;

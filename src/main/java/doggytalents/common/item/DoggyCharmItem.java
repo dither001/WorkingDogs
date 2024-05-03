@@ -1,5 +1,7 @@
 package doggytalents.common.item;
 
+import java.util.Objects;
+
 import doggytalents.DoggyEntityTypes;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.event.EventHandler;
@@ -24,8 +26,6 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-
-import java.util.Objects;
 
 public class DoggyCharmItem extends Item {
 

@@ -2,7 +2,6 @@ package doggytalents.client.entity.render.layer.accessory.modelrenderentry;
 
 import doggytalents.client.entity.render.AccessoryModelManager;
 import doggytalents.client.entity.render.AccessoryModelManager.Entry;
-import doggytalents.common.entity.accessory.BirthdayHatAccessory;
 
 public class AccessoryModelRenderEntries {
     

@@ -1,23 +1,27 @@
 package doggytalents.common.util.CachedSearchUtil;
 
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.BLOCKED;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.COLLIDE;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.DAMAGE;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.DANGER;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.ERR;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.NULL;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.OK;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.OPEN;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import doggytalents.common.entity.Dog;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-
-import static doggytalents.common.util.CachedSearchUtil.PoolValues.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CachedSearchUtil {
 

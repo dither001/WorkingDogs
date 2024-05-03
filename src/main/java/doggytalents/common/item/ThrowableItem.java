@@ -1,5 +1,9 @@
 package doggytalents.common.item;
 
+import java.util.function.Supplier;
+
+import javax.annotation.Nonnull;
+
 import doggytalents.api.feature.EnumMode;
 import doggytalents.api.inferface.IThrowableItem;
 import doggytalents.common.entity.Dog;
@@ -18,10 +22,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-
-import java.util.function.Supplier;
-
-import javax.annotation.Nonnull;
 
 /**
  * @author ProPercivalalb

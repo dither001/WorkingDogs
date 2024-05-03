@@ -8,11 +8,7 @@ import doggytalents.api.registry.TalentInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ForgeMod;
-
-import java.util.UUID;
 
 public class PillowPawTalent extends TalentInstance {
 

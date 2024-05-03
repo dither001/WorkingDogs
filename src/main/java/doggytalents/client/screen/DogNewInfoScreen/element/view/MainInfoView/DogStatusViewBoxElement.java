@@ -1,14 +1,11 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView;
 
-import java.util.Random;
-
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 
-import doggytalents.client.entity.render.DogScreenOverlays;
-import doggytalents.api.feature.DogSize;
 import doggytalents.api.feature.DogLevel.Type;
+import doggytalents.api.feature.DogSize;
+import doggytalents.client.entity.render.DogScreenOverlays;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Resources;
@@ -16,12 +13,9 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.StatFormatter;
-import net.minecraft.util.Mth;
-import net.minecraft.world.effect.MobEffects;
 
 public class DogStatusViewBoxElement extends AbstractElement {
 

@@ -1,6 +1,5 @@
 package doggytalents.common.artifacts;
 
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 import javax.annotation.Nonnull;

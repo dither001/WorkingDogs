@@ -3,11 +3,11 @@ package doggytalents.common.network.packet;
 import java.util.List;
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.item.WhistleItem.WhistleMode;
 import doggytalents.common.network.IPacket;
 import doggytalents.common.network.packet.data.WhistleUseData;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.InventoryUtil;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.InteractionHand;

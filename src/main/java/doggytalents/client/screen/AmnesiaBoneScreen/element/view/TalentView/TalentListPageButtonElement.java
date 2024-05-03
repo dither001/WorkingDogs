@@ -1,14 +1,9 @@
 package doggytalents.client.screen.AmnesiaBoneScreen.element.view.TalentView;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.client.screen.framework.Store;
-import doggytalents.client.screen.framework.UIAction;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.widget.TextOnlyButton;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 

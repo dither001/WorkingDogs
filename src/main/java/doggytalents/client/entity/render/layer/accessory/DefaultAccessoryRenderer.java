@@ -5,8 +5,8 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import doggytalents.api.inferface.IColoredObject;
 import doggytalents.api.registry.Accessory;
-import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.api.registry.Accessory.AccessoryRenderType;
+import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.ClientSetup;
 import doggytalents.client.entity.model.DogFrontLegsSeperate;
 import doggytalents.client.entity.model.DogModelRegistry;

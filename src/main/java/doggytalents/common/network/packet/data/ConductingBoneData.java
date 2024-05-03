@@ -5,8 +5,6 @@ import java.util.UUID;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import doggytalents.common.storage.DogLocationData;
-
 public class ConductingBoneData {
     public static class RequestDogsData {
     }

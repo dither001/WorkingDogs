@@ -2,9 +2,9 @@ package doggytalents.client.data;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;

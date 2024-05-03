@@ -1,8 +1,7 @@
 package doggytalents.common.entity.misc;
 
 import doggytalents.DoggyEntityTypes;
-import doggytalents.DoggyItems;
-import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -18,7 +17,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 
 public class Piano extends Entity {
 

@@ -1,7 +1,5 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.StyleView.view.AccessoryView;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.element.ElementPosition.ChildDirection;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;

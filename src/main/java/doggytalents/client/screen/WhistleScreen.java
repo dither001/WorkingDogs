@@ -3,34 +3,24 @@ package doggytalents.client.screen;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.antlr.v4.parse.ANTLRParser.parserRule_return;
-
 import com.mojang.blaze3d.platform.InputConstants;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.client.screen.widget.CustomButton;
-import doggytalents.DoggyItems;
-import doggytalents.common.entity.Dog;
-import doggytalents.common.item.WhistleItem;
 import doggytalents.common.item.WhistleItem.WhistleMode;
 import doggytalents.common.network.PacketHandler;
-import doggytalents.common.network.packet.data.HeelByNameData;
 import doggytalents.common.network.packet.data.WhisltleEditHotKeyData;
 import doggytalents.common.network.packet.data.WhistleRequestModeData;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.Rect2i;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.PacketDistributor;
 
 

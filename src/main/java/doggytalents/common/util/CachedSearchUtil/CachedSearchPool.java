@@ -1,9 +1,8 @@
 package doggytalents.common.util.CachedSearchUtil;
 
-import doggytalents.common.entity.Dog;
-import net.minecraft.world.level.Level;
+import static doggytalents.common.util.CachedSearchUtil.PoolValues.ERR;
 
-import static doggytalents.common.util.CachedSearchUtil.PoolValues.*;
+import net.minecraft.world.level.Level;
 
 public class CachedSearchPool {
     public static final int MAX_RADIUS_XZ = 5;

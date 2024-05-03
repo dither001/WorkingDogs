@@ -1,7 +1,5 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.view;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.DogRandomNameRegistry;
 import doggytalents.client.screen.ScreenUtil;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.GroupsListElement;
@@ -9,9 +7,8 @@ import doggytalents.client.screen.DogNewInfoScreen.widget.CombatReturnSwitch;
 import doggytalents.client.screen.DogNewInfoScreen.widget.LowHealthStrategySwitch;
 import doggytalents.client.screen.framework.ToolTipOverlayManager;
 import doggytalents.client.screen.framework.element.AbstractElement;
-import doggytalents.client.screen.framework.element.ScrollView;
-import doggytalents.client.screen.framework.element.ElementPosition.ChildDirection;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
+import doggytalents.client.screen.framework.element.ScrollView;
 import doggytalents.client.screen.framework.widget.FlatButton;
 import doggytalents.client.screen.framework.widget.OneLineLimitedTextArea;
 import doggytalents.common.entity.Dog;
@@ -24,9 +21,9 @@ import doggytalents.common.network.packet.data.DogNameData;
 import doggytalents.common.network.packet.data.DogObeyData;
 import doggytalents.common.network.packet.data.DogRegardTeamPlayersData;
 import doggytalents.common.network.packet.data.FriendlyFireData;
+import doggytalents.common.network.packet.data.HideArmorData;
 import doggytalents.common.network.packet.data.PatrolTargetLockData;
 import doggytalents.common.util.DogUtil;
-import doggytalents.common.network.packet.data.HideArmorData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

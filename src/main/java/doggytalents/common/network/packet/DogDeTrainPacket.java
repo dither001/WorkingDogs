@@ -2,12 +2,11 @@ package doggytalents.common.network.packet;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.api.DoggyTalentsAPI;
 import doggytalents.api.registry.Talent;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.packet.data.DogDeTrainData;
-import doggytalents.common.network.packet.data.DogTalentData;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent.Context;
 

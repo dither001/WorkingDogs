@@ -1,13 +1,9 @@
 package doggytalents.client.screen;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-
 import doggytalents.common.inventory.container.RiceMillMenu;
 import doggytalents.common.lib.Resources;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.screens.inventory.InventoryScreen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;

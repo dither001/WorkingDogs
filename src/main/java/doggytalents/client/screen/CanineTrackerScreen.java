@@ -9,17 +9,13 @@ import org.apache.commons.lang3.tuple.Triple;
 
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.platform.InputConstants;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.client.screen.framework.widget.TextOnlyButton;
 import doggytalents.client.screen.widget.CustomButton;
-import doggytalents.common.entity.Dog;
 import doggytalents.common.network.PacketHandler;
-import doggytalents.common.network.packet.data.ConductingBoneData;
 import doggytalents.common.network.packet.data.CanineTrackerData;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -29,7 +25,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.util.Mth;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.PacketDistributor;
 

@@ -2,24 +2,19 @@ package doggytalents.common.network.packet;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.DoggySounds;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.ai.triggerable.DogSoftHeelAction;
 import doggytalents.common.item.WhistleItem;
-import doggytalents.common.network.IPacket;
-import doggytalents.common.network.PacketHandler;
-import doggytalents.common.network.packet.data.DogData;
 import doggytalents.common.network.packet.data.HeelByNameData;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.DogUtil;
-import doggytalents.common.util.EntityUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.network.NetworkEvent.Context;
 
 

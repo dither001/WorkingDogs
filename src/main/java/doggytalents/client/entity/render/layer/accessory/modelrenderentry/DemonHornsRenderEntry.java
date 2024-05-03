@@ -2,10 +2,8 @@ package doggytalents.client.entity.render.layer.accessory.modelrenderentry;
 
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.entity.model.DemonHornsModel;
-import doggytalents.client.entity.model.SnorkelModel;
 import doggytalents.client.entity.model.SyncedAccessoryModel;
 import doggytalents.client.entity.render.AccessoryModelManager;
-import doggytalents.common.entity.accessory.DemonHornsAccessory;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.lib.Resources;
 import net.minecraft.client.model.geom.ModelLayerLocation;

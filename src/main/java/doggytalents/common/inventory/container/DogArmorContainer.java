@@ -1,34 +1,21 @@
 package doggytalents.common.inventory.container;
 
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.items.SlotItemHandler;
-
-import com.google.errorprone.annotations.Var;
 import com.mojang.datafixers.util.Pair;
 
 import doggytalents.DoggyContainerTypes;
 import doggytalents.DoggyTalents;
 import doggytalents.api.impl.DogArmorItemHandler;
 import doggytalents.common.entity.Dog;
-import doggytalents.common.inventory.PackPuppyItemHandler;
-import doggytalents.common.inventory.container.slot.DogInventorySlot;
-import doggytalents.common.talent.DoggyArmorTalent;
-import doggytalents.common.talent.PackPuppyTalent;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.inventory.DataSlot;
 import net.minecraft.world.inventory.InventoryMenu;
-import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.items.SlotItemHandler;
 
 public class DogArmorContainer extends AbstractContainerMenu {
     private Level world;

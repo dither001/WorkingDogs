@@ -1,8 +1,10 @@
 package doggytalents.common.block.tileentity;
 
-import doggytalents.DoggyRegistries;
+import java.util.UUID;
+
+import javax.annotation.Nullable;
+
 import doggytalents.DoggyTileEntityTypes;
-import doggytalents.api.DoggyTalentsAPI;
 import doggytalents.api.registry.IBeddingMaterial;
 import doggytalents.api.registry.ICasingMaterial;
 import doggytalents.common.block.DogBedBlock;
@@ -20,9 +22,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.client.model.data.ModelProperty;
-
-import javax.annotation.Nullable;
-import java.util.UUID;
 
 public class DogBedTileEntity extends PlacedTileEntity {
 

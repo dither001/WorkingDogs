@@ -5,7 +5,6 @@ import java.util.List;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.client.screen.framework.types.TextType;
-import doggytalents.client.screen.framework.types.TextType.Align;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 

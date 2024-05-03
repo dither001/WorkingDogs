@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import doggytalents.DoggyItems;
 import doggytalents.client.screen.ConductingBoneScreen;
 import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
@@ -16,19 +15,17 @@ import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.ConductingBoneData.RequestDistantTeleportDogData;
 import doggytalents.common.network.packet.data.ConductingBoneData.RequestDogsData;
 import doggytalents.common.network.packet.data.ConductingBoneData.ResponseDogsData;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.storage.DogLocationStorage;
 import doggytalents.common.util.DogUtil;
-
-import static doggytalents.common.network.packet.data.ConductingBoneData.*;
-
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.NetworkEvent.Context;
+import net.minecraftforge.network.PacketDistributor;
 
 /**
  * @Author DashieDev

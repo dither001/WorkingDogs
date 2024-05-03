@@ -1,27 +1,16 @@
 package doggytalents.client.screen.AmnesiaBoneScreen.element.view.TalentView;
-import java.security.cert.PKIXReason;
 import java.util.List;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.DoggyTalents;
 import doggytalents.api.registry.Talent;
 import doggytalents.client.screen.AmnesiaBoneScreen.store.slice.ActiveTalentDescSlice;
-import doggytalents.client.screen.framework.Store;
-import doggytalents.client.screen.framework.UIAction;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.widget.CustomButton;
-import doggytalents.client.screen.widget.DogInventoryButton;
-import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.DogDeTrainData;
-import doggytalents.common.network.packet.data.DogTalentData;
-import doggytalents.common.network.packet.data.OpenDogScreenData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;

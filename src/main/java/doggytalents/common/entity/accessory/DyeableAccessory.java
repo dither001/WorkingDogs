@@ -1,27 +1,20 @@
 package doggytalents.common.entity.accessory;
 
+import java.util.function.Supplier;
+
 import doggytalents.DoggyTalentsNext;
-import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IColoredObject;
 import doggytalents.api.inferface.IDogAlteration;
 import doggytalents.api.registry.Accessory;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.api.registry.AccessoryType;
 import doggytalents.common.util.ColourCache;
-import doggytalents.common.util.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeableLeatherItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.Level;
-
-import java.util.function.Supplier;
 
 public class DyeableAccessory extends Accessory {
 

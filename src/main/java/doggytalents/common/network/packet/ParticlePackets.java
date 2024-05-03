@@ -1,10 +1,11 @@
 package doggytalents.common.network.packet;
 
+import java.util.function.Supplier;
+
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.IPacket;
 import doggytalents.common.network.PacketHandler;
-import doggytalents.common.network.packet.data.DogData;
 import doggytalents.common.network.packet.data.DogEatingParticleData;
 import doggytalents.common.network.packet.data.DogShakingData;
 import doggytalents.common.network.packet.data.DogShakingData.State;
@@ -18,8 +19,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.NetworkEvent.Context;
 import net.minecraftforge.network.PacketDistributor;
-
-import java.util.function.Supplier;
 
 public class ParticlePackets {
     public static class CritEmitterPacket implements IPacket<CritEmitterData> {

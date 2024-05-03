@@ -1,10 +1,7 @@
 package doggytalents.client.screen.framework;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
-
-import javax.annotation.Nullable;
 
 import com.google.common.collect.Maps;
 

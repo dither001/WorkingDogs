@@ -6,7 +6,6 @@ import java.util.UUID;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-import doggytalents.DoggyItems;
 import doggytalents.client.entity.render.RenderUtil;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.item.CanineTrackerItem;
@@ -17,7 +16,6 @@ import doggytalents.common.util.Util;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font.DisplayMode;
-import net.minecraft.client.gui.font.FontManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

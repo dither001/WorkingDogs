@@ -1,20 +1,14 @@
 package doggytalents.client.entity.render.layer.accessory;
 
-import java.util.function.BiFunction;
-
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
-import doggytalents.DoggyAccessoryTypes;
-import doggytalents.api.inferface.IColoredObject;
-import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.entity.model.DogModelRegistry;
 import doggytalents.client.entity.model.dog.DogModel;
 import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.config.ConfigHandler.ClientConfig;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Resources;
-import net.minecraft.Util;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

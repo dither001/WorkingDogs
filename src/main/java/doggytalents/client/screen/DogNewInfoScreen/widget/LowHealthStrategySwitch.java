@@ -11,8 +11,6 @@ import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.Dog.LowHealthStrategy;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.DogLowHealthStrategyData;
-import doggytalents.common.network.packet.data.DogModeData;
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;

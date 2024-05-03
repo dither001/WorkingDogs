@@ -2,12 +2,8 @@ package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.vi
 
 import java.util.ArrayList;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.view.ArtifactsView.widget.ArtifactHolder;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.view.ArtifactsView.widget.ArtifactShowBox;
 import doggytalents.client.screen.framework.element.AbstractElement;
-import doggytalents.client.screen.framework.element.DivElement;
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;

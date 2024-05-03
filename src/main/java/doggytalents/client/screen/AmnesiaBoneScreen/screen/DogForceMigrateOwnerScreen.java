@@ -1,10 +1,7 @@
 package doggytalents.client.screen.AmnesiaBoneScreen.screen;
 
-import java.util.List;
-
 import doggytalents.client.screen.widget.CustomButton;
 import doggytalents.common.entity.Dog;
-import doggytalents.common.item.AmnesiaBoneItem;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.ForceChangeOwnerData;
 import net.minecraft.ChatFormatting;
@@ -13,7 +10,6 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.util.Mth;
 import net.minecraftforge.network.PacketDistributor;

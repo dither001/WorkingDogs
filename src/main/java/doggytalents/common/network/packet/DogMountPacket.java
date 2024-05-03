@@ -3,12 +3,9 @@ package doggytalents.common.network.packet;
 import java.util.function.Supplier;
 
 import doggytalents.client.event.ClientEventHandler;
-import doggytalents.common.entity.Dog;
 import doggytalents.common.network.IPacket;
 import doggytalents.common.network.packet.data.DogMountData;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.entity.Entity;
 import net.minecraftforge.network.NetworkEvent.Context;
 
 /*

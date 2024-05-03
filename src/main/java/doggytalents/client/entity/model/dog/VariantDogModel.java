@@ -1,7 +1,5 @@
 package doggytalents.client.entity.model.dog;
 
-import java.util.Optional;
-
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

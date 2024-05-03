@@ -1,11 +1,6 @@
 package doggytalents.common.entity;
 
-import java.util.Map;
-import java.util.UUID;
-
 import javax.annotation.Nonnull;
-
-import com.google.common.collect.Maps;
 
 import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.ai.triggerable.DogGreetOwnerAction;

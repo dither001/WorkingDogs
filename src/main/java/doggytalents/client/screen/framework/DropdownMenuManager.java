@@ -1,19 +1,14 @@
 package doggytalents.client.screen.framework;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
-
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.events.ContainerEventHandler;
 import net.minecraft.client.gui.components.events.GuiEventListener;
-import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
 

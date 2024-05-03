@@ -9,7 +9,6 @@ import doggytalents.client.entity.render.AccessoryModelManager.Entry;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
 import doggytalents.common.item.AccessoryItem;
-import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.ItemLike;
 
 public class Fedora extends Accessory implements IAccessoryHasModel {

@@ -2,12 +2,10 @@ package doggytalents.common.talent.doggy_tools;
 
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 import com.google.common.collect.Maps;
 
 import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.ai.triggerable.TriggerableAction;
 import doggytalents.common.talent.doggy_tools.tool_actions.DogFarmerAction;
 import doggytalents.common.talent.doggy_tools.tool_actions.ToolAction;
 import net.minecraft.world.item.Item;

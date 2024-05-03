@@ -1,7 +1,5 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.Minecraft;

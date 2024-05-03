@@ -1,8 +1,10 @@
 package doggytalents.client.screen;
 
+import java.util.Optional;
+
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
+
 import doggytalents.DoggyAccessories;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.screen.widget.SmallButton;
@@ -22,8 +24,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.PacketDistributor;
-
-import java.util.Optional;
 
 public class DogInventoriesScreen extends AbstractContainerScreen<DogInventoriesContainer> {
 

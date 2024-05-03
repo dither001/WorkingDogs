@@ -4,9 +4,9 @@ import java.util.function.Supplier;
 
 import org.apache.commons.lang3.ObjectUtils;
 
-import doggytalents.DoggyItems;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.packet.data.ForceChangeOwnerData;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent.Context;
 

@@ -1,10 +1,11 @@
 package doggytalents.client.entity.render.layer;
 
+import java.util.Optional;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.DoggyAccessoryTypes;
 import doggytalents.DoggyTalents;
-import doggytalents.api.registry.TalentInstance;
 import doggytalents.client.ClientSetup;
 import doggytalents.client.entity.model.DogRescueModel;
 import doggytalents.client.entity.model.dog.DogModel;
@@ -15,8 +16,6 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
-
-import java.util.Optional;
 
 public class RescueDogRenderer extends RenderLayer<Dog, DogModel> {
 

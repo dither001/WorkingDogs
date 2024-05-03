@@ -2,14 +2,12 @@ package doggytalents.common.network.packet;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.item.AmnesiaBoneItem;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.network.packet.data.DogUntameData;
-import doggytalents.common.storage.DogLocationStorage;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraftforge.network.NetworkEvent.Context;
 

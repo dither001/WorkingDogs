@@ -2,10 +2,8 @@ package doggytalents.common.entity.ai.nav;
 
 import doggytalents.common.entity.Dog;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
-import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 
 public class DogSwimMoveControl extends MoveControl {
 

@@ -1,6 +1,5 @@
 package doggytalents.client.screen.framework.widget;
 
-import doggytalents.client.screen.framework.element.AbstractElement;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;

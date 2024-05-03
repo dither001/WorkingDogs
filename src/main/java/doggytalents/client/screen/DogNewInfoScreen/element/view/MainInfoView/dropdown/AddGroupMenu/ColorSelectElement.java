@@ -2,8 +2,6 @@ package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.dr
 
 import java.util.ArrayList;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.widget.FlatButton;
 import net.minecraft.client.gui.GuiGraphics;

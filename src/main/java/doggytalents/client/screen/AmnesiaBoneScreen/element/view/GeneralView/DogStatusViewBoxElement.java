@@ -1,10 +1,5 @@
 package doggytalents.client.screen.AmnesiaBoneScreen.element.view.GeneralView;
 
-import java.util.Random;
-
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.api.feature.DogSize;
 import doggytalents.client.entity.render.DogScreenOverlays;
 import doggytalents.client.screen.framework.element.AbstractElement;
@@ -15,8 +10,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.StatFormatter;
-import net.minecraft.util.Mth;
-import net.minecraft.world.effect.MobEffects;
 
 public class DogStatusViewBoxElement extends AbstractElement {
 

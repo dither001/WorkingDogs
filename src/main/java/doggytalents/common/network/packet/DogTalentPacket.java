@@ -1,16 +1,14 @@
 package doggytalents.common.network.packet;
 
-import doggytalents.DoggyTalentsNext;
+import java.util.function.Supplier;
+
 import doggytalents.api.DoggyTalentsAPI;
 import doggytalents.api.registry.Talent;
-import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.packet.data.DogTalentData;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent.Context;
-
-import java.util.function.Supplier;
 
 public class DogTalentPacket extends DogPacket<DogTalentData> {
 

@@ -1,7 +1,5 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.dropdown.AddGroupMenu;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.framework.DropdownMenuManager;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
@@ -12,7 +10,6 @@ import doggytalents.common.entity.DogGroupsManager.DogGroup;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.DogGroupsData;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;

@@ -1,9 +1,14 @@
 package doggytalents.common.storage;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import javax.annotation.Nullable;
+
 import com.google.common.collect.Lists;
 
 import doggytalents.DoggyEntityTypes;
-import doggytalents.DoggyTalentsNext;
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.common.config.ConfigHandler;
@@ -20,13 +25,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
-
-import javax.annotation.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 public class DogRespawnData implements IDogData {
 

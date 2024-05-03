@@ -1,5 +1,10 @@
 package doggytalents.common.entity.stats;
 
+import java.util.Collections;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.function.Predicate;
+
 import com.google.common.collect.Maps;
 
 import doggytalents.common.util.Cache;
@@ -12,11 +17,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.Collections;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.function.Predicate;
 
 public class StatsTracker {
 

@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 import doggytalents.DoggyTalents;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.packet.data.DoggyToolsPickFirstData;
-import doggytalents.common.talent.DoggyTorchTalent;
 import doggytalents.common.talent.doggy_tools.DoggyToolsTalent;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent.Context;

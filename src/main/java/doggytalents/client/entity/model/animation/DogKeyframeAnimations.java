@@ -1,22 +1,14 @@
 package doggytalents.client.entity.model.animation;
 
-import doggytalents.api.inferface.AbstractDog;
+import org.joml.Vector3f;
+
 import doggytalents.client.entity.model.AnimatedSyncedAccessoryModel;
 import doggytalents.client.entity.model.dog.DogModel;
 import doggytalents.common.entity.Dog;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import org.joml.Vector3f;
-
 import net.minecraft.client.animation.AnimationChannel;
+import net.minecraft.client.animation.AnimationChannel.Targets;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
-import net.minecraft.client.animation.AnimationChannel.Targets;
-import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

@@ -1,14 +1,10 @@
 package doggytalents.client.screen.AmnesiaBoneScreen.widget;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.DoggyTalents;
 import doggytalents.api.registry.Talent;
 import doggytalents.client.screen.AmnesiaBoneScreen.store.UIActionTypes;
 import doggytalents.client.screen.AmnesiaBoneScreen.store.slice.ActiveTalentDescSlice;
 import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.UIAction;
-import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.client.Minecraft;

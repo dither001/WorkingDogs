@@ -1,14 +1,10 @@
 package doggytalents.client.screen.framework.widget;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.DoggyTalents;
 import doggytalents.api.registry.Talent;
 import doggytalents.client.screen.framework.AbstractSlice;
 import doggytalents.client.screen.framework.CommonUIActionTypes;
 import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.UIAction;
-import doggytalents.common.entity.Dog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -16,7 +12,6 @@ import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
 
 public class TabPanelButton extends AbstractButton {
     static final int DEFAULT_COLOR = 0x485e5d5d;

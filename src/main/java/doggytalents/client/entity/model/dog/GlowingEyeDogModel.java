@@ -1,5 +1,7 @@
 package doggytalents.client.entity.model.dog;
 
+import java.util.function.Function;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -8,8 +10,6 @@ import doggytalents.common.entity.Dog;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-
-import java.util.function.Function;
 
 public class GlowingEyeDogModel extends DogModel {
 

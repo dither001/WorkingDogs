@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import doggytalents.common.block.DogBedBlock;
 import doggytalents.common.block.DogBedMaterialManager;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.DogBedUtil;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;

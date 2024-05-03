@@ -3,9 +3,9 @@ package doggytalents.client.screen.DogNewInfoScreen.widget;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import doggytalents.DoggyItems;
 import doggytalents.client.entity.model.dog.DogModel;
 import doggytalents.common.lib.Resources;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Tooltip;

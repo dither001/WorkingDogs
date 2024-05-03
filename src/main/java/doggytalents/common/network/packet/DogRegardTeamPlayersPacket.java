@@ -1,12 +1,11 @@
 package doggytalents.common.network.packet;
     
+import java.util.function.Supplier;
+
 import doggytalents.common.entity.Dog;
-import doggytalents.common.network.packet.data.DogObeyData;
 import doggytalents.common.network.packet.data.DogRegardTeamPlayersData;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent.Context;
-
-import java.util.function.Supplier;
 
 public class DogRegardTeamPlayersPacket extends DogPacket<DogRegardTeamPlayersData> {
 

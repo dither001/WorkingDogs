@@ -5,12 +5,9 @@ import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyItems;
-import doggytalents.api.registry.Accessory;
 import doggytalents.common.entity.accessory.HeadBandAccessory;
-import doggytalents.common.entity.accessory.LocatorOrbAccessory;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;

@@ -1,31 +1,5 @@
 package doggytalents.common.entity.accessory;
 
-import doggytalents.DoggyAccessoryTypes;
-import doggytalents.api.inferface.AbstractDog;
-import doggytalents.api.inferface.IDogAlteration;
-import doggytalents.api.registry.Accessory;
-import doggytalents.api.registry.AccessoryInstance;
-import doggytalents.client.entity.render.AccessoryModelManager.Entry;
-import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
-import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
-import doggytalents.client.event.ClientEventHandler;
-import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.anim.DogPose;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
-import net.minecraft.world.level.ItemLike;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,6 +11,29 @@ import javax.annotation.Nullable;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.collect.Maps;
+
+import doggytalents.DoggyAccessoryTypes;
+import doggytalents.api.inferface.AbstractDog;
+import doggytalents.api.inferface.IDogAlteration;
+import doggytalents.api.registry.Accessory;
+import doggytalents.api.registry.AccessoryInstance;
+import doggytalents.client.entity.render.AccessoryModelManager.Entry;
+import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
+import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
+import doggytalents.common.entity.Dog;
+import doggytalents.common.entity.anim.DogPose;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
+import net.minecraft.world.level.ItemLike;
 
 public class FieryReflector extends Accessory implements IAccessoryHasModel {
 

@@ -3,19 +3,14 @@ package doggytalents.client.screen.AmnesiaBoneScreen.element.view.GeneralView;
 import java.util.List;
 import java.util.UUID;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.DoggyItems;
 import doggytalents.client.screen.AmnesiaBoneScreen.screen.DogMigrateOwnerScreen;
 import doggytalents.client.screen.AmnesiaBoneScreen.screen.DogUntameConfirmScreen;
-import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.element.AbstractElement;
-import doggytalents.client.screen.framework.element.DivElement;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
 import doggytalents.client.screen.framework.types.TextType.Align;
-import doggytalents.client.screen.framework.widget.FlatButton;
 import doggytalents.client.screen.framework.widget.MultiLineFlatButton;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

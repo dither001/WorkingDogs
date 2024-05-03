@@ -8,10 +8,7 @@ import java.util.UUID;
 import com.google.common.collect.Maps;
 
 import doggytalents.common.entity.Dog;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.event.server.ServerStoppingEvent;
 
 public class OnlineDogLocationManager {
 

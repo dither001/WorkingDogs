@@ -1,10 +1,5 @@
 package doggytalents.client.entity.model.animation;
 
-import java.util.Map;
-
-import com.google.common.collect.Maps;
-
-import doggytalents.api.anim.DogAnimation;
 import doggytalents.client.entity.model.animation.biganim.BellyRubAnimation;
 import doggytalents.client.entity.model.animation.biganim.DrownAnimation;
 import doggytalents.client.entity.model.animation.biganim.FaintStand1Animation;

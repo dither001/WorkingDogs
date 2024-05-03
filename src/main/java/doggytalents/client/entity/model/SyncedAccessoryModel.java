@@ -1,6 +1,5 @@
 package doggytalents.client.entity.model;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 import org.joml.Vector3f;
@@ -9,11 +8,9 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 
-import doggytalents.api.inferface.AbstractDog;
 import doggytalents.client.entity.model.dog.DogModel;
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.ListModel;
 import net.minecraft.client.model.geom.ModelPart;
 
 public abstract class SyncedAccessoryModel extends EntityModel<Dog> {

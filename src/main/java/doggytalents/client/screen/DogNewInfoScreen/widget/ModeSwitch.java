@@ -3,8 +3,6 @@ package doggytalents.client.screen.DogNewInfoScreen.widget;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.api.feature.EnumMode;
 import doggytalents.client.screen.ScreenUtil;
 import doggytalents.client.screen.framework.ToolTipOverlayManager;

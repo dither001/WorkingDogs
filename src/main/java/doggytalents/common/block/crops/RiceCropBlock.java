@@ -1,6 +1,6 @@
 package doggytalents.common.block.crops;
 
-import doggytalents.DoggyItems;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;

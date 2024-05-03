@@ -1,14 +1,10 @@
 package doggytalents.client.screen.DogNewInfoScreen.screen;
 
-import java.util.List;
-
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.client.screen.ScreenUtil;
 import doggytalents.client.screen.DogNewInfoScreen.DogNewInfoScreen;
-import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.widget.TextOnlyButton;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Resources;

@@ -1,29 +1,24 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.TalentView;
 
-import java.security.cert.PKIXReason;
 import java.util.List;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.DoggyTalents;
 import doggytalents.api.registry.Talent;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.DogStatusViewBoxElement;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTalentDescSlice;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.TalentChangeHandlerSlice;
-import doggytalents.client.screen.widget.CustomButton;
-import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.ToolTipOverlayManager;
-import doggytalents.client.screen.framework.UIAction;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.element.DivElement;
-import doggytalents.client.screen.framework.element.ScrollView;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
+import doggytalents.client.screen.framework.element.ScrollView;
 import doggytalents.client.screen.framework.widget.FlatButton;
 import doggytalents.client.screen.framework.widget.OneLineLimitedTextArea;
+import doggytalents.client.screen.widget.CustomButton;
 import doggytalents.client.screen.widget.DogInventoryButton;
-import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.CreeperSweeperData;
@@ -45,9 +40,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

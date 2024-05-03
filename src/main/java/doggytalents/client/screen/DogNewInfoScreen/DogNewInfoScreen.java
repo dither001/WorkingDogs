@@ -4,27 +4,29 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.client.screen.DogNewInfoScreen.element.MainButtonToolboxRowElement;
 import doggytalents.client.screen.DogNewInfoScreen.element.DogInfoNavBarElement;
-import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.DogDescriptionViewBoxElement;
-import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.DogStatusViewBoxElement;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.MainInfoView;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.StatsView.StatsView;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.StyleView.StyleView;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.TalentView.TalentView;
 import doggytalents.client.screen.DogNewInfoScreen.screen.DogCannotInteractWithScreen;
-import doggytalents.client.screen.DogNewInfoScreen.store.UIActionTypes;
-import doggytalents.client.screen.DogNewInfoScreen.store.slice.*;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveSkinSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTabSlice;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTabSlice.Tab;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTalentDescSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.GroupChangeHandlerSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.MainPanelSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.StatsViewPanelSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.StyleViewPanelSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.TalentChangeHandlerSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.TalentListPageCounterSlice;
+import doggytalents.client.screen.DogNewInfoScreen.store.slice.TalentListSlice;
 import doggytalents.client.screen.framework.AbstractSlice;
 import doggytalents.client.screen.framework.CommonUIActionTypes;
 import doggytalents.client.screen.framework.DropdownMenuManager;
 import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.StoreConnectedScreen;
 import doggytalents.client.screen.framework.ToolTipOverlayManager;
-import doggytalents.client.screen.framework.UIAction;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.element.DivElement;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
@@ -32,10 +34,8 @@ import doggytalents.client.screen.framework.widget.TextOnlyButton;
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.events.GuiEventListener;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
 public class DogNewInfoScreen extends StoreConnectedScreen {

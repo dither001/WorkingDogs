@@ -1,9 +1,9 @@
 package doggytalents.common.item;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 import doggytalents.api.registry.Accessory;
 import net.minecraft.network.chat.Component;

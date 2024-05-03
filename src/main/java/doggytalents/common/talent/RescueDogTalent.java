@@ -1,27 +1,22 @@
 package doggytalents.common.talent;
 
 import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.function.Predicate;
 
 import javax.annotation.Nonnull;
 
-import doggytalents.api.feature.DataKey;
-import doggytalents.api.feature.EnumMode;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.ai.triggerable.TriggerableAction;
 import doggytalents.common.network.packet.data.RescueDogRenderData;
-import doggytalents.common.util.DogUtil;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.player.Player;
 

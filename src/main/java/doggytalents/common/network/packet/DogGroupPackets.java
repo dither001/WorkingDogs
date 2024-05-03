@@ -3,21 +3,17 @@ package doggytalents.common.network.packet;
 import java.util.ArrayList;
 import java.util.function.Supplier;
 
-import doggytalents.client.screen.DogNewInfoScreen.DogNewInfoScreen;
-import doggytalents.client.screen.DogNewInfoScreen.store.UIActionTypes;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTabSlice;
-import doggytalents.client.screen.framework.Store;
-import doggytalents.client.screen.framework.UIAction;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.DogGroupsManager;
 import doggytalents.common.entity.DogGroupsManager.DogGroup;
+import doggytalents.common.network.IPacket;
+import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.DogGroupsData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent.Context;
 import net.minecraftforge.network.PacketDistributor;
-import doggytalents.common.network.IPacket;
-import doggytalents.common.network.PacketHandler;
 
 public class DogGroupPackets {
     

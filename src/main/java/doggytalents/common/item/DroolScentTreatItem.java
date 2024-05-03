@@ -1,6 +1,6 @@
 package doggytalents.common.item;
 
-import doggytalents.DoggyItems;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

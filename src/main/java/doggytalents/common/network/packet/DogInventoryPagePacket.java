@@ -1,5 +1,7 @@
 package doggytalents.common.network.packet;
 
+import java.util.function.Supplier;
+
 import doggytalents.common.inventory.container.DogInventoriesContainer;
 import doggytalents.common.network.IPacket;
 import doggytalents.common.network.packet.data.DogInventoryPageData;
@@ -9,8 +11,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.network.NetworkEvent.Context;
-
-import java.util.function.Supplier;
 
 public class DogInventoryPagePacket implements IPacket<DogInventoryPageData>  {
 

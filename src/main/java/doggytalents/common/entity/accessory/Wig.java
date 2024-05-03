@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import doggytalents.DoggyAccessoryTypes;
-import doggytalents.DoggyItems;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogAlteration;
 import doggytalents.api.registry.Accessory;
@@ -13,6 +12,7 @@ import doggytalents.client.entity.render.AccessoryModelManager.Entry;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
 import doggytalents.common.item.DyeableAccessoryItem;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

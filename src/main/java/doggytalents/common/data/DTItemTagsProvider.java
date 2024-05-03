@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.DoggyTags;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;

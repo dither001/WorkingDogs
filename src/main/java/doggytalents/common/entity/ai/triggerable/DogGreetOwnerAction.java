@@ -3,7 +3,6 @@ package doggytalents.common.entity.ai.triggerable;
 import javax.annotation.Nonnull;
 
 import doggytalents.api.anim.DogAnimation;
-import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.DogOwnerDistanceManager;
 import doggytalents.common.util.DogUtil;

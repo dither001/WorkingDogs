@@ -3,14 +3,9 @@ package doggytalents.common.network.packet.data;
 import java.util.List;
 import java.util.UUID;
 
-import javax.annotation.Nullable;
-
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
-import doggytalents.common.storage.DogLocationData;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.ClipContext.Block;
 
 public class CanineTrackerData {
     public static class RequestDogsData {

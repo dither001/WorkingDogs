@@ -40,6 +40,7 @@ import doggytalents.common.entity.accessory.Wig;
 import doggytalents.common.entity.accessory.WitchHatAccessory;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.lib.Resources;
+import doggytalents.common.register.DoggyItems;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 

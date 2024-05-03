@@ -2,9 +2,9 @@ package doggytalents.common.network.packet;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.common.network.IPacket;
 import doggytalents.common.network.packet.data.WhisltleEditHotKeyData;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.fml.LogicalSide;

@@ -1,9 +1,11 @@
 package doggytalents.common.block;
 
-import doggytalents.DoggyItems;
+import javax.annotation.Nullable;
+
 import doggytalents.DoggyTileEntityTypes;
 import doggytalents.common.Screens;
 import doggytalents.common.block.tileentity.FoodBowlTileEntity;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.InventoryUtil;
 import doggytalents.common.util.WorldUtil;
 import net.minecraft.core.BlockPos;
@@ -24,7 +26,11 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -43,8 +49,6 @@ import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.EmptyHandler;
-
-import javax.annotation.Nullable;
 
 public class FoodBowlBlock extends BaseEntityBlock {
 

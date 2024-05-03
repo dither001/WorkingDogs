@@ -2,7 +2,6 @@ package doggytalents.common.entity;
 
 import java.util.UUID;
 
-import doggytalents.DoggyItems;
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.client.screen.DogNewInfoScreen.screen.DogCannotInteractWithScreen;
@@ -11,6 +10,7 @@ import doggytalents.common.entity.ai.triggerable.DogBounceAction;
 import doggytalents.common.entity.ai.triggerable.DogFaintStandAction;
 import doggytalents.common.entity.anim.DogPose;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ItemParticleOption;

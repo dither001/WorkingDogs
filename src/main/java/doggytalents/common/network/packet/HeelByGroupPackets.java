@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.function.Supplier;
 
-import doggytalents.DoggyItems;
 import doggytalents.DoggySounds;
 import doggytalents.client.screen.HeelByGroupScreen;
 import doggytalents.common.config.ConfigHandler;
@@ -14,6 +13,7 @@ import doggytalents.common.entity.DogGroupsManager.DogGroup;
 import doggytalents.common.network.IPacket;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.HeelByGroupData;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.DogUtil;
 import doggytalents.common.util.EntityUtil;
 import net.minecraft.client.Minecraft;

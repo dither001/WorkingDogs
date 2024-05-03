@@ -2,19 +2,13 @@ package doggytalents.common.item;
 
 import java.util.List;
 
-import javax.annotation.Nullable;
-
 import com.mojang.datafixers.util.Pair;
 
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogFoodHandler;
-import doggytalents.common.network.packet.ParticlePackets;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 
 public interface IDogEddible extends IDogFoodHandler {

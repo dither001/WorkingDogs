@@ -1,7 +1,6 @@
 package doggytalents.common.entity.ai.nav;
 
 import doggytalents.common.entity.Dog;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.control.JumpControl;
 import net.minecraft.world.phys.Vec3;
 

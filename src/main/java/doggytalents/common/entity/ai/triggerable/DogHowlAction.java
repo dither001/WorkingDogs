@@ -2,7 +2,6 @@ package doggytalents.common.entity.ai.triggerable;
 
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.common.entity.Dog;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 
 public class DogHowlAction extends TriggerableAction {

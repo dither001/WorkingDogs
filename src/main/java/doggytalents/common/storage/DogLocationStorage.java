@@ -1,6 +1,17 @@
 package doggytalents.common.storage;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.UUID;
+import java.util.stream.Stream;
+
+import javax.annotation.Nullable;
+
 import com.google.common.collect.Maps;
+
 import doggytalents.DoggyTalentsNext;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Constants;
@@ -16,11 +27,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.storage.DimensionDataStorage;
 import net.minecraftforge.event.server.ServerStoppingEvent;
-
-import javax.annotation.Nullable;
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.stream.Stream;
 
 public class DogLocationStorage extends SavedData {
 

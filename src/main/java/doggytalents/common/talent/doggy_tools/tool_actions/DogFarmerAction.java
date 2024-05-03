@@ -1,8 +1,8 @@
 package doggytalents.common.talent.doggy_tools.tool_actions;
 
-import doggytalents.DoggyItems;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.talent.doggy_tools.DoggyToolsTalent;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;

@@ -1,14 +1,13 @@
 package doggytalents.common.item;
 
-import doggytalents.DoggyItems;
 import doggytalents.api.feature.EnumGender;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogItem;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

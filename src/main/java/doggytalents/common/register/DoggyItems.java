@@ -1,10 +1,16 @@
-package doggytalents;
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
+package doggytalents.common.register;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
+import doggytalents.DoggyAccessories;
+import doggytalents.DoggyEntityTypes;
+import doggytalents.DoggySounds;
 import doggytalents.api.feature.DogLevel;
 import doggytalents.api.registry.Accessory;
 import doggytalents.common.artifacts.FeatheredMantleArtifact;
@@ -85,13 +91,11 @@ import doggytalents.common.item.UncookedRiceBowlItem;
 import doggytalents.common.item.WhistleItem;
 import doggytalents.common.item.WitchHatItem;
 import doggytalents.common.lib.Constants;
-import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.util.Util;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeableLeatherItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.RecordItem;
@@ -101,11 +105,19 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * helpers
+ */
+// line 2 "../../../register_item.ump"
+// line 159 "../../../register_item.ump"
 public class DoggyItems {
+
+	// ------------------------
+	// STATIC VARIABLES
+	// ------------------------
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.Keys.ITEMS,
 			Constants.MOD_ID);
-
 	public static final RegistryObject<Item> THROW_BONE = registerThrowBone("throw_bone");
 	public static final RegistryObject<Item> THROW_BONE_WET = registerThrowBoneWet("throw_bone_wet");
 	public static final RegistryObject<Item> THROW_STICK = registerThrowStick("throw_stick");
@@ -122,13 +134,6 @@ public class DoggyItems {
 			DoggyAccessories.DYEABLE_COLLAR);
 	public static final RegistryObject<DyeableAccessoryItem> WOOL_COLLAR_THICC = registerAccessoryDyed(
 			"wool_collar_thicc", DoggyAccessories.DYEABLE_COLLAR_THICC);
-	public static final RegistryObject<AccessoryItem> CREATIVE_COLLAR = register("creative_collar",
-			() -> new AccessoryItem(DoggyAccessories.GOLDEN_COLLAR, createInitialProp()) {
-				@Override
-				public boolean isFoil(ItemStack stack) {
-					return true;
-				}
-			});
 	public static final RegistryObject<AccessoryItem> SPOTTED_COLLAR = registerAccessory("spotted_collar",
 			DoggyAccessories.SPOTTED_COLLAR);
 	public static final RegistryObject<AccessoryItem> MULTICOLOURED_COLLAR = registerAccessory("multicoloured_collar",
@@ -136,13 +141,6 @@ public class DoggyItems {
 	public static final RegistryObject<Item> CANINE_TRACKER = registerWith("canine_tracker", CanineTrackerItem::new, 1);
 	public static final RegistryObject<Item> CONDUCTING_BONE = registerWithFireResistant("conducting_bone",
 			ConductingBoneItem::new, 1);
-	public static final RegistryObject<Item> CREATIVE_CANINE_TRACKER = registerWith("creative_canine_tracker",
-			props -> new CanineTrackerItem(props) {
-				@Override
-				public boolean isFoil(ItemStack stack) {
-					return true;
-				}
-			}, 1);
 	public static final RegistryObject<WhistleItem> WHISTLE = registerWith("whistle", WhistleItem::new, 1);
 	public static final RegistryObject<Item> TREAT_BAG = registerWith("treat_bag", TreatBagItem::new, 1);
 	public static final RegistryObject<Item> ENERGIZER_STICK = register("energizer_stick", EnergizerStick::new);
@@ -176,8 +174,6 @@ public class DoggyItems {
 			DoggyAccessories.BOWTIE);
 	public static final RegistryObject<AccessoryItem> SMARTY_GLASSES = registerAccessory("smarty_glasses",
 			DoggyAccessories.SMARTY_GLASSES);
-	public static final RegistryObject<DyeableAccessoryItem> WIG = register("wig",
-			() -> new Wig.WigItem(DoggyAccessories.WIG, createInitialProp()));
 	public static final RegistryObject<AccessoryItem> BACH_WIG = registerAccessory("bach_wig",
 			DoggyAccessories.BACH_WIG);
 	public static final RegistryObject<AccessoryItem> LEATHER_JACKET = registerAccessory("leather_jacket",
@@ -211,20 +207,12 @@ public class DoggyItems {
 	public static final RegistryObject<SwordItem> SUSSY_SICKLE = register("sussy_sickle", SussySickleItem::new);
 	public static final RegistryObject<AccessoryItem> SNORKEL = registerSnorkel("snorkel", DoggyAccessories.SNORKEL);
 	public static final RegistryObject<Item> STARTER_BUNDLE = registerWith("starter_bundle", StarterBundleItem::new, 1);
-
 	public static final RegistryObject<AccessoryItem> HEAD_BAND_BLANK = registerHeadBand("head_band_blank",
 			DoggyAccessories.HEAD_BAND_BlANK);
 	public static final RegistryObject<AccessoryItem> HEAD_BAND_MYSTERY = registerHeadBand("head_band_mystery",
 			DoggyAccessories.HEAD_BAND_MYSTERY);
 	public static final RegistryObject<AccessoryItem> HEAD_BAND_HIGHHH = registerHeadBand("head_band_highhh",
 			DoggyAccessories.HEAD_BAND_HIGHHH);
-	public static final RegistryObject<DyeableAccessoryItem> BAKER_HAT = register("baker_hat",
-			() -> new BakerHat.BakerHatItem(DoggyAccessories.BAKER_HAT, createInitialProp()));
-	public static final RegistryObject<DyeableAccessoryItem> CHEF_HAT = register("chef_hat",
-			() -> new ChefHat.ChefHatItem(DoggyAccessories.CHEF_HAT, createInitialProp()));
-	public static final RegistryObject<DyeableAccessoryItem> LAB_COAT = register("lab_coat",
-			() -> new LabCoat.LabCoatItem(DoggyAccessories.LAB_COAT, createInitialProp()));
-
 	public static final RegistryObject<AccessoryItem> SUPERDOG_SUIT = registerAccessory("superdog_suit",
 			DoggyAccessories.SUPERDOG_SUIT);
 	public static final RegistryObject<DyeableAccessoryItem> FLYING_CAPE = registerAccessoryDyed("flying_cape",
@@ -237,7 +225,6 @@ public class DoggyItems {
 			() -> new FieryReflectorItem(DoggyAccessories.DIVINE_RETRIBUTION, createInitialProp()));
 	public static final RegistryObject<AccessoryItem> SOUL_REFLECTOR = register("soul_reflector",
 			() -> new FieryReflectorItem(DoggyAccessories.SOUL_REFLECTOR, createInitialProp()));
-
 	public static final RegistryObject<AccessoryItem> TENGU_MASK = register("tengu_mask",
 			() -> new TenguMaskItem(DoggyAccessories.TENGU_MASK, createInitialProp()));
 	public static final RegistryObject<AccessoryItem> DEMON_HORNS = register("demon_horns",
@@ -254,10 +241,8 @@ public class DoggyItems {
 			() -> new Fedora.FedoraItem(DoggyAccessories.FEDORA, createInitialProp()));
 	public static final RegistryObject<DyeableAccessoryItem> FLATCAP = register("flatcap",
 			() -> new FlatCap.FlatCapItem(DoggyAccessories.FLATCAP, createInitialProp()));
-
 	public static final RegistryObject<AccessoryItem> KITSUNE_MASK = register("kitsune_mask",
 			() -> new KitsuneMaskItem(DoggyAccessories.KITSUNE_MASK, createInitialProp()));
-
 	public static final RegistryObject<AccessoryItem> HOT_DOG = register("hot_dog",
 			() -> new HotDogAccessoryItem(DoggyAccessories.HOT_DOG, createInitialProp()));
 	public static final RegistryObject<AccessoryItem> GIANT_STICK = register("giant_stick",
@@ -266,10 +251,8 @@ public class DoggyItems {
 			() -> new CeremonialGarb.Item(DoggyAccessories.CERE_GARB, createInitialProp()));
 	public static final RegistryObject<AccessoryItem> DOGGY_CONTACTS = register("doggy_contacts",
 			() -> new DoggyContactsItem(DoggyAccessories.DOGGY_CONTACTS, createInitialProp()));
-
 	public static final RegistryObject<Item> FRISBEE = registerFrisbee("frisbee");
 	public static final RegistryObject<Item> FRISBEE_WET = registerFrisbeeWet("frisbee_wet");
-
 	public static final RegistryObject<Item> RICE_GRAINS = register("rice_grains",
 			() -> new RiceGrainsItem(DoggyBlocks.RICE_CROP.get(), createInitialProp()));
 	public static final RegistryObject<Item> RICE_WHEAT = register("rice_wheat",
@@ -295,14 +278,37 @@ public class DoggyItems {
 	public static final RegistryObject<Item> GYUDON = register("gyudon", GyudonItem::new);
 	public static final RegistryObject<Item> OYAKODON = register("oyakodon", OyakodonItem::new);
 	public static final RegistryObject<Item> SAKE = register("sake", SakeItem::new);
-
 	public static final RegistryObject<Item> SCENT_TREAT = register("scent_treat", ScentTreatItem::new);
 	public static final RegistryObject<Item> DROOL_SCENT_TREAT = register("drool_scent_treat",
 			DroolScentTreatItem::new);
-
 	public static final RegistryObject<DoggyArtifactItem> FEATHERED_MANTLE = registerWith("feathered_mantle",
 			props -> new DoggyArtifactItem(() -> new FeatheredMantleArtifact(), props), 1);
+	public static final RegistryObject<PianoItem> GRAND_PIANO_BLACK = register("grand_piano_black_item",
+			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_BLACK));
+	public static final RegistryObject<PianoItem> GRAND_PIANO_WHITE = register("grand_piano_white_item",
+			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_WHITE));
+	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BLACK = register("upright_piano_black_item",
+			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BLACK));
+	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BROWN = register("upright_piano_brown_item",
+			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BROWN));
+	public static final RegistryObject<DogPlushieItem> DOG_PLUSHIE_TOY = register("dog_plushie_toy_item",
+			() -> new DogPlushieItem());
 
+	/**
+	 * FIXME
+	 */
+	public static final RegistryObject<AccessoryItem> CREATIVE_COLLAR = register("creative_collar",
+			() -> new AccessoryItem(DoggyAccessories.GOLDEN_COLLAR, createInitialProp()));
+	public static final RegistryObject<Item> CREATIVE_CANINE_TRACKER = registerWith("creative_canine_tracker",
+			props -> new CanineTrackerItem(props), 1);
+	public static final RegistryObject<DyeableAccessoryItem> WIG = register("wig",
+			() -> new Wig.WigItem(DoggyAccessories.WIG, createInitialProp()));
+	public static final RegistryObject<DyeableAccessoryItem> BAKER_HAT = register("baker_hat",
+			() -> new BakerHat.BakerHatItem(DoggyAccessories.BAKER_HAT, createInitialProp()));
+	public static final RegistryObject<DyeableAccessoryItem> CHEF_HAT = register("chef_hat",
+			() -> new ChefHat.ChefHatItem(DoggyAccessories.CHEF_HAT, createInitialProp()));
+	public static final RegistryObject<DyeableAccessoryItem> LAB_COAT = register("lab_coat",
+			() -> new LabCoat.LabCoatItem(DoggyAccessories.LAB_COAT, createInitialProp()));
 	public static final RegistryObject<Item> MUSIC_DISC_BWV_1080_FUGUE_11_KIMIKO = register("disc_bwv_1080_fugue_11",
 			() -> new RecordItem(13, () -> DoggySounds.BWV_1080_FUGUE_11_KIMIKO.get(),
 					(new Item.Properties()).stacksTo(1).rarity(Rarity.RARE), 292 * 20));
@@ -316,113 +322,149 @@ public class DoggyItems {
 			() -> new ChopinRecordItem(13, () -> DoggySounds.CHOPIN_OP64_NO1.get(),
 					(new Item.Properties()).stacksTo(1).rarity(Rarity.RARE), 132 * 20));
 
-	public static final RegistryObject<PianoItem> GRAND_PIANO_BLACK = register("grand_piano_black_item",
-			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_BLACK));
-	public static final RegistryObject<PianoItem> GRAND_PIANO_WHITE = register("grand_piano_white_item",
-			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_WHITE));
-	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BLACK = register("upright_piano_black_item",
-			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BLACK));
-	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BROWN = register("upright_piano_brown_item",
-			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BROWN));
-	public static final RegistryObject<DogPlushieItem> DOG_PLUSHIE_TOY = register("dog_plushie_toy_item",
-			() -> new DogPlushieItem());
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
 
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
+
+	public DoggyItems() {
+	}
+
+	// ------------------------
+	// INTERFACE
+	// ------------------------
+
+	public void delete() {
+	}
+
+	// line 162 "../../../register_item.ump"
 	private static Item.Properties createInitialProp() {
 		return new Item.Properties();
 	}
 
+	public String toString() {
+		return super.toString() + "[" + "]";
+	}
+	// ------------------------
+	// DEVELOPER CODE - PROVIDED AS-IS
+	// ------------------------
+
+	// line 165 "../../../register_item.ump"
 	private static RegistryObject<Item> registerThrowBone(final String name) {
 		return register(name,
 				() -> new ThrowableItem(THROW_BONE_WET, () -> Items.BONE, createInitialProp().stacksTo(2)));
 	}
 
+// line 170 "../../../register_item.ump"
 	private static RegistryObject<Item> registerThrowStick(final String name) {
 		return register(name, () -> new ThrowableItem(THROW_STICK_WET, THROW_STICK, createInitialProp().stacksTo(8)));
 	}
 
+// line 174 "../../../register_item.ump"
 	private static RegistryObject<Item> registerFrisbee(final String name) {
 		return register(name, () -> new FrisbeeItem(FRISBEE_WET, FRISBEE, createInitialProp().stacksTo(1)));
 	}
 
+// line 178 "../../../register_item.ump"
 	private static RegistryObject<Item> registerThrowBoneWet(final String name) {
 		return register(name, () -> new DroolBoneItem(THROW_BONE, createInitialProp().stacksTo(1)));
 	}
 
+// line 182 "../../../register_item.ump"
 	private static RegistryObject<Item> registerThrowStickWet(final String name) {
 		return register(name, () -> new DroolBoneItem(THROW_STICK, createInitialProp().stacksTo(1)));
 	}
 
+// line 186 "../../../register_item.ump"
 	private static RegistryObject<Item> registerFrisbeeWet(final String name) {
 		return register(name, () -> new FrisbeeDroolItem(FRISBEE, createInitialProp().stacksTo(1)));
 	}
 
+// line 190 "../../../register_item.ump"
 	private static RegistryObject<Item> registerSizeBone(final String name, final DogResizeItem.Type typeIn) {
 		return register(name, () -> new DogResizeItem(typeIn, createInitialProp().stacksTo(1).durability(10)));
 	}
 
+// line 194 "../../../register_item.ump"
 	private static RegistryObject<Item> registerTreat(final String name, final DogLevel.Type typeIn, int maxLevel) {
 		return register(name, () -> new TreatItem(maxLevel, typeIn, createInitialProp()));
 	}
 
+// line 198 "../../../register_item.ump"
 	private static RegistryObject<DyeableAccessoryItem> registerAccessoryDyed(final String name,
 			Supplier<? extends DyeableAccessory> type) {
 		return register(name, () -> new DyeableAccessoryItem(type, createInitialProp()));
 	}
 
+// line 203 "../../../register_item.ump"
 	private static RegistryObject<AccessoryItem> registerAccessory(final String name,
 			Supplier<? extends Accessory> type) {
 		return register(name, () -> new AccessoryItem(type, createInitialProp()));
 	}
 
+// line 208 "../../../register_item.ump"
 	private static RegistryObject<AccessoryItem> registerSnorkel(final String name,
 			Supplier<? extends Accessory> type) {
 		return register(name, () -> new SnorkelAccessoryItem(type, createInitialProp()));
 	}
 
+// line 213 "../../../register_item.ump"
 	private static RegistryObject<AccessoryItem> registerLocatorOrb(final String name,
 			Supplier<? extends LocatorOrbAccessory> type) {
 		return register(name, () -> new LocatorOrbItem(type, createInitialProp()));
 	}
 
+// line 218 "../../../register_item.ump"
 	private static RegistryObject<AccessoryItem> registerHeadBand(final String name,
 			Supplier<? extends HeadBandAccessory> type) {
 		return register(name, () -> new HeadBandItem(type, createInitialProp()));
 	}
 
+// line 223 "../../../register_item.ump"
 	private static <T extends Item> RegistryObject<T> registerWith(final String name,
 			Function<Item.Properties, T> itemConstructor, int maxStackSize) {
 		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(maxStackSize)));
 	}
 
+// line 228 "../../../register_item.ump"
 	private static <T extends Item> RegistryObject<T> registerWithFireResistant(final String name,
 			Function<Item.Properties, T> itemConstructor, int maxStackSize) {
 		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(maxStackSize).fireResistant()));
 	}
 
+// line 233 "../../../register_item.ump"
 	private static <T extends Item> RegistryObject<T> registerTool(final String name,
 			Function<Item.Properties, T> itemConstructor, int durability) {
 		return register(name, () -> itemConstructor.apply(createInitialProp().stacksTo(1).durability(durability)));
 	}
 
+// line 238 "../../../register_item.ump"
 	private static <T extends Item> RegistryObject<T> register(final String name,
 			Function<Item.Properties, T> itemConstructor) {
 		return register(name, () -> itemConstructor.apply(createInitialProp()));
 	}
 
+// line 243 "../../../register_item.ump"
 	private static RegistryObject<Item> register(final String name) {
 		return registerWith(name, (Function<Item.Properties, Item.Properties>) null);
 	}
 
+// line 247 "../../../register_item.ump"
 	private static RegistryObject<Item> registerWith(final String name,
 			@Nullable Function<Item.Properties, Item.Properties> extraPropFunc) {
 		Item.Properties prop = createInitialProp();
 		return register(name, () -> new Item(extraPropFunc != null ? extraPropFunc.apply(prop) : prop));
 	}
 
+// line 253 "../../../register_item.ump"
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> sup) {
 		return ITEMS.register(name, sup);
 	}
 
+// line 257 "../../../register_item.ump"
 	public static void registerItemColours(final RegisterColorHandlersEvent.Item event) {
 		ItemColors itemColors = event.getItemColors();
 		Util.acceptOrElse(DoggyItems.WOOL_COLLAR, (item) -> {

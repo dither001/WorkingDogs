@@ -1,7 +1,7 @@
 package doggytalents.common.inventory.container;
 
 import doggytalents.DoggyContainerTypes;
-import doggytalents.DoggyItems;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;

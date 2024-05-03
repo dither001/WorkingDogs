@@ -1,14 +1,12 @@
 package doggytalents.common.entity;
 
 import com.google.common.base.Predicates;
+
 import doggytalents.DoggyEntityTypes;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.util.EntityUtil;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,11 +14,7 @@ import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraftforge.entity.IEntityAdditionalSpawnData;
-import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
-
-import java.util.UUID;
 
 public class DoggyBeamEntity extends ThrowableProjectile {
 

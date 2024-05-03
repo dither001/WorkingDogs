@@ -2,9 +2,9 @@ package doggytalents.common.data;
 
 import java.util.function.Consumer;
 
-import doggytalents.DoggyItems;
 import doggytalents.DoggyRecipeSerializers;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.Util;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;

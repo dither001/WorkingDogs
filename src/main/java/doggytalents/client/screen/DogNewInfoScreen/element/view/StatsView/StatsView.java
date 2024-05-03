@@ -1,17 +1,13 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.StatsView;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.client.screen.DogNewInfoScreen.element.view.StatsView.view.StatsGeneralView;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.StatsView.view.MobKillsView;
+import doggytalents.client.screen.DogNewInfoScreen.element.view.StatsView.view.StatsGeneralView;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.StatsViewPanelSlice;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.StatsViewPanelSlice.StatsViewPanelTab;
-import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.element.DivElement;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
 import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.stats.StatsTracker;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.StatsSyncData;
 import net.minecraft.client.Minecraft;

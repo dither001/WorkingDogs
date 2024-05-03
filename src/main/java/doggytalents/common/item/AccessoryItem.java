@@ -1,5 +1,7 @@
 package doggytalents.common.item;
 
+import java.util.function.Supplier;
+
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogItem;
 import doggytalents.api.registry.Accessory;
@@ -10,8 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-
-import java.util.function.Supplier;
 
 public class AccessoryItem extends Item implements IDogItem {
 

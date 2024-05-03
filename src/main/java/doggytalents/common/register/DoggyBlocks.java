@@ -8,7 +8,6 @@ import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyItems;
 import doggytalents.DoggyTalentsNext;
 import doggytalents.common.block.DogBathBlock;
 import doggytalents.common.block.DogBedBlock;

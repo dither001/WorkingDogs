@@ -1,6 +1,5 @@
 package doggytalents.common.entity.personality;
 
-import doggytalents.common.entity.ClassicalVar;
 import doggytalents.common.entity.Dog;
 
 public class DogPersonality {

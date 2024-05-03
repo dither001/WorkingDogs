@@ -1,16 +1,13 @@
 package doggytalents.common.network.packet;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
 import doggytalents.client.entity.render.world.CanineTrackerLocateRenderer;
-import doggytalents.client.screen.ConductingBoneScreen;
 import doggytalents.client.screen.CanineTrackerScreen;
 import doggytalents.common.item.CanineTrackerItem;
 import doggytalents.common.network.IPacket;

@@ -1,17 +1,10 @@
 package doggytalents.client.screen.DogNewInfoScreen.element.view.TalentView;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import doggytalents.api.registry.Talent;
-import doggytalents.client.screen.DogNewInfoScreen.store.slice.TalentListPageCounterSlice;
-import doggytalents.client.screen.DogNewInfoScreen.store.slice.TalentListSlice;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.TalentListSlice.TalentListData;
 import doggytalents.client.screen.DogNewInfoScreen.widget.TalentListEntryButton;
-import doggytalents.client.screen.framework.Store;
-import doggytalents.client.screen.framework.UIAction;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.gui.GuiGraphics;

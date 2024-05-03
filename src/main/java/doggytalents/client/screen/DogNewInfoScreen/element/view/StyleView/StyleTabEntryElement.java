@@ -2,11 +2,8 @@ package doggytalents.client.screen.DogNewInfoScreen.element.view.StyleView;
 
 import java.util.ArrayList;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.StyleViewPanelSlice;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.StyleViewPanelSlice.StyleViewPanelTab;
-import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.widget.TabPanelButton;
 import net.minecraft.client.gui.GuiGraphics;

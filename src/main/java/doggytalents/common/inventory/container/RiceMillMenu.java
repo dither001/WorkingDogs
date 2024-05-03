@@ -1,7 +1,6 @@
 package doggytalents.common.inventory.container;
 
 import doggytalents.DoggyContainerTypes;
-import doggytalents.DoggyItems;
 import doggytalents.common.block.tileentity.RiceMillBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
@@ -10,15 +9,12 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.AbstractFurnaceMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.items.SlotItemHandler;
 
 public class RiceMillMenu extends AbstractContainerMenu {
 

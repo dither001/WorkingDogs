@@ -2,10 +2,9 @@ package doggytalents.common.artifacts;
 
 import java.util.UUID;
 
-import doggytalents.DoggyItems;
 import doggytalents.DoggyTalents;
 import doggytalents.api.inferface.AbstractDog;
-import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.ForgeMod;
 

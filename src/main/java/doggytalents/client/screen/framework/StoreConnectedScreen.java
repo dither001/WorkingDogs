@@ -7,7 +7,6 @@ import java.util.function.Consumer;
 import javax.annotation.Nullable;
 
 import doggytalents.client.screen.framework.element.AbstractElement;
-import doggytalents.client.screen.framework.element.DivElement;
 import doggytalents.client.screen.framework.element.ElementPosition.PosType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;

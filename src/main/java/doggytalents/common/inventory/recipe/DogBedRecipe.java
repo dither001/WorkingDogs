@@ -1,7 +1,6 @@
 package doggytalents.common.inventory.recipe;
 
 import doggytalents.DoggyRecipeSerializers;
-import doggytalents.api.DoggyTalentsAPI;
 import doggytalents.api.registry.IBeddingMaterial;
 import doggytalents.api.registry.ICasingMaterial;
 import doggytalents.common.util.DogBedUtil;

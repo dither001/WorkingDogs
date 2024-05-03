@@ -2,8 +2,6 @@ package doggytalents.client.screen.AmnesiaBoneScreen;
 
 import java.util.List;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.AmnesiaBoneScreen.element.AmnesiaNavBarElement;
 import doggytalents.client.screen.AmnesiaBoneScreen.element.view.GeneralView.GeneralView;
 import doggytalents.client.screen.AmnesiaBoneScreen.element.view.TalentView.TalentView;

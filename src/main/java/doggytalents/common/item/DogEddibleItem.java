@@ -3,7 +3,6 @@ package doggytalents.common.item;
 import java.util.List;
 import java.util.function.Function;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.mojang.datafixers.util.Pair;

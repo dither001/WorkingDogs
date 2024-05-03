@@ -1,22 +1,12 @@
 package doggytalents.client.entity.render.layer.accessory.modelrenderentry;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.entity.model.BirthdayHatModel;
 import doggytalents.client.entity.model.SyncedAccessoryModel;
-import doggytalents.client.entity.model.WigModel;
-import doggytalents.client.entity.model.dog.DogModel;
-import doggytalents.client.entity.render.AccessoryModelManager;
-import doggytalents.client.entity.render.layer.accessory.DefaultAccessoryRenderer;
-import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.accessory.BirthdayHatAccessory;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.lib.Resources;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions;
 

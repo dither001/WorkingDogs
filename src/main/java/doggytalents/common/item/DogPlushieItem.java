@@ -1,12 +1,11 @@
 package doggytalents.common.item;
 
-import javax.annotation.Nullable;
-
 import java.util.List;
 import java.util.Objects;
 
+import javax.annotation.Nullable;
+
 import doggytalents.DoggyEntityTypes;
-import doggytalents.DoggyItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -15,7 +14,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;

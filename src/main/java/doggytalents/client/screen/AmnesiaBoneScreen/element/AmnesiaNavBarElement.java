@@ -2,12 +2,8 @@ package doggytalents.client.screen.AmnesiaBoneScreen.element;
 
 import java.util.ArrayList;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import doggytalents.client.screen.AmnesiaBoneScreen.store.slice.ActiveTabSlice;
 import doggytalents.client.screen.AmnesiaBoneScreen.widget.NavBarButton;
-import doggytalents.client.screen.framework.Store;
-import doggytalents.client.screen.framework.UIAction;
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.Minecraft;

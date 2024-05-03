@@ -1,6 +1,5 @@
 package doggytalents.common.entity.serializers;
 
-import doggytalents.common.entity.DogIncapacitatedMananger;
 import doggytalents.common.entity.DogIncapacitatedMananger.BandaidState;
 import doggytalents.common.entity.DogIncapacitatedMananger.DefeatedType;
 import doggytalents.common.entity.DogIncapacitatedMananger.IncapacitatedSyncState;

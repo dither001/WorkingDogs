@@ -2,10 +2,6 @@ package doggytalents.client.screen.AmnesiaBoneScreen.screen;
 
 import java.util.List;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
-import doggytalents.client.screen.DogNewInfoScreen.DogNewInfoScreen;
-import doggytalents.client.screen.framework.Store;
 import doggytalents.client.screen.widget.CustomButton;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.item.AmnesiaBoneItem;
@@ -14,7 +10,6 @@ import doggytalents.common.network.packet.data.DogUntameData;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;

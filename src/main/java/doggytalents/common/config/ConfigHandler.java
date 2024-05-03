@@ -1,6 +1,11 @@
 package doggytalents.common.config;
 
-import doggytalents.DoggyTalentsNext;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.tuple.Pair;
+
 import doggytalents.api.DoggyTalentsAPI;
 import doggytalents.api.registry.Talent;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -8,11 +13,6 @@ import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
-import org.apache.commons.lang3.tuple.Pair;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ConfigHandler {
 

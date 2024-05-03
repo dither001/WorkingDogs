@@ -1,12 +1,11 @@
 package doggytalents.common.util.dogpromise;
 
-import static doggytalents.common.util.dogpromise.promise.AbstractPromise.State.*;
+import static doggytalents.common.util.dogpromise.promise.AbstractPromise.State.RUNNING;
 
 import java.util.ArrayList;
 
 import doggytalents.common.util.dogpromise.promise.AbstractPromise;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.LivingEntity;
 
 /**
  * @author DashieDev

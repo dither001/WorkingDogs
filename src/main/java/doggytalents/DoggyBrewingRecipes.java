@@ -3,6 +3,7 @@ package doggytalents;
 import java.util.ArrayList;
 import java.util.function.Supplier;
 
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;

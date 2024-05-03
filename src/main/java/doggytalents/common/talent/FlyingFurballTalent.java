@@ -1,5 +1,7 @@
 package doggytalents.common.talent;
 
+import java.util.UUID;
+
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.api.impl.DogAlterationProps;
 import doggytalents.api.inferface.AbstractDog;
@@ -8,12 +10,9 @@ import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.ai.nav.DogFlyingMoveControl;
 import doggytalents.common.entity.ai.nav.DogFlyingNavigation;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.common.ForgeMod;
-
-import java.util.UUID;
 
 public class FlyingFurballTalent extends TalentInstance {
 

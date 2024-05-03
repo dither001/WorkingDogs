@@ -1,6 +1,7 @@
 package doggytalents.client.entity.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+
 import doggytalents.common.entity.Dog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;

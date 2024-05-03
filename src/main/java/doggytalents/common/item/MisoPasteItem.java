@@ -1,8 +1,8 @@
 package doggytalents.common.item;
 
-import javax.annotation.Nullable;
-
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;

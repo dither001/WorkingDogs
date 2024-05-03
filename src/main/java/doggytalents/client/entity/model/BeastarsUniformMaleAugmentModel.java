@@ -2,10 +2,6 @@ package doggytalents.client.entity.model;
 
 import java.util.Optional;
 
-import com.google.common.collect.ImmutableList;
-
-import doggytalents.common.entity.Dog;
-import net.minecraft.client.model.ListModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;

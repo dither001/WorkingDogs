@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.google.common.collect.Maps;
-
 import doggytalents.common.util.Util;
 import net.minecraft.resources.ResourceLocation;
 

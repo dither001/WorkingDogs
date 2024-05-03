@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import doggytalents.DoggyEntityTypes;
-import doggytalents.DoggyItems;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
