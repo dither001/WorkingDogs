@@ -7,5 +7,8 @@ strictness allow 1006;
 strictness allow 1007;
 strictness allow 1008;
 
+use ../version/forge_main.ump;
+use ../version/minecraft_main.ump;
+
 use ../client/client_main.ump;
 use ../common/common_main.ump;

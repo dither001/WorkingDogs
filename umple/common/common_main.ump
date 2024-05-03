@@ -3,6 +3,10 @@ namespace doggytalents.common;
 use common_setup.ump;
 namespace-;
 
+namespace doggytalents.common.advancement;
+use advancement/advancement_provider.ump;
+namespace-;
+
 namespace doggytalents.common.register;
 use register/register_block.ump;
 use register/register_item.ump;

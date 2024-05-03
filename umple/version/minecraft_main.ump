@@ -1,0 +1,7 @@
+
+/* minecraft 1.20.1 */
+external AdvancementProvider {
+	internal PackOutput packOutput;
+	internal CompletableFuture<HolderLookup.Provider> holderLookupProvider;
+	internal List<AdvancementSubProvider> providerList;
+}
