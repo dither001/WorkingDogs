@@ -1,0 +1,14 @@
+
+class DoggyEffects {
+depend java.util.function.Supplier;
+
+	const DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.Keys.MOB_EFFECTS,
+			Constants.MOD_ID);
+
+	const RegistryObject<NattoBiteEffect> NATTO_BITE = register("natto_bite", () -> new NattoBiteEffect());
+
+	public static <T extends MobEffect> RegistryObject<T> register(String id, Supplier<T> sup) {
+		return EFFECTS.register(id, sup);
+	}
+
+}
