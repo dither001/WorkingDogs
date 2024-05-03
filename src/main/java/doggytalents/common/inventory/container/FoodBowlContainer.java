@@ -1,7 +1,7 @@
 package doggytalents.common.inventory.container;
 
-import doggytalents.DoggyContainerTypes;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyContainerTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

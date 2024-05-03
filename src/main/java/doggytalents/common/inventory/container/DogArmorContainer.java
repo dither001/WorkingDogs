@@ -2,10 +2,10 @@ package doggytalents.common.inventory.container;
 
 import com.mojang.datafixers.util.Pair;
 
-import doggytalents.DoggyContainerTypes;
 import doggytalents.DoggyTalents;
 import doggytalents.api.impl.DogArmorItemHandler;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyContainerTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;

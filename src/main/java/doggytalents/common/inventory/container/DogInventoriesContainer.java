@@ -3,10 +3,10 @@ package doggytalents.common.inventory.container;
 import java.util.ArrayList;
 import java.util.List;
 
-import doggytalents.DoggyContainerTypes;
 import doggytalents.DoggyTalents;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.inventory.container.slot.DogInventorySlot;
+import doggytalents.common.register.DoggyContainerTypes;
 import doggytalents.common.talent.PackPuppyTalent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;

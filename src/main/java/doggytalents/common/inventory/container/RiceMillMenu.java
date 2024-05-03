@@ -1,7 +1,7 @@
 package doggytalents.common.inventory.container;
 
-import doggytalents.DoggyContainerTypes;
 import doggytalents.common.block.tileentity.RiceMillBlockEntity;
+import doggytalents.common.register.DoggyContainerTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
