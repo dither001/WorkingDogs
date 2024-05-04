@@ -1,0 +1,4 @@
+
+external RecipeProvider {
+	PackOutput output;
+}

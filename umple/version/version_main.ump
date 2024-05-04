@@ -3,4 +3,5 @@ use forge/forge_tags.ump
 
 use minecraft/minecraft_advancement.ump;
 use minecraft/minecraft_loot.ump;
+use minecraft/minecraft_recipe.ump;
 use minecraft/minecraft_tags.ump;

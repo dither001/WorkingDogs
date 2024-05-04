@@ -11,6 +11,10 @@ namespace doggytalents.common.data.loot;
 use data/data_loot.ump;
 namespace-;
 
+namespace doggytalents.common.data.recipe;
+use data/data_recipe.ump;
+namespace-;
+
 namespace doggytalents.common.data.tags;
 use data/data_tags.ump;
 namespace-;
