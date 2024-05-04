@@ -1,8 +1,8 @@
 package doggytalents.common.inventory.recipe;
 
-import doggytalents.DoggyRecipeSerializers;
 import doggytalents.api.registry.IBeddingMaterial;
 import doggytalents.api.registry.ICasingMaterial;
+import doggytalents.common.register.DoggyRecipeSerializers;
 import doggytalents.common.util.DogBedUtil;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;

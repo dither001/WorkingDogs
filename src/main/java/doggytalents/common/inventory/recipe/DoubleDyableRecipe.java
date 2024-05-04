@@ -2,8 +2,8 @@ package doggytalents.common.inventory.recipe;
 
 import java.util.ArrayList;
 
-import doggytalents.DoggyRecipeSerializers;
 import doggytalents.common.item.DoubleDyableAccessoryItem;
+import doggytalents.common.register.DoggyRecipeSerializers;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;

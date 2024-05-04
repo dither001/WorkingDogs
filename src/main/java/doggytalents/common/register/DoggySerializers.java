@@ -1,4 +1,7 @@
-package doggytalents;
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
+package doggytalents.common.register;
 
 import java.util.function.Supplier;
 
@@ -18,11 +21,15 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+// line 2 "../../../register_storage.ump"
 public class DoggySerializers {
+
+	// ------------------------
+	// STATIC VARIABLES
+	// ------------------------
 
 	public static final DeferredRegister<EntityDataSerializer<?>> SERIALIZERS = DeferredRegister
 			.create(ForgeRegistries.Keys.ENTITY_DATA_SERIALIZERS, Constants.MOD_ID);
-
 	public static final RegistryObject<EntityDataSerializer> CLASSICAL_VAR = register2("classical_var",
 			ClassicalVarSerializer::new);
 	public static final RegistryObject<EntityDataSerializer> COLLAR_TYPE_SERIALIZER = register2("collar",
@@ -43,11 +50,38 @@ public class DoggySerializers {
 	public static final RegistryObject<EntityDataSerializer> DOG_SKIN_DATA_SERIALIZER = register2("dog_skin_data",
 			DogSkinDataSerializer::new);
 
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
+
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
+
+	public DoggySerializers() {
+	}
+
+	// ------------------------
+	// INTERFACE
+	// ------------------------
+
+	public void delete() {
+	}
+
+	public String toString() {
+		return super.toString() + "[" + "]";
+	}
+	// ------------------------
+	// DEVELOPER CODE - PROVIDED AS-IS
+	// ------------------------
+
+	// line 18 "../../../register_storage.ump"
 	private static <X extends EntityDataSerializer<?>> RegistryObject<EntityDataSerializer> register2(final String name,
 			final Supplier<X> factory) {
 		return register(name, () -> factory.get());
 	}
 
+// line 22 "../../../register_storage.ump"
 	private static RegistryObject<EntityDataSerializer> register(final String name,
 			final Supplier<EntityDataSerializer> sup) {
 		return SERIALIZERS.register(name, sup);

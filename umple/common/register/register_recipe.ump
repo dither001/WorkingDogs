@@ -1,0 +1,18 @@
+
+class DoggyRecipeSerializers {
+depend java.util.function.Supplier;
+
+	const DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.Keys.RECIPE_SERIALIZERS, Constants.MOD_ID);
+
+	const RegistryObject<RecipeSerializer<DogBedRecipe>> DOG_BED = register("dog_bed", DogBedRecipe::new);
+	const RegistryObject<RecipeSerializer<DoubleDyableRecipe>> DOUBLE_DYABLE = register("double_dyable", DoubleDyableRecipe::new);
+
+	private static <R extends CraftingRecipe, T extends RecipeSerializer<R>> RegistryObject<RecipeSerializer<R>> register(final String name, SimpleCraftingRecipeSerializer.Factory<R> factory) {
+		return register(name, () -> new SimpleCraftingRecipeSerializer<R>(factory));
+	}
+
+	private static <T extends RecipeSerializer<?>> RegistryObject<T> register(final String name, final Supplier<T> sup) {
+		return RECIPE_SERIALIZERS.register(name, sup);
+	}
+
+}
