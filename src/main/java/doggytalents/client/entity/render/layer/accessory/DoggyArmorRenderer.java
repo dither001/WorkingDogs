@@ -5,7 +5,6 @@ import java.util.Optional;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.registry.TalentInstance;
 import doggytalents.client.ClientSetup;
 import doggytalents.client.entity.model.DogArmorModel;
@@ -15,6 +14,7 @@ import doggytalents.client.entity.render.DoggyArmorMapping;
 import doggytalents.client.entity.render.layer.DogArmorHelmetAltModel;
 import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyTalents;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

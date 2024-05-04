@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.packet.data.GatePasserData;
+import doggytalents.common.register.DoggyTalents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;

@@ -1,7 +1,6 @@
 package doggytalents.common.talent;
 import java.util.UUID;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.impl.DogAlterationProps;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
@@ -9,6 +8,7 @@ import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.ai.nav.DogSwimMoveControl;
 import doggytalents.common.entity.ai.nav.DogWaterBoundNavigation;
+import doggytalents.common.register.DoggyTalents;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;

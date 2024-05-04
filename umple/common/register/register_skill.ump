@@ -1,5 +1,6 @@
 
-class SkillRegister {
+class DoggyTalents {
+depend java.util.Optional;
 depend java.util.function.Supplier;
 
 	const DeferredRegister<Talent> TALENTS = DeferredRegister.create(DoggyRegistries.Keys.TALENTS_REGISTRY, Constants.MOD_ID);
@@ -44,11 +45,82 @@ depend java.util.function.Supplier;
 	const RegistryObject<Talent> WATER_HOLDER = register("water_holder", () -> new Talent(WaterHolderTalent::new));
 	const RegistryObject<Talent> WOLF_MOUNT = registerInst("wolf_mount", WolfMountTalent::new);
 
+}
+
+class DoggyTalents {
+
+	public static final RegistryObject<Talent> CHEMI_CANINE = register("chemi_canine",
+			() -> new Talent(ChemiCanineTalent::new) {
+				@Override
+				public int getLevelCost(int toGoToLevel) {
+					if (toGoToLevel == 1)
+						return 5;
+					return super.getLevelCost(toGoToLevel);
+				};
+
+				@Override
+				public int getCummulativeCost(int level) {
+					if (level <= 0)
+						return 0;
+					return level * (level + 1) / 2 + 4;
+				}
+			});
+
+	public static final RegistryObject<Talent> FLYING_FURBALL = register("flying_furball",
+			() -> new Talent(FlyingFurballTalent::new) {
+				@Override
+				public int getLevelCost(int toGoToLevel) {
+					if (toGoToLevel == 1)
+						return 5;
+					return super.getLevelCost(toGoToLevel);
+				};
+
+				@Override
+				public int getCummulativeCost(int level) {
+					if (level <= 0)
+						return 0;
+					return level * (level + 1) / 2 + 4;
+				}
+
+				@Override
+				public boolean isDogEligible(AbstractDog dog) {
+					return dog.getDogLevel(DoggyTalents.PILLOW_PAW) <= 0
+							&& dog.getDogLevel().getLevel(DogLevel.Type.KAMI) > 0;
+				}
+
+				@Override
+				public Optional<String> getNonEligibleTranslationKey(AbstractDog dog) {
+					if (dog.getDogLevel(DoggyTalents.PILLOW_PAW) > 0)
+						return Optional.empty();
+					return Optional.of(this.getTranslationKey() + ".dog_not_kami");
+				}
+			});
+
+	public static final RegistryObject<Talent> PILLOW_PAW = register("pillow_paw",
+			() -> new Talent(PillowPawTalent::new) {
+				@Override
+				public boolean isDogEligible(AbstractDog dog) {
+					return PillowPawTalent.isDogEligible(dog);
+				}
+			});
+
+	public static final RegistryObject<Talent> OOKAMIKAZE = register("ookamikaze",
+			() -> new Talent(OokamiKazeTalent::new) {
+				@Override
+				public boolean isDogEligible(AbstractDog dog) {
+					return dog.getDogLevel().getLevel(DogLevel.Type.KAMI) > 0;
+				}
+
+				@Override
+				public Optional<String> getNonEligibleTranslationKey(AbstractDog dog) {
+					return Optional.of(DoggyTalents.FLYING_FURBALL.get().getTranslationKey() + ".dog_not_kami");
+				}
+			});
 
 }
 
 /** helpers */
-class SkillRegister {
+class DoggyTalents {
 
 	private static <T extends Talent> RegistryObject<T> register(final String name, final Supplier<T> sup) {
 		return TALENTS.register(name, sup);

@@ -1,8 +1,8 @@
 package doggytalents.common.inventory.container;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.common.register.DoggyContainerTypes;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.talent.PackPuppyTalent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;

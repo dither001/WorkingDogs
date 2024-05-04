@@ -7,7 +7,6 @@ import java.util.UUID;
 import org.apache.commons.lang3.ObjectUtils;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
@@ -20,6 +19,7 @@ import doggytalents.common.item.DogEddibleItem;
 import doggytalents.common.item.IDogEddible;
 import doggytalents.common.network.packet.data.PackPuppyData;
 import doggytalents.common.register.DoggyTags;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.util.DogUtil;
 import doggytalents.common.util.InventoryUtil;
 import net.minecraft.core.BlockPos;

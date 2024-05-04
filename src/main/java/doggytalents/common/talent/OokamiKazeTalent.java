@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Maps;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
@@ -18,6 +17,7 @@ import doggytalents.common.entity.ai.triggerable.TriggerableAction;
 import doggytalents.common.network.PacketHandler;
 import doggytalents.common.network.packet.data.DogExplosionData;
 import doggytalents.common.register.DoggyAdvancementTriggers;
+import doggytalents.common.register.DoggyTalents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;

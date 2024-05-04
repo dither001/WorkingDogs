@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import org.apache.commons.lang3.ObjectUtils;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
@@ -12,6 +11,7 @@ import doggytalents.common.config.ConfigHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.ai.triggerable.TriggerableAction;
 import doggytalents.common.register.DoggyTags;
+import doggytalents.common.register.DoggyTalents;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;

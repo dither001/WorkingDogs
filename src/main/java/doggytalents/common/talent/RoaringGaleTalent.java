@@ -3,11 +3,11 @@ package doggytalents.common.talent;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.feature.DataKey;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyTalents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;

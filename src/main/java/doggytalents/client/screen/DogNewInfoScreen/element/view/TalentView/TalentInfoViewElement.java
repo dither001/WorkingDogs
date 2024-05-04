@@ -5,7 +5,6 @@ import java.util.List;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.registry.Talent;
 import doggytalents.client.screen.DogNewInfoScreen.element.view.MainInfoView.DogStatusViewBoxElement;
 import doggytalents.client.screen.DogNewInfoScreen.store.slice.ActiveTalentDescSlice;
@@ -29,6 +28,7 @@ import doggytalents.common.network.packet.data.GatePasserData;
 import doggytalents.common.network.packet.data.OpenDogScreenData;
 import doggytalents.common.network.packet.data.PackPuppyData;
 import doggytalents.common.network.packet.data.RescueDogRenderData;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.talent.CreeperSweeperTalent;
 import doggytalents.common.talent.DoggyTorchTalent;
 import doggytalents.common.talent.GatePasserTalent;

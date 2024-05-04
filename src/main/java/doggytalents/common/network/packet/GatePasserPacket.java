@@ -2,9 +2,9 @@ package doggytalents.common.network.packet;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyTalents;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.packet.data.GatePasserData;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.talent.GatePasserTalent;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent.Context;

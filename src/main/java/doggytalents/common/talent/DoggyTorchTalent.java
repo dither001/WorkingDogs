@@ -2,12 +2,12 @@ package doggytalents.common.talent;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.Talent;
 import doggytalents.api.registry.TalentInstance;
 import doggytalents.common.inventory.PackPuppyItemHandler;
 import doggytalents.common.network.packet.data.DoggyTorchData;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.util.InventoryUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

@@ -7,7 +7,6 @@ import javax.annotation.Nullable;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.impl.DogAlterationProps;
 import doggytalents.api.impl.IDogRangedAttackManager;
 import doggytalents.api.inferface.AbstractDog;
@@ -17,6 +16,7 @@ import doggytalents.common.Screens;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.inventory.DoggyToolsItemHandler;
 import doggytalents.common.network.packet.data.DoggyToolsPickFirstData;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.talent.PackPuppyTalent;
 import doggytalents.common.talent.doggy_tools.tool_actions.ToolAction;
 import net.minecraft.nbt.CompoundTag;

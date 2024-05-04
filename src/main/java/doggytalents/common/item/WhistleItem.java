@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.feature.EnumMode;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogItem;
@@ -23,6 +22,7 @@ import doggytalents.common.entity.ai.triggerable.DogHowlAction;
 import doggytalents.common.entity.ai.triggerable.DogMoveToBedAction;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.register.DoggySounds;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.talent.MobRetrieverTalent;
 import doggytalents.common.talent.RoaringGaleTalent;
 import doggytalents.common.util.DogUtil;

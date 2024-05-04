@@ -4,13 +4,13 @@ import java.util.Optional;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-import doggytalents.DoggyTalents;
 import doggytalents.client.ClientSetup;
 import doggytalents.client.entity.model.DogRescueModel;
 import doggytalents.client.entity.model.dog.DogModel;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Resources;
 import doggytalents.common.register.DoggyAccessoryTypes;
+import doggytalents.common.register.DoggyTalents;
 import doggytalents.common.talent.RescueDogTalent;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

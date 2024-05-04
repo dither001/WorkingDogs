@@ -2,7 +2,6 @@ package doggytalents.common;
 
 import java.util.List;
 
-import doggytalents.DoggyTalents;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.common.block.tileentity.FoodBowlTileEntity;
 import doggytalents.common.entity.Dog;
@@ -12,6 +11,7 @@ import doggytalents.common.inventory.container.DoggyToolsMenu;
 import doggytalents.common.inventory.container.PackPuppyContainer;
 import doggytalents.common.inventory.container.TreatBagContainer;
 import doggytalents.common.register.DoggyItems;
+import doggytalents.common.register.DoggyTalents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.MenuProvider;
