@@ -1,17 +1,15 @@
 
 external EntityTypeTagsProvider {
-isA IntrinsicHolderTagsProvider;
-}
-
-external IntrinsicHolderTagsProvider {
-	internal PackOutput p_256164_;
-	internal ResourceKey<? extends Registry<T>> p_256155_;
-	internal CompletableFuture<HolderLookup.Provider> p_256488_;
-	internal Function<T, ResourceKey<T>> p_256168_;
-	internal String modId;
-	internal ExistingFileHelper fileHelper;
+	PackOutput output;
+	CompletableFuture<Provider> provider;
+	String modId;
+	ExistingFileHelper helper;
 }
 
 external ItemTagsProvider {
-isA IntrinsicHolderTagsProvider;
+	PackOutput output;
+	CompletableFuture<Provider> provider;
+	CompletableFuture<TagLookup<Block>> lookup;
+	String modId;
+	ExistingFileHelper helper;
 }

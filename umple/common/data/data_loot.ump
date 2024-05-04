@@ -1,57 +1,26 @@
-package doggytalents.common.data;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+class DTLootTableProvider {
+depend java.util.List;
+depend java.util.Map;
+depend java.util.function.Supplier;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.level.block.Block;
+isA LootTableProvider;
 
-import doggytalents.common.register.DoggyBlocks;
-import doggytalents.common.register.DoggyEntityTypes;
-import doggytalents.common.register.DoggyItems;
-import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.data.loot.EntityLootSubProvider;
-import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.ValidationContext;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
-import net.minecraft.world.level.storage.loot.functions.CopyNbtFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.nbt.ContextNbtProvider;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-
-public class DTLootTableProvider extends LootTableProvider {
-
-	public DTLootTableProvider(PackOutput p_254123_) {
-		super(p_254123_, Collections.emptySet(),
-				List.of(new LootTableProvider.SubProviderEntry(Blocks::new, LootContextParamSets.BLOCK),
-						new LootTableProvider.SubProviderEntry(Entities::new, LootContextParamSets.ENTITY)));
+	public DTLootTableProvider(PackOutput output) {
+		super(output, Collections.emptySet(), List.of(
+				new LootTableProvider.SubProviderEntry(Blocks::new, LootContextParamSets.BLOCK)
+				, new LootTableProvider.SubProviderEntry(Entities::new, LootContextParamSets.ENTITY)
+			));
+		/* custom constructor */
 	}
 
 	@Override
 	protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationTracker) {
+		/* NO OP */
 	}
 
 	private static class Blocks extends BlockLootSubProvider {
-
 		private static final Set<Item> EXPLOSION_RESISTANT = Stream.of(DoggyBlocks.DOG_BED.get()).map(ItemLike::asItem)
 				.collect(Collectors.toSet());
 
@@ -68,7 +37,6 @@ public class DTLootTableProvider extends LootTableProvider {
 									.copy("casingId", "doggytalents.casingId")
 									.copy("beddingId", "doggytalents.beddingId").copy("ownerId", "doggytalents.ownerId")
 									.copy("name", "doggytalents.name").copy("ownerName", "doggytalents.ownerName"))));
-
 			this.add(block.get(), lootTableBuilder);
 		}
 
@@ -133,4 +101,5 @@ public class DTLootTableProvider extends LootTableProvider {
 			this.registerNoLoot(DoggyEntityTypes.DOG);
 		}
 	}
+
 }

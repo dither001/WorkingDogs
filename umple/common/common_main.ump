@@ -7,6 +7,10 @@ namespace doggytalents.common.data.advancement;
 use data/data_advancement.ump;
 namespace-;
 
+namespace doggytalents.common.data.loot;
+use data/data_loot.ump;
+namespace-;
+
 namespace doggytalents.common.data.tags;
 use data/data_tags.ump;
 namespace-;

@@ -23,6 +23,11 @@ public class DTBlockTagsProvider extends BlockTagsProvider {
 	// CONSTRUCTOR
 	// ------------------------
 
+	public DTBlockTagsProvider(PackOutput aOutput, CompletableFuture<Provider> aProvider, String aModId,
+			ExistingFileHelper aHelper) {
+		super(aOutput, aProvider, aModId, aHelper);
+	}
+
 	// ------------------------
 	// INTERFACE
 	// ------------------------
@@ -30,6 +35,7 @@ public class DTBlockTagsProvider extends BlockTagsProvider {
 	public void delete() {
 	}
 
+	@Override
 	// line 13 "../../../../data_tags.ump"
 	public String getName() {
 		return "DoggyTalents Block Tags";
@@ -37,7 +43,7 @@ public class DTBlockTagsProvider extends BlockTagsProvider {
 
 	@Override
 	// line 18 "../../../../data_tags.ump"
-	protected void addTags(Provider p_256380_) {
+	protected void addTags(Provider provider) {
 		// TODO Auto-generated method stub
 	}
 

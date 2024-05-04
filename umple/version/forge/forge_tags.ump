@@ -1,7 +1,9 @@
 
-/* minecraft 1.20.1 */
 external BlockTagsProvider {
-isA IntrinsicHolderTagsProvider;
+	PackOutput output;
+	CompletableFuture<Provider> provider;
+	String modId;
+	ExistingFileHelper helper;
 }
 
 external ForgeAdvancementProvider {

@@ -1,4 +1,7 @@
-package doggytalents.common.data;
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
+package doggytalents.common.data.loot;
 
 import java.util.Collections;
 import java.util.List;
@@ -38,20 +41,49 @@ import net.minecraft.world.level.storage.loot.providers.nbt.ContextNbtProvider;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
+// line 2 "../../../../data_loot.ump"
 public class DTLootTableProvider extends LootTableProvider {
 
-	public DTLootTableProvider(PackOutput p_254123_) {
-		super(p_254123_, Collections.emptySet(),
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
+
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
+
+	public DTLootTableProvider(PackOutput aOutput, Set<ResourceLocation> aResource,
+			List<SubProviderEntry> aProviderList) {
+		super(aOutput, aResource, aProviderList);
+	}
+
+	// ------------------------
+	// INTERFACE
+	// ------------------------
+
+	public void delete() {
+	}
+
+	// line 11 "../../../../data_loot.ump"
+	public DTLootTableProvider(PackOutput output) {
+		super(output, Collections.emptySet(),
 				List.of(new LootTableProvider.SubProviderEntry(Blocks::new, LootContextParamSets.BLOCK),
 						new LootTableProvider.SubProviderEntry(Entities::new, LootContextParamSets.ENTITY)));
+		/* custom constructor */
 	}
 
 	@Override
+	// line 20 "../../../../data_loot.ump"
 	protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationTracker) {
+		/* NO OP */
 	}
 
-	private static class Blocks extends BlockLootSubProvider {
+	// ------------------------
+	// DEVELOPER CODE - PROVIDED AS-IS
+	// ------------------------
 
+	// line 23 "../../../../data_loot.ump"
+	private static class Blocks extends BlockLootSubProvider {
 		private static final Set<Item> EXPLOSION_RESISTANT = Stream.of(DoggyBlocks.DOG_BED.get()).map(ItemLike::asItem)
 				.collect(Collectors.toSet());
 
@@ -68,7 +100,6 @@ public class DTLootTableProvider extends LootTableProvider {
 									.copy("casingId", "doggytalents.casingId")
 									.copy("beddingId", "doggytalents.beddingId").copy("ownerId", "doggytalents.ownerId")
 									.copy("name", "doggytalents.name").copy("ownerName", "doggytalents.ownerName"))));
-
 			this.add(block.get(), lootTableBuilder);
 		}
 
@@ -113,8 +144,8 @@ public class DTLootTableProvider extends LootTableProvider {
 		}
 	}
 
+// line 84 "../../../../data_loot.ump"
 	private static class Entities extends EntityLootSubProvider {
-
 		protected Entities() {
 			super(FeatureFlags.VANILLA_SET);
 		}
@@ -133,4 +164,5 @@ public class DTLootTableProvider extends LootTableProvider {
 			this.registerNoLoot(DoggyEntityTypes.DOG);
 		}
 	}
+
 }

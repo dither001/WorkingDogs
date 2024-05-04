@@ -11,6 +11,7 @@ import doggytalents.common.lib.Constants;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.register.DoggyTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
@@ -22,8 +23,21 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-// line 54 "../../../../data_tags.ump"
+// line 53 "../../../../data_tags.ump"
 public class DTItemTagsProvider extends ItemTagsProvider {
+
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
+
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
+
+	public DTItemTagsProvider(PackOutput aOutput, CompletableFuture<Provider> aProvider,
+			CompletableFuture<TagLookup<Block>> aLookup, String aModId, ExistingFileHelper aHelper) {
+		super(aOutput, aProvider, aLookup, aModId, aHelper);
+	}
 
 	// ------------------------
 	// INTERFACE
@@ -32,19 +46,9 @@ public class DTItemTagsProvider extends ItemTagsProvider {
 	public void delete() {
 	}
 
-	// ------------------------
-	// DEVELOPER CODE - PROVIDED AS-IS
-	// ------------------------
-
-	// line 62 "../../../../data_tags.ump"
-	public DTItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> holderLookup,
-			CompletableFuture<TagsProvider.TagLookup<Block>> blockTagLookup, ExistingFileHelper fileHelper) {
-		/* custom constructor */
-		super(packOutput, holderLookup, blockTagLookup, Constants.MOD_ID, fileHelper);
-	}
-
-// line 69 "../../../../data_tags.ump"
-	public void addTags(HolderLookup.Provider provider) {
+	@Override
+	// line 70 "../../../../data_tags.ump"
+	public void addTags(Provider provider) {
 		createTag(DoggyTags.BEG_ITEMS_TAMED, DoggyItems.THROW_STICK, DoggyItems.THROW_BONE, () -> Items.BONE,
 				DoggyItems.FRISBEE);
 		appendToTag(DoggyTags.TREATS);
@@ -57,6 +61,17 @@ public class DTItemTagsProvider extends ItemTagsProvider {
 		tag(ItemTags.MUSIC_DISCS).add(DoggyItems.MUSIC_DISC_BWV_1080_FUGUE_11_KIMIKO.get(),
 				DoggyItems.MUSIC_DISC_BWV_849_FUGUE_KIMIKO.get(), DoggyItems.MUSIC_DISC_OKAMI_1.get(),
 				DoggyItems.MUSIC_DISC_CHOPIN_OP64_NO1.get());
+	}
+
+	// ------------------------
+	// DEVELOPER CODE - PROVIDED AS-IS
+	// ------------------------
+
+	// line 62 "../../../../data_tags.ump"
+	public DTItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> holderLookup,
+			CompletableFuture<TagsProvider.TagLookup<Block>> blockTagLookup, ExistingFileHelper fileHelper) {
+		/* custom constructor */
+		super(packOutput, holderLookup, blockTagLookup, Constants.MOD_ID, fileHelper);
 	}
 
 // line 85 "../../../../data_tags.ump"

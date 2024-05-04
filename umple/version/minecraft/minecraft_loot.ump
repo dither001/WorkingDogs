@@ -1,0 +1,6 @@
+
+external LootTableProvider {
+	internal PackOutput output;
+	internal Set<ResourceLocation> resource;
+	internal List<SubProviderEntry> providerList;
+}
