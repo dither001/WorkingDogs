@@ -45,12 +45,12 @@ public class DoggyTags {
 	public void delete() {
 	}
 
-	// line 16 "../../../register_tag.ump"
+	// line 17 "../../../register_tag.ump"
 	private static TagKey<Item> tag(String name) {
 		return ItemTags.create(Util.getResource(name));
 	}
 
-	// line 20 "../../../register_tag.ump"
+	// line 21 "../../../register_tag.ump"
 	private static TagKey<EntityType<?>> tagEntity(String name) {
 		return ForgeRegistries.ENTITY_TYPES.tags().createTagKey(Util.getResource(name));
 	}

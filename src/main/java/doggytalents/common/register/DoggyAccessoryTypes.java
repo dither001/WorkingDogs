@@ -55,12 +55,12 @@ public class DoggyAccessoryTypes {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 17 "../../../register_accessorytype.ump"
+	// line 18 "../../../register_accessorytype.ump"
 	private static RegistryObject<AccessoryType> register(final String name) {
 		return register(name, () -> new AccessoryType());
 	}
 
-// line 21 "../../../register_accessorytype.ump"
+// line 22 "../../../register_accessorytype.ump"
 	private static <T extends AccessoryType> RegistryObject<T> register(final String name, final Supplier<T> sup) {
 		return ACCESSORY_TYPES.register(name, sup);
 	}

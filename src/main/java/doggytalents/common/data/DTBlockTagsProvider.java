@@ -2,7 +2,7 @@ package doggytalents.common.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 import doggytalents.common.lib.Constants;
 import net.minecraft.core.HolderLookup;

@@ -52,8 +52,8 @@ import net.minecraftforge.registries.RegistryObject;
  * helpers
  */
 // line 2 "../../../register_skill.ump"
-// line 49 "../../../register_skill.ump"
-// line 122 "../../../register_skill.ump"
+// line 50 "../../../register_skill.ump"
+// line 123 "../../../register_skill.ump"
 public class DoggyTalents {
 
 	// ------------------------
@@ -125,7 +125,7 @@ public class DoggyTalents {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 51 "../../../register_skill.ump"
+	// line 52 "../../../register_skill.ump"
 	public static final RegistryObject<Talent> CHEMI_CANINE = register("chemi_canine",
 			() -> new Talent(ChemiCanineTalent::new) {
 				@Override
@@ -142,10 +142,10 @@ public class DoggyTalents {
 					return level * (level + 1) / 2 + 4;
 				}
 			}
-// line 66 "../../../register_skill.ump"
+// line 67 "../../../register_skill.ump"
 	);
 
-// line 68 "../../../register_skill.ump"
+// line 69 "../../../register_skill.ump"
 	public static final RegistryObject<Talent> FLYING_FURBALL = register("flying_furball",
 			() -> new Talent(FlyingFurballTalent::new) {
 				@Override
@@ -175,10 +175,10 @@ public class DoggyTalents {
 					return Optional.of(this.getTranslationKey() + ".dog_not_kami");
 				}
 			}
-// line 96 "../../../register_skill.ump"
+// line 97 "../../../register_skill.ump"
 	);
 
-// line 98 "../../../register_skill.ump"
+// line 99 "../../../register_skill.ump"
 	public static final RegistryObject<Talent> PILLOW_PAW = register("pillow_paw",
 			() -> new Talent(PillowPawTalent::new) {
 				@Override
@@ -186,10 +186,10 @@ public class DoggyTalents {
 					return PillowPawTalent.isDogEligible(dog);
 				}
 			}
-// line 104 "../../../register_skill.ump"
+// line 105 "../../../register_skill.ump"
 	);
 
-// line 106 "../../../register_skill.ump"
+// line 107 "../../../register_skill.ump"
 	public static final RegistryObject<Talent> OOKAMIKAZE = register("ookamikaze",
 			() -> new Talent(OokamiKazeTalent::new) {
 				@Override
@@ -202,15 +202,15 @@ public class DoggyTalents {
 					return Optional.of(DoggyTalents.FLYING_FURBALL.get().getTranslationKey() + ".dog_not_kami");
 				}
 			}
-// line 117 "../../../register_skill.ump"
+// line 118 "../../../register_skill.ump"
 	);
 
-// line 124 "../../../register_skill.ump"
+// line 125 "../../../register_skill.ump"
 	private static <T extends Talent> RegistryObject<T> register(final String name, final Supplier<T> sup) {
 		return TALENTS.register(name, sup);
 	}
 
-// line 128 "../../../register_skill.ump"
+// line 129 "../../../register_skill.ump"
 	private static <T extends Talent> RegistryObject<Talent> registerInst(final String name,
 			final BiFunction<Talent, Integer, TalentInstance> sup) {
 		return register(name, () -> new Talent(sup));

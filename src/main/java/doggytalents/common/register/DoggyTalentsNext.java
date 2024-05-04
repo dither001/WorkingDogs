@@ -19,11 +19,11 @@ import doggytalents.common.block.tileentity.RiceMillBlockEntity;
 import doggytalents.common.chunk.GarbageChunkCollector;
 import doggytalents.common.command.DoggyCommands;
 import doggytalents.common.config.ConfigHandler;
-import doggytalents.common.data.DTBlockTagsProvider;
-import doggytalents.common.data.DTEntityTagsProvider;
 import doggytalents.common.data.DTLootModifierProvider;
 import doggytalents.common.data.DTLootTableProvider;
 import doggytalents.common.data.DTRecipeProvider;
+import doggytalents.common.data.tags.DTBlockTagsProvider;
+import doggytalents.common.data.tags.DTEntityTagsProvider;
 import doggytalents.common.data.tags.DTItemTagsProvider;
 import doggytalents.common.entity.BoostingFoodHandler;
 import doggytalents.common.entity.Dog;
@@ -111,7 +111,7 @@ public class DoggyTalentsNext {
 		forgeEventBus.register(new EventHandler());
 
 		/* Client Events */
-		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+		DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
 			modEventBus.addListener(DoggyKeybinds::registerDTKeyMapping);
 			modEventBus.addListener(this::clientSetup);
 			modEventBus.addListener(DoggyBlocks::registerBlockColours);

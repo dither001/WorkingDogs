@@ -1,12 +1,62 @@
 
-class DTItemTagsProvider {
+class DTBlockTagsProvider {
+depend net.minecraft.core.HolderLookup.Provider;
+isA BlockTagsProvider;
 
+	public DTBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+		/* custom constructor */
+		super(output, lookupProvider, Constants.MOD_ID, existingFileHelper);
+	}
+
+	@Override
+	public String getName() {
+		return "DoggyTalents Block Tags";
+	}
+
+	@Override
+	protected void addTags(Provider p_256380_) {
+		// TODO Auto-generated method stub
+	}
+
+}
+
+class DTEntityTagsProvider {
+depend java.util.Arrays;
+depend java.util.function.Supplier;
+depend net.minecraft.core.HolderLookup.Provider;
+isA EntityTypeTagsProvider;
+
+	public DTEntityTagsProvider(PackOutput output, CompletableFuture<Provider> provider, ExistingFileHelper fileHelper) {
+		super(output, provider, Constants.MOD_ID, fileHelper);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String getName() {
+		return "DoggyTalents Entity Tags";
+	}
+
+	@Override
+	public void addTags(HolderLookup.Provider provider) {
+		createTag(DoggyTags.DOG_SHOULD_IGNORE, () -> EntityType.ENDERMAN);
+		createTag(DoggyTags.DROP_SOY_WHEN_DOG_KILL, () -> EntityType.CREEPER, () -> EntityType.ZOMBIE,
+				() -> EntityType.SKELETON, () -> EntityType.SPIDER);
+		createTag(DoggyTags.MOB_RETRIEVER_MUST_IGNORE, () -> EntityType.CREEPER);
+	}
+
+	private final @SafeVarargs void createTag(TagKey<EntityType<?>> tag, Supplier<? extends EntityType<?>>... entities) {
+		tag(tag).add(Arrays.stream(entities).map(Supplier::get).toArray(EntityType<?>[]::new));
+	}
+
+}
+
+
+class DTItemTagsProvider {
 depend java.util.Arrays;
 depend java.util.function.Supplier;
 depend net.minecraft.world.item.Item;
 depend net.minecraft.world.item.Items;
 depend net.minecraft.world.level.block.Block;
-
 isA ItemTagsProvider;
 
 	public DTItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> holderLookup,

@@ -64,23 +64,19 @@ public class DoggyBlocks {
 
 	// line 32 "../../../register_block.ump"
 	public static void logError() {
-		// Only try to register if blocks were successfully registered
-		// Trying to avoid as reports like DoggyTalents#242, where it says
-		// DoggyTalents crashed but is not the CAUSE of the crash
-
-		DoggyTalentsNext.LOGGER
-				.info("Items/Blocks were not registered for some reason... probably beacuse we are c...r..a..s.hing");
+		/* Only attempt register if blocks already successfully registered */
+		DoggyTalentsNext.LOGGER.info("Items/Blocks not registered");
 	}
 
 	/**
 	 * 
 	 */
-	// line 42 "../../../register_block.ump"
+	// line 38 "../../../register_block.ump"
 	private static Item.Properties createInitialProp() {
 		return new Item.Properties();
 	}
 
-	// line 46 "../../../register_block.ump"
+	// line 42 "../../../register_block.ump"
 	private static BlockItem makeItemBlock(Block block) {
 		return makeItemBlock(block, null);
 	}
@@ -103,26 +99,26 @@ public class DoggyBlocks {
 		}, DoggyBlocks::logError);
 	}
 
-// line 49 "../../../register_block.ump"
+// line 45 "../../../register_block.ump"
 	private static BlockItem makeItemBlock(Block block,
 			@Nullable Function<Item.Properties, Item.Properties> extraPropFunc) {
 		Item.Properties prop = createInitialProp();
 		return new BlockItem(block, extraPropFunc != null ? extraPropFunc.apply(prop) : prop);
 	}
 
-// line 55 "../../../register_block.ump"
+// line 51 "../../../register_block.ump"
 	private static <T extends Block> RegistryObject<T> registerWithItem(final String name,
 			final Supplier<T> blockSupplier, @Nullable Function<Item.Properties, Item.Properties> extraPropFunc) {
 		return register(name, blockSupplier, (b) -> makeItemBlock(b.get(), extraPropFunc));
 	}
 
-// line 60 "../../../register_block.ump"
+// line 56 "../../../register_block.ump"
 	private static <T extends Block> RegistryObject<T> registerWithItem(final String name,
 			final Supplier<T> blockSupplier) {
 		return register(name, blockSupplier, (b) -> makeItemBlock(b.get()));
 	}
 
-// line 65 "../../../register_block.ump"
+// line 61 "../../../register_block.ump"
 	private static <T extends Block> RegistryObject<T> register(final String name, final Supplier<T> blockSupplier,
 			final Function<RegistryObject<T>, Item> itemFunction) {
 		RegistryObject<T> blockObj = register(name, blockSupplier);
@@ -130,7 +126,7 @@ public class DoggyBlocks {
 		return blockObj;
 	}
 
-// line 72 "../../../register_block.ump"
+// line 68 "../../../register_block.ump"
 	private static <T extends Block> RegistryObject<T> register(final String name, final Supplier<T> blockSupplier) {
 		return BLOCKS.register(name, blockSupplier);
 	}

@@ -46,16 +46,6 @@ import doggytalents.common.lib.Resources;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-//import doggytalents.DoggyAccessoryTypes;
-//import doggytalents.DoggyRegistries;
-//import doggytalents.api.registry.Accessory;
-//import doggytalents.api.registry.Accessory.AccessoryRenderType;
-//import doggytalents.common.entity.accessory.*;
-//import doggytalents.common.lib.Constants;
-//import doggytalents.common.lib.Resources;
-//import net.minecraftforge.registries.DeferredRegister;
-//import net.minecraftforge.registries.RegistryObject;
-
 // line 2 "../../../register_accessory.ump"
 public class DoggyAccessories {
 
@@ -65,7 +55,6 @@ public class DoggyAccessories {
 
 	public static final DeferredRegister<Accessory> ACCESSORIES = DeferredRegister
 			.create(DoggyRegistries.Keys.ACCESSORIES_REGISTRY, Constants.MOD_ID);
-
 	public static final RegistryObject<DyeableAccessory> DYEABLE_COLLAR = register("dyeable_collar",
 			() -> new DyeableAccessory(DoggyAccessoryTypes.COLLAR, DoggyItems.WOOL_COLLAR)
 					.setDogStillNakedWhenWear(true).setModelTexture(Resources.COLLAR_DEFAULT)
@@ -249,7 +238,7 @@ public class DoggyAccessories {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 169 "../../../register_accessory.ump"
+	// line 170 "../../../register_accessory.ump"
 	private static <T extends Accessory> RegistryObject<T> register(final String name, final Supplier<T> sup) {
 		return ACCESSORIES.register(name, sup);
 	}

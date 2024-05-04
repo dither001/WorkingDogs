@@ -22,12 +22,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-// line 2 "../../../../data_tags.ump"
+// line 54 "../../../../data_tags.ump"
 public class DTItemTagsProvider extends ItemTagsProvider {
-
-	// ------------------------
-	// MEMBER VARIABLES
-	// ------------------------
 
 	// ------------------------
 	// INTERFACE
@@ -40,14 +36,14 @@ public class DTItemTagsProvider extends ItemTagsProvider {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 12 "../../../../data_tags.ump"
+	// line 62 "../../../../data_tags.ump"
 	public DTItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> holderLookup,
 			CompletableFuture<TagsProvider.TagLookup<Block>> blockTagLookup, ExistingFileHelper fileHelper) {
 		/* custom constructor */
 		super(packOutput, holderLookup, blockTagLookup, Constants.MOD_ID, fileHelper);
 	}
 
-// line 19 "../../../../data_tags.ump"
+// line 69 "../../../../data_tags.ump"
 	public void addTags(HolderLookup.Provider provider) {
 		createTag(DoggyTags.BEG_ITEMS_TAMED, DoggyItems.THROW_STICK, DoggyItems.THROW_BONE, () -> Items.BONE,
 				DoggyItems.FRISBEE);
@@ -63,12 +59,12 @@ public class DTItemTagsProvider extends ItemTagsProvider {
 				DoggyItems.MUSIC_DISC_CHOPIN_OP64_NO1.get());
 	}
 
-// line 35 "../../../../data_tags.ump"
+// line 85 "../../../../data_tags.ump"
 	private @SafeVarargs final void appendToTag(TagKey<Item> tag, TagKey<Item>... toAppend) {
 		tag(tag).addTags(toAppend);
 	}
 
-// line 40 "../../../../data_tags.ump"
+// line 90 "../../../../data_tags.ump"
 	private @SafeVarargs final void createTag(TagKey<Item> tag, Supplier<? extends ItemLike>... items) {
 		tag(tag).add(Arrays.stream(items).map(Supplier::get).map(ItemLike::asItem).toArray(Item[]::new));
 	}

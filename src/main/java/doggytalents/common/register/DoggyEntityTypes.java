@@ -82,7 +82,7 @@ public class DoggyEntityTypes {
 	public void delete() {
 	}
 
-	// line 59 "../../../register_entitytype.ump"
+	// line 48 "../../../register_entitytype.ump"
 	public static void addEntityAttributes(EntityAttributeCreationEvent e) {
 		e.put(DOG.get(),
 				Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 8.0D).add(Attributes.MOVEMENT_SPEED, 0.3D)
@@ -98,7 +98,7 @@ public class DoggyEntityTypes {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 47 "../../../register_entitytype.ump"
+	// line 62 "../../../register_entitytype.ump"
 	private static <E extends Entity, T extends EntityType<E>> RegistryObject<EntityType<E>> register(final String name,
 			final EntityType.EntityFactory<E> sup, final MobCategory classification,
 			final Function<EntityType.Builder<E>, EntityType.Builder<E>> builder) {
@@ -106,7 +106,7 @@ public class DoggyEntityTypes {
 				() -> builder.apply(EntityType.Builder.of(sup, classification)).build(Util.getResourcePath(name)));
 	}
 
-// line 53 "../../../register_entitytype.ump"
+// line 68 "../../../register_entitytype.ump"
 	private static <E extends Entity, T extends EntityType<E>> RegistryObject<T> register(final String name,
 			final Supplier<T> sup) {
 		return ENTITIES.register(name, sup);

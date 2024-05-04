@@ -53,7 +53,7 @@ public class DoggyAttributes {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 11 "../../../register_attribute.ump"
+	// line 12 "../../../register_attribute.ump"
 	private static <T extends Attribute> RegistryObject<T> register(final String name, final Supplier<T> sup) {
 		return ATTRIBUTES.register(name, sup);
 	}

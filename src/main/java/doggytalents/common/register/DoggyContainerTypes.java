@@ -61,34 +61,34 @@ public class DoggyContainerTypes {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 6 "../../../register_container.ump"
+	// line 9 "../../../register_container.ump"
 	public static final RegistryObject<MenuType<FoodBowlContainer>> FOOD_BOWL = register("food_bowl",
 			(windowId, inv, data) -> {
 				BlockPos pos = data.readBlockPos();
 				return new FoodBowlContainer(windowId, inv.player.level(), pos, inv, inv.player);
 			}
-// line 10 "../../../register_container.ump"
+// line 13 "../../../register_container.ump"
 	);
 
-// line 12 "../../../register_container.ump"
+// line 15 "../../../register_container.ump"
 	public static final RegistryObject<MenuType<PackPuppyContainer>> PACK_PUPPY = register("pack_puppy",
 			(windowId, inv, data) -> {
 				Entity entity = inv.player.level().getEntity(data.readInt());
 				return entity instanceof Dog ? new PackPuppyContainer(windowId, inv, (Dog) entity) : null;
 			}
-// line 16 "../../../register_container.ump"
+// line 19 "../../../register_container.ump"
 	);
 
-// line 18 "../../../register_container.ump"
+// line 21 "../../../register_container.ump"
 	public static final RegistryObject<MenuType<TreatBagContainer>> TREAT_BAG = register("treat_bag",
 			(windowId, inv, data) -> {
 				int slotId = data.readByte();
 				return new TreatBagContainer(windowId, inv, slotId, data.readItem());
 			}
-// line 22 "../../../register_container.ump"
+// line 25 "../../../register_container.ump"
 	);
 
-// line 24 "../../../register_container.ump"
+// line 27 "../../../register_container.ump"
 	public static final RegistryObject<MenuType<DogInventoriesContainer>> DOG_INVENTORIES = register("dog_inventories",
 			(windowId, inv, data) -> {
 				int noDogs = data.readInt();
@@ -101,10 +101,10 @@ public class DoggyContainerTypes {
 				}
 				return !dogs.isEmpty() ? new DogInventoriesContainer(windowId, inv, dogs) : null;
 			}
-// line 35 "../../../register_container.ump"
+// line 38 "../../../register_container.ump"
 	);
 
-// line 37 "../../../register_container.ump"
+// line 40 "../../../register_container.ump"
 	public static final RegistryObject<MenuType<DogArmorContainer>> DOG_ARMOR = register("dog_armor",
 			(windowId, inv, data) -> {
 				int dogId = data.readInt();
@@ -113,10 +113,10 @@ public class DoggyContainerTypes {
 					return null;
 				return new DogArmorContainer(windowId, inv, (Dog) e);
 			}
-// line 44 "../../../register_container.ump"
+// line 47 "../../../register_container.ump"
 	);
 
-// line 46 "../../../register_container.ump"
+// line 49 "../../../register_container.ump"
 	public static final RegistryObject<MenuType<DoggyToolsMenu>> DOG_TOOLS = register("dog_tools",
 			(windowId, inv, data) -> {
 				int dogId = data.readInt();
@@ -125,25 +125,25 @@ public class DoggyContainerTypes {
 					return null;
 				return new DoggyToolsMenu(windowId, inv, (Dog) e);
 			}
-// line 53 "../../../register_container.ump"
+// line 56 "../../../register_container.ump"
 	);
 
-// line 55 "../../../register_container.ump"
+// line 58 "../../../register_container.ump"
 	public static final RegistryObject<MenuType<RiceMillMenu>> RICE_MILL = register("rice_mill",
 			(windowId, inv, data) -> {
 				var pos = data.readBlockPos();
 				return new RiceMillMenu(windowId, inv, pos);
 			}
-// line 59 "../../../register_container.ump"
+// line 62 "../../../register_container.ump"
 	);
 
-// line 62 "../../../register_container.ump"
+// line 65 "../../../register_container.ump"
 	private static <X extends AbstractContainerMenu, T extends MenuType<X>> RegistryObject<MenuType<X>> register(
 			final String name, final IContainerFactory<X> factory) {
 		return register(name, () -> IForgeMenuType.create(factory));
 	}
 
-// line 67 "../../../register_container.ump"
+// line 70 "../../../register_container.ump"
 	private static <T extends MenuType<?>> RegistryObject<T> register(final String name, final Supplier<T> sup) {
 		return CONTAINERS.register(name, sup);
 	}

@@ -1,33 +1,57 @@
-package doggytalents.common.data;
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
+package doggytalents.common.data.tags;
 
 import java.util.Arrays;
-import java.util.function.Supplier;
-import net.minecraft.core.HolderLookup.Provider;
-
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
+
 import doggytalents.common.lib.Constants;
 import doggytalents.common.register.DoggyTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+// line 23 "../../../../data_tags.ump"
 public class DTEntityTagsProvider extends EntityTypeTagsProvider {
 
-	public DTEntityTagsProvider(PackOutput output, CompletableFuture<Provider> provider,
-			ExistingFileHelper fileHelper) {
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
+
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
+
+	// ------------------------
+	// INTERFACE
+	// ------------------------
+
+	public void delete() {
+	}
+
+	// line 30 "../../../../data_tags.ump"
+	public DTEntityTagsProvider(PackOutput output, CompletableFuture<Provider> provider, ExistingFileHelper fileHelper) {
 		super(output, provider, Constants.MOD_ID, fileHelper);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
+	// line 36 "../../../../data_tags.ump"
 	public String getName() {
 		return "DoggyTalents Entity Tags";
 	}
 
-	@Override
+	// ------------------------
+	// DEVELOPER CODE - PROVIDED AS-IS
+	// ------------------------
+
+	// line 40 "../../../../data_tags.ump"
 	public void addTags(HolderLookup.Provider provider) {
 		createTag(DoggyTags.DOG_SHOULD_IGNORE, () -> EntityType.ENDERMAN);
 		createTag(DoggyTags.DROP_SOY_WHEN_DOG_KILL, () -> EntityType.CREEPER, () -> EntityType.ZOMBIE,
@@ -35,8 +59,9 @@ public class DTEntityTagsProvider extends EntityTypeTagsProvider {
 		createTag(DoggyTags.MOB_RETRIEVER_MUST_IGNORE, () -> EntityType.CREEPER);
 	}
 
-	@SafeVarargs
-	private final void createTag(TagKey<EntityType<?>> tag, Supplier<? extends EntityType<?>>... entities) {
+// line 47 "../../../../data_tags.ump"
+	private final @SafeVarargs void createTag(TagKey<EntityType<?>> tag,
+			Supplier<? extends EntityType<?>>... entities) {
 		tag(tag).add(Arrays.stream(entities).map(Supplier::get).toArray(EntityType<?>[]::new));
 	}
 

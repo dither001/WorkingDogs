@@ -45,7 +45,7 @@ public class DoggyAdvancementTriggers {
 	public void delete() {
 	}
 
-	// line 19 "../../../register_advancement.ump"
+	// line 20 "../../../register_advancement.ump"
 	public static void registerAll() {
 		for (var x : TRIGGERS.entrySet()) {
 			CriteriaTriggers.register(x.getValue());
@@ -59,7 +59,7 @@ public class DoggyAdvancementTriggers {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 9 "../../../register_advancement.ump"
+	// line 10 "../../../register_advancement.ump"
 	public static <T extends CriterionTrigger<?>> T register(T p_10596_) {
 		if (!TRIGGERS.containsKey(p_10596_.getId())) {
 			TRIGGERS.put(p_10596_.getId(), p_10596_);
