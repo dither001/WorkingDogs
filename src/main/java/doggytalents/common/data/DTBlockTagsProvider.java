@@ -13,18 +13,19 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class DTBlockTagsProvider extends BlockTagsProvider {
 
-    public DTBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, Constants.MOD_ID, existingFileHelper);
-    }
+	public DTBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+			@Nullable ExistingFileHelper existingFileHelper) {
+		super(output, lookupProvider, Constants.MOD_ID, existingFileHelper);
+	}
 
-    @Override
-    public String getName() {
-        return "DoggyTalents Block Tags";
-    }
+	@Override
+	public String getName() {
+		return "DoggyTalents Block Tags";
+	}
 
-    @Override
-    protected void addTags(Provider p_256380_) {
-        // TODO Auto-generated method stub
-        
-    }
+	@Override
+	protected void addTags(Provider p_256380_) {
+		// TODO Auto-generated method stub
+	}
+
 }

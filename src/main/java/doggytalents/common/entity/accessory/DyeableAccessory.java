@@ -2,12 +2,12 @@ package doggytalents.common.entity.accessory;
 
 import java.util.function.Supplier;
 
-import doggytalents.DoggyTalentsNext;
 import doggytalents.api.inferface.IColoredObject;
 import doggytalents.api.inferface.IDogAlteration;
 import doggytalents.api.registry.Accessory;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.api.registry.AccessoryType;
+import doggytalents.common.register.DoggyTalentsNext;
 import doggytalents.common.util.ColourCache;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;

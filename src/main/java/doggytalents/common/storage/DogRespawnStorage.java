@@ -12,9 +12,9 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Maps;
 
-import doggytalents.DoggyTalentsNext;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.lib.Constants;
+import doggytalents.common.register.DoggyTalentsNext;
 import doggytalents.common.util.NBTUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;

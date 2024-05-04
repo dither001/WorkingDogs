@@ -11,7 +11,6 @@ import javax.annotation.Nullable;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
-import doggytalents.DoggyTalentsNext;
 import doggytalents.api.registry.IBeddingMaterial;
 import doggytalents.api.registry.ICasingMaterial;
 import doggytalents.common.block.tileentity.DogBedTileEntity;
@@ -19,6 +18,7 @@ import doggytalents.common.entity.Dog;
 import doggytalents.common.entity.ai.triggerable.DogMoveToBedAction;
 import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.register.DoggyItems;
+import doggytalents.common.register.DoggyTalentsNext;
 import doggytalents.common.storage.DogRespawnData;
 import doggytalents.common.storage.DogRespawnStorage;
 import doggytalents.common.util.DogBedUtil;

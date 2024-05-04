@@ -1,5 +1,9 @@
 
 /* minecraft 1.20.1 */
+external BlockTagsProvider {
+isA IntrinsicHolderTagsProvider;
+}
+
 external ForgeAdvancementProvider {
 isA AdvancementProvider;
 	internal List<AdvancementGenerator> generatorList;

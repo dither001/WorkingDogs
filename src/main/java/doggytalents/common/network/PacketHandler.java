@@ -1,6 +1,5 @@
 package doggytalents.common.network;
 
-import doggytalents.DoggyTalentsNext;
 import doggytalents.common.network.packet.CanineTrackerPackets;
 import doggytalents.common.network.packet.ChangeAccessoryPacket;
 import doggytalents.common.network.packet.ChangeArtifactPacket;
@@ -91,6 +90,7 @@ import doggytalents.common.network.packet.data.TrainWolfToDogData;
 import doggytalents.common.network.packet.data.WhisltleEditHotKeyData;
 import doggytalents.common.network.packet.data.WhistleRequestModeData;
 import doggytalents.common.network.packet.data.WhistleUseData;
+import doggytalents.common.register.DoggyTalentsNext;
 import net.minecraftforge.network.PacketDistributor;
 
 public final class PacketHandler {

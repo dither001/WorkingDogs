@@ -1,4 +1,23 @@
 
+use register_accessory.ump;
+use register_accessorytype.ump;
+use register_advancement.ump;
+use register_attribute.ump;
+use register_block.ump;
+use register_blockentity.ump;
+use register_brewing.ump;
+use register_container.ump;
+use register_effect.ump;
+use register_entitytype.ump;
+use register_init.ump;
+use register_item.ump;
+use register_itemgroup.ump;
+use register_recipe.ump;
+use register_skill.ump;
+use register_sound.ump;
+use register_storage.ump;
+use register_tag.ump;
+
 class DoggyRegistries {
 depend net.minecraftforge.registries.RegistryBuilder;
 
@@ -13,7 +32,6 @@ depend net.minecraftforge.registries.RegistryBuilder;
 		return new RegistryBuilder<T>().setName(rl);
 	}
 
-	/* */
 	static class Keys {
 		public static final ResourceLocation TALENTS_REGISTRY = Util.getResource("talents");
 		public static final ResourceLocation ACCESSORIES_REGISTRY = Util.getResource("accessories");
@@ -23,3 +41,5 @@ depend net.minecraftforge.registries.RegistryBuilder;
 	}
 
 }
+
+namespace-;

@@ -10,7 +10,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.blaze3d.vertex.VertexFormat;
 
-import doggytalents.DoggyTalentsNext;
 import doggytalents.api.anim.DogAnimation;
 import doggytalents.client.DoggyKeybinds;
 import doggytalents.client.block.model.DogBedModel;
@@ -32,6 +31,7 @@ import doggytalents.common.network.packet.data.DogSyncData;
 import doggytalents.common.network.packet.data.WhistleUseData;
 import doggytalents.common.register.DoggyBlocks;
 import doggytalents.common.register.DoggyItems;
+import doggytalents.common.register.DoggyTalentsNext;
 import doggytalents.common.util.InventoryUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.LevelLoadingScreen;
