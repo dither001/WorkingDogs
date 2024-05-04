@@ -45,6 +45,7 @@ import doggytalents.common.register.DoggyItems;
 import doggytalents.common.register.DoggyRegistries;
 import doggytalents.common.register.DoggySounds;
 import doggytalents.common.register.DoggyTalents;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import doggytalents.common.talent.HappyEaterTalent;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.api.distmarker.Dist;

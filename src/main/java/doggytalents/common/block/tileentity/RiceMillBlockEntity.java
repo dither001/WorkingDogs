@@ -5,10 +5,10 @@ import java.util.Optional;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyTileEntityTypes;
 import doggytalents.common.block.RiceMillBlock;
 import doggytalents.common.inventory.container.RiceMillMenu;
 import doggytalents.common.register.DoggyItems;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import doggytalents.common.util.InventoryUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

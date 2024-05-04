@@ -3,7 +3,6 @@ package doggytalents.client;
 import java.util.ArrayList;
 import java.util.List;
 
-import doggytalents.DoggyTileEntityTypes;
 import doggytalents.api.events.RegisterDogSkinJsonPathEvent;
 import doggytalents.client.block.model.RiceMillModel;
 import doggytalents.client.block.render.RiceMillRenderer;
@@ -109,6 +108,7 @@ import doggytalents.client.tileentity.renderer.DogBedRenderer;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.register.DoggyContainerTypes;
 import doggytalents.common.register.DoggyEntityTypes;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;

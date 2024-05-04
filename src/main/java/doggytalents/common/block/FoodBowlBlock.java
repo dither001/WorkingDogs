@@ -2,10 +2,10 @@ package doggytalents.common.block;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyTileEntityTypes;
 import doggytalents.common.Screens;
 import doggytalents.common.block.tileentity.FoodBowlTileEntity;
 import doggytalents.common.register.DoggyItems;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import doggytalents.common.util.InventoryUtil;
 import doggytalents.common.util.WorldUtil;
 import net.minecraft.core.BlockPos;

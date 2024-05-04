@@ -1,0 +1,21 @@
+
+class DoggyTileEntityTypes {
+depend java.util.function.Supplier;
+depend net.minecraft.world.level.block.Block;
+
+	const DeferredRegister<BlockEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.Keys.BLOCK_ENTITY_TYPES, Constants.MOD_ID);
+
+	const RegistryObject<BlockEntityType<DogBedTileEntity>> DOG_BED = register("dog_bed", DogBedTileEntity::new, DoggyBlocks.DOG_BED);
+	const RegistryObject<BlockEntityType<FoodBowlTileEntity>> FOOD_BOWL = register("food_bowl", FoodBowlTileEntity::new, DoggyBlocks.FOOD_BOWL);
+	const RegistryObject<BlockEntityType<RiceMillBlockEntity>> RICE_MILL = register("rice_mill", RiceMillBlockEntity::new, DoggyBlocks.RICE_MILL);
+
+	private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(final String name,
+			final BlockEntityType.BlockEntitySupplier<T> sup, Supplier<? extends Block> validBlock) {
+		return register(name, () -> BlockEntityType.Builder.of(sup, validBlock.get()).build(null));
+	}
+
+	private static <T extends BlockEntityType<?>> RegistryObject<T> register(final String name, final Supplier<T> sup) {
+		return TILE_ENTITIES.register(name, sup);
+	}
+
+}

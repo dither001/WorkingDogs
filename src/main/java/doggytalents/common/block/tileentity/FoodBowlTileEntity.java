@@ -6,10 +6,10 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyTileEntityTypes;
 import doggytalents.api.feature.FoodHandler;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.inventory.container.FoodBowlContainer;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import doggytalents.common.util.InventoryUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

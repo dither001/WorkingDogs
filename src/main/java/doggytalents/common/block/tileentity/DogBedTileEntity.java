@@ -4,12 +4,12 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyTileEntityTypes;
 import doggytalents.api.registry.IBeddingMaterial;
 import doggytalents.api.registry.ICasingMaterial;
 import doggytalents.common.block.DogBedBlock;
 import doggytalents.common.block.DogBedMaterialManager;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import doggytalents.common.storage.DogLocationData;
 import doggytalents.common.storage.DogLocationStorage;
 import doggytalents.common.util.NBTUtil;

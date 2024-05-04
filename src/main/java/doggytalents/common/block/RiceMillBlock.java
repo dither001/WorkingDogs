@@ -2,9 +2,9 @@ package doggytalents.common.block;
 
 import javax.annotation.Nullable;
 
-import doggytalents.DoggyTileEntityTypes;
 import doggytalents.common.block.tileentity.RiceMillBlockEntity;
 import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
