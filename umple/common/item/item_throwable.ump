@@ -1,59 +1,30 @@
-/*PLEASE DO NOT EDIT THIS CODE*/
-/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
 
-package doggytalents.common.item;
+class ThrowableItem {
+depend java.util.function.Supplier;
+depend net.minecraft.stats.Stats;
+depend net.minecraft.world.entity.Entity;
+depend net.minecraft.world.entity.player.Player;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.level.Level;
+isA IThrowableItem;
+isA Item;
 
-import java.util.function.Supplier;
-
-import doggytalents.api.feature.EnumMode;
-import doggytalents.api.inferface.IThrowableItem;
-import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.ai.triggerable.DogFetchAction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.util.Mth;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
-
-// line 2 "../../../item_throwable.ump"
-public class ThrowableItem extends Item implements IThrowableItem {
-
-	// ------------------------
-	// MEMBER VARIABLES
-	// ------------------------
-
-	// ------------------------
-	// CONSTRUCTOR
-	// ------------------------
-
-	public ThrowableItem(Properties aProperties) {
-		super(aProperties);
+	public ThrowableItem(Supplier<? extends Item> altBone, Supplier<? extends Item> renderBone, Properties properties) {
+		/* custom constructor */
+		this(properties);
+		this.altBone = altBone;
+		this.renderBone = renderBone;
 	}
 
-	// ------------------------
-	// INTERFACE
-	// ------------------------
-
-	public void delete() {
-	}
+	public Supplier<? extends Item> altBone;
+	public Supplier<? extends Item> renderBone;
 
 	@Override
-	// line 24 "../../../item_throwable.ump"
 	public ItemStack getCustomRenderStack(ItemStack stack) {
 		return new ItemStack(this.renderBone.get());
 	}
 
 	@Override
-	// line 29 "../../../item_throwable.ump"
 	public ItemStack getReturnStack(ItemStack stack) {
 		ItemStack returnStack = new ItemStack(this.altBone.get());
 		if (stack.hasTag()) {
@@ -64,7 +35,6 @@ public class ThrowableItem extends Item implements IThrowableItem {
 	}
 
 	@Override
-	// line 39 "../../../item_throwable.ump"
 	public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
 		ItemStack itemStackIn = playerIn.getItemInHand(handIn);
 
@@ -87,12 +57,10 @@ public class ThrowableItem extends Item implements IThrowableItem {
 
 		playerIn.awardStat(Stats.ITEM_USED.get(this));
 		return new InteractionResultHolder<ItemStack>(InteractionResult.SUCCESS, itemStackIn);
+
 	}
 
-	/**
-	 * 
-	 */
-	// line 66 "../../../item_throwable.ump"
+	/* */
 	private void setHeadingFromThrower(ItemEntity entityItem, Entity entityThrower, float rotationPitchIn,
 			float rotationYawIn, float pitchOffset, float velocity, float inaccuracy) {
 		float f = -Mth.sin(rotationYawIn * ((float) Math.PI / 180F))
@@ -106,7 +74,6 @@ public class ThrowableItem extends Item implements IThrowableItem {
 				entityItem.getDeltaMovement().add(vec3d.x, entityThrower.onGround() ? 0.0D : vec3d.y, vec3d.z));
 	}
 
-	// line 79 "../../../item_throwable.ump"
 	private void setThrowableHeading(ItemEntity entityItem, double x, double y, double z, float velocity,
 			float inaccuracy) {
 		Vec3 vec3d = (new Vec3(x, y, z)).normalize()
@@ -122,7 +89,7 @@ public class ThrowableItem extends Item implements IThrowableItem {
 		entityItem.xRotO = entityItem.getXRot();
 	}
 
-	// line 94 "../../../item_throwable.ump"
+
 	private void triggerNearbyDogs(Player player, ItemEntity entityitem) {
 		final int RADIUS = 5;
 		var dogs = player.level().getEntitiesOfClass(Dog.class, player.getBoundingBox().inflate(RADIUS, 3, RADIUS),
@@ -132,22 +99,5 @@ public class ThrowableItem extends Item implements IThrowableItem {
 			dog.triggerAction(new DogFetchAction(dog, player, entityitem));
 		}
 	}
-
-	// ------------------------
-	// DEVELOPER CODE - PROVIDED AS-IS
-	// ------------------------
-
-	// line 12 "../../../item_throwable.ump"
-	public ThrowableItem(Supplier<? extends Item> altBone, Supplier<? extends Item> renderBone, Properties properties) {
-		/* custom constructor */
-		this(properties);
-		this.altBone = altBone;
-		this.renderBone = renderBone;
-	}
-
-// line 19 "../../../item_throwable.ump"
-	public Supplier<? extends Item> altBone;
-// line 20 "../../../item_throwable.ump"
-	public Supplier<? extends Item> renderBone;
 
 }

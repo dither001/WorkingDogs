@@ -23,11 +23,14 @@ namespace doggytalents.common.data.tags;
 use data/data_tags.ump;
 namespace-;
 
+use item/item_main.ump;
+
 namespace doggytalents.common.register;
 use register/register_main.ump;
 namespace-;
 
-namespace doggytalents.common.world;
-use world/item_skillrespec.ump;
-use world/world_item.ump;
+namespace doggytalents.common.world.item;
+use world/item/item_accessory.ump;
+use world/item/item_artifact.ump;
+use world/item/item_respec.ump;
 namespace-;

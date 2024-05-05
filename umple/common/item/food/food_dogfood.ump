@@ -1,0 +1,125 @@
+
+class DogEddibleItem {
+depend java.util.List;
+depend java.util.function.Function;
+depend com.mojang.datafixers.util.Pair;
+depend net.minecraft.world.entity.Entity;
+depend net.minecraft.world.entity.player.Player;
+depend net.minecraft.world.food.FoodProperties.Builder;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.level.Level;
+isA IDogEddible;
+isA Item;
+abstract;
+
+	public DogEddibleItem(Properties itemProps, FoodProperties foodProperties) {
+		/* custom constructor */
+		super(itemProps.food(EmptyProperties));
+		this.baseFoodProperties = (null != foodProperties) ? foodProperties : EmptyProperties;
+
+		Builder nullPropsBuilder = (new FoodProperties.Builder()).nutrition(0);
+		boolean changed = false;
+		if (foodProperties.canAlwaysEat()) {
+			changed = true;
+			nullPropsBuilder.alwaysEat();
+		}
+
+		emptyFoodProperties = changed ? nullPropsBuilder.build() : EmptyProperties;
+		currentFoodProperties = emptyFoodProperties;
+	}
+
+	public DogEddibleItem(FoodProperties foodProperties) {
+		/* custom constructor */
+		this(new Properties(), foodProperties);
+	}
+
+	public DogEddibleItem(Function<Builder, FoodProperties.Builder> propsCreator) {
+		/* custom constructor */
+		this(new Properties(), propsCreator.apply(new FoodProperties.Builder()).build());
+	}
+
+	public DogEddibleItem(Function<Properties, Properties> itemBuilder, Function<Builder, Builder> foodBuilder) {
+		/* custom constructor */
+		this(itemBuilder.apply(new Properties()), foodBuilder.apply(new Builder()).build());
+	}
+
+	internal const FoodProperties EmptyProperties = (new FoodProperties.Builder()).nutrition(0).build();
+
+	lazy FoodProperties baseFoodProperties;
+	lazy FoodProperties currentFoodProperties;
+	lazy FoodProperties emptyFoodProperties;
+
+	@Override
+	public boolean canConsume(AbstractDog dog, ItemStack stackIn, Entity entityIn) {
+		return !dog.isDefeated() && isFood(stackIn);
+	}
+
+	@Override
+	public InteractionResult consume(AbstractDog dog, ItemStack stack, Entity entityIn) {
+		if (dog.level().isClientSide)
+			return InteractionResult.SUCCESS;
+
+		var dogEddible = this;
+
+		if (!dogEddible.alwaysEatWhenDogConsume(dog) && !dog.canStillEat()) {
+			return InteractionResult.FAIL;
+		}
+
+		if (!dog.level().isClientSide) {
+			float heal = dogEddible.getAddedHungerWhenDogConsume(stack, dog);
+
+			dog.addHunger(heal);
+			dog.consumeItemFromStack(entityIn, stack);
+
+			for (var pair : dogEddible.getAdditionalEffectsWhenDogConsume(stack, dog)) {
+				if (pair.getFirst() != null && dog.getRandom().nextFloat() < pair.getSecond()) {
+					dog.addEffect(new MobEffectInstance(pair.getFirst()));
+				}
+			}
+
+			if (dog.level() instanceof ServerLevel) {
+				ParticlePackets.DogEatingParticlePacket.sendDogEatingParticlePacketToNearby(dog, new ItemStack(this));
+			}
+			dog.playSound(dogEddible.getDogEatingSound(dog), dog.getSoundVolume(),
+					(dog.getRandom().nextFloat() - dog.getRandom().nextFloat()) * 0.2F + 1.0F);
+
+			var returnStack = dogEddible.getReturnStackAfterDogConsume(stack, dog);
+			if (!returnStack.isEmpty()) {
+				dog.spawnAtLocation(returnStack);
+			}
+		}
+
+		return InteractionResult.SUCCESS;
+	}
+
+	@Override
+	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+		if (entity instanceof Player)
+			currentFoodProperties = baseFoodProperties;
+		var ret = super.finishUsingItem(stack, level, entity);
+		currentFoodProperties = emptyFoodProperties;
+		return ret;
+	}
+
+	@Override
+	public float getAddedHungerWhenDogConsume(ItemStack useStack, AbstractDog dog) {
+		return baseFoodProperties.getNutrition() * 5;
+	}
+
+	@Override
+	public List<Pair<MobEffectInstance, Float>> getAdditionalEffectsWhenDogConsume(ItemStack useStack,
+			AbstractDog dog) {
+		return baseFoodProperties.getEffects();
+	}
+
+	@Override
+	public FoodProperties getFoodProperties() {
+		return this.currentFoodProperties;
+	}
+
+	@Override
+	public boolean isFood(ItemStack stack) {
+		return stack.getItem() == this;
+	}
+
+}

@@ -1,130 +1,20 @@
-package doggytalents.common.item;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.annotation.Nullable;
-
-import doggytalents.api.feature.EnumMode;
-import doggytalents.api.inferface.AbstractDog;
-import doggytalents.api.inferface.IDogItem;
-import doggytalents.client.screen.HeelByGroupScreen;
-import doggytalents.client.screen.HeelByNameScreen;
-import doggytalents.client.screen.WhistleScreen;
-import doggytalents.common.config.ConfigHandler;
-import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.DoggyBeamEntity;
-import doggytalents.common.entity.ai.triggerable.DogGoBehindOwnerAction;
-import doggytalents.common.entity.ai.triggerable.DogHowlAction;
-import doggytalents.common.entity.ai.triggerable.DogMoveToBedAction;
-import doggytalents.common.register.DoggyItems;
-import doggytalents.common.register.DoggySounds;
-import doggytalents.common.register.DoggyTalents;
-import doggytalents.common.talent.MobRetrieverTalent;
-import doggytalents.common.talent.RoaringGaleTalent;
-import doggytalents.common.util.DogUtil;
-import doggytalents.common.util.EntityUtil;
-import net.minecraft.nbt.Tag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
-
-//import doggytalents.api.feature.EnumMode;
-//import doggytalents.api.inferface.AbstractDog;
-//import doggytalents.api.inferface.IDogItem;
-//import doggytalents.client.screen.HeelByGroupScreen;
-//import doggytalents.client.screen.HeelByNameScreen;
-//import doggytalents.client.screen.WhistleScreen;
-//import doggytalents.common.config.ConfigHandler;
-//import doggytalents.common.entity.Dog;
-//import doggytalents.common.entity.DoggyBeamEntity;
-//import doggytalents.common.entity.ai.triggerable.DogGoBehindOwnerAction;
-//import doggytalents.common.entity.ai.triggerable.DogHowlAction;
-//import doggytalents.common.entity.ai.triggerable.DogMoveToBedAction;
-//import doggytalents.common.register.DoggyItems;
-//import doggytalents.common.register.DoggySounds;
-//import doggytalents.common.register.DoggyTalents;
-//import doggytalents.common.talent.MobRetrieverTalent;
-//import doggytalents.common.talent.RoaringGaleTalent;
-//import doggytalents.common.util.DogUtil;
-//import doggytalents.common.util.EntityUtil;
-//import net.minecraft.nbt.Tag;
-//import net.minecraft.network.chat.Component;
-//import net.minecraft.network.chat.Style;
-//import net.minecraft.sounds.SoundSource;
-//import net.minecraft.world.InteractionHand;
-//import net.minecraft.world.InteractionResult;
-//import net.minecraft.world.InteractionResultHolder;
-//import net.minecraft.world.entity.LivingEntity;
-//import net.minecraft.world.entity.player.Player;
-//import net.minecraft.world.entity.projectile.ProjectileUtil;
-//import net.minecraft.world.item.Item;
-//import net.minecraft.world.item.ItemStack;
-//import net.minecraft.world.item.Rarity;
-//import net.minecraft.world.item.TooltipFlag;
-//import net.minecraft.world.level.Level;
-//import net.minecraft.world.phys.Vec3;
-
-public class WhistleItem extends Item implements IDogItem {
-
-	public static enum WhistleMode {
-		STAND(0, WhistleSound.LONG), HEEL(1, WhistleSound.LONG), STAY(2, WhistleSound.SHORT),
-		OKAY(3, WhistleSound.LONG), SHELPERD(4, WhistleSound.SHORT), TACTICAL(5, WhistleSound.NONE),
-		ROAR(6, WhistleSound.NONE), HEEL_BY_NAME(7, WhistleSound.NONE), TO_BED(8, WhistleSound.LONG),
-		GO_BEHIND(9, WhistleSound.SHORT), HEEL_BY_GROUP(10, WhistleSound.NONE), MOB_RETRIEVER(11, WhistleSound.SHORT),
-		HEEL_BY_LOOK(12, WhistleSound.SHORT), RIDE_WITH_ME(13, WhistleSound.SHORT), HOWL(14, WhistleSound.NONE);
-
-		public static final WhistleMode[] VALUES = Arrays.stream(WhistleMode.values())
-				.sorted(Comparator.comparingInt(WhistleMode::getIndex)).toArray(size -> {
-					return new WhistleMode[size];
-				});
-
-		private int id;
-		private WhistleSound sound;
-
-		private WhistleMode(int id, WhistleSound sound) {
-			this.id = id;
-			this.sound = sound;
-		}
-
-		public int getIndex() {
-			return this.id;
-		}
-
-		public WhistleSound getSound() {
-			return this.sound;
-		}
-
-		public String getUnlocalisedTitle() {
-			return "item.doggytalents.whistle." + this.getIndex();
-		}
-	}
-
-	public static enum WhistleSound {
-		NONE, SHORT, LONG
-	}
-
-	public WhistleItem(Properties properties) {
-		super(properties);
-	}
+class WhistleItem {
+depend java.util.Arrays;
+depend java.util.Comparator;
+depend java.util.List;
+depend net.minecraft.nbt.Tag;
+depend net.minecraft.network.chat.Component;
+depend net.minecraft.network.chat.Style;
+depend net.minecraft.world.entity.player.Player;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.item.Rarity;
+depend net.minecraft.world.level.Level;
+isA IDogItem;
+isA Item;
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flags) {
+	public void appendHoverText(ItemStack stack, Level level, List<Component> components, TooltipFlag flags) {
 		var desc_id = this.getDescriptionId() + ".description";
 		components.add(Component.translatable(desc_id).withStyle(Style.EMPTY.withItalic(true)));
 	}
@@ -191,7 +81,8 @@ public class WhistleItem extends Item implements IDogItem {
 		}
 	}
 
-	public void useMode(WhistleMode mode, List<Dog> dogsList, Level world, Player player, InteractionHand hand,
+	/* */
+	void useMode(WhistleMode mode, List<Dog> dogsList, Level world, Player player, InteractionHand hand,
 			boolean isKeyBind) {
 		if (mode == null)
 			return;
@@ -399,40 +290,9 @@ public class WhistleItem extends Item implements IDogItem {
 		}
 	}
 
-	private void rideWithMe(Level level, Player player) {
-		if (level.isClientSide)
-			return;
-		final int reach_range = 30;
-		var eye_pos = player.getEyePosition();
-		var view_vec = player.getViewVector(1);
-		var max_reach_vec = view_vec.scale(reach_range);
-		var max_pos = eye_pos.add(max_reach_vec);
-		var search_area = player.getBoundingBox().expandTowards(max_reach_vec).inflate(1.0D, 1.0D, 1.0D);
-		var hitResult = ProjectileUtil.getEntityHitResult(player, eye_pos, max_pos, search_area, e -> {
-			return (e instanceof Dog);
-		}, reach_range * reach_range);
-		if (hitResult == null)
-			return;
-		var entity = hitResult.getEntity();
-		if (entity == null)
-			return;
-		if (!(entity instanceof Dog dog))
-			return;
+}
 
-		if (dog.isPassenger()) {
-			dog.unRide();
-			return;
-		}
-		var vehicle = player.getVehicle();
-		if (vehicle == null) {
-			return;
-		}
-
-		dog.authorizeRiding();
-		var result = dog.startRiding(vehicle);
-		if (result)
-			player.sendSystemMessage(Component.translatable("dogcommand.ride_with_me", dog.getName().getString()));
-	}
+class WhistleItem {
 
 	private void heelByLook(Level level, Player player) {
 		if (level.isClientSide)
@@ -482,6 +342,82 @@ public class WhistleItem extends Item implements IDogItem {
 		dog.triggerAction(new DogHowlAction(dog));
 		player.level().playSound(null, player.blockPosition(), DoggySounds.WHISTLE_SHORT.get(), SoundSource.PLAYERS,
 				0.6F + player.level().random.nextFloat() * 0.1F, 0.8F + player.level().random.nextFloat() * 0.2F);
+	}
+
+	private void rideWithMe(Level level, Player player) {
+		if (level.isClientSide)
+			return;
+		final int reach_range = 30;
+		var eye_pos = player.getEyePosition();
+		var view_vec = player.getViewVector(1);
+		var max_reach_vec = view_vec.scale(reach_range);
+		var max_pos = eye_pos.add(max_reach_vec);
+		var search_area = player.getBoundingBox().expandTowards(max_reach_vec).inflate(1.0D, 1.0D, 1.0D);
+		var hitResult = ProjectileUtil.getEntityHitResult(player, eye_pos, max_pos, search_area, e -> {
+			return (e instanceof Dog);
+		}, reach_range * reach_range);
+		if (hitResult == null)
+			return;
+		var entity = hitResult.getEntity();
+		if (entity == null)
+			return;
+		if (!(entity instanceof Dog dog))
+			return;
+
+		if (dog.isPassenger()) {
+			dog.unRide();
+			return;
+		}
+		var vehicle = player.getVehicle();
+		if (vehicle == null) {
+			return;
+		}
+
+		dog.authorizeRiding();
+		var result = dog.startRiding(vehicle);
+		if (result)
+			player.sendSystemMessage(Component.translatable("dogcommand.ride_with_me", dog.getName().getString()));
+	}
+
+}
+
+class WhistleItem {
+
+	public enum WhistleMode {
+		STAND(0, WhistleSound.LONG), HEEL(1, WhistleSound.LONG), STAY(2, WhistleSound.SHORT),
+		OKAY(3, WhistleSound.LONG), SHELPERD(4, WhistleSound.SHORT), TACTICAL(5, WhistleSound.NONE),
+		ROAR(6, WhistleSound.NONE), HEEL_BY_NAME(7, WhistleSound.NONE), TO_BED(8, WhistleSound.LONG),
+		GO_BEHIND(9, WhistleSound.SHORT), HEEL_BY_GROUP(10, WhistleSound.NONE), MOB_RETRIEVER(11, WhistleSound.SHORT),
+		HEEL_BY_LOOK(12, WhistleSound.SHORT), RIDE_WITH_ME(13, WhistleSound.SHORT), HOWL(14, WhistleSound.NONE);
+
+		public static final WhistleMode[] VALUES = Arrays.stream(WhistleMode.values())
+				.sorted(Comparator.comparingInt(WhistleMode::getIndex)).toArray(size -> {
+					return new WhistleMode[size];
+				});
+
+		private int id;
+		private WhistleSound sound;
+
+		private WhistleMode(int id, WhistleSound sound) {
+			this.id = id;
+			this.sound = sound;
+		}
+
+		public int getIndex() {
+			return this.id;
+		}
+
+		public WhistleSound getSound() {
+			return this.sound;
+		}
+
+		public String getUnlocalisedTitle() {
+			return "item.doggytalents.whistle." + this.getIndex();
+		}
+	}
+
+	public enum WhistleSound {
+		NONE, SHORT, LONG
 	}
 
 }

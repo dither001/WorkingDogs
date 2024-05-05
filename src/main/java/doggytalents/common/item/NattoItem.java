@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import com.mojang.datafixers.util.Pair;
 
 import doggytalents.api.inferface.AbstractDog;
+import doggytalents.common.item.food.DogEddibleItem;
 import doggytalents.common.register.DoggyEffects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;

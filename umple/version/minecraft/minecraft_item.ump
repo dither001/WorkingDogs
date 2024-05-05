@@ -1,4 +1,6 @@
 
+external interface DyeableLeatherItem {}
+
 external Item {
 	Properties properties;
 }

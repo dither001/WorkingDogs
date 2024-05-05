@@ -1,6 +1,10 @@
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
 package doggytalents.common.item;
 
 import doggytalents.api.feature.DogLevel;
+import doggytalents.api.feature.DogLevel.Type;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogItem;
 import doggytalents.common.lib.Constants;
@@ -11,65 +15,105 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
+// line 2 "../../../item_dogtreat.ump"
 public class TreatItem extends Item implements IDogItem {
 
-    private final int maxLevel;
-    private final DogLevel.Type type;
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
 
-    public TreatItem(int maxLevel, DogLevel.Type typeIn, Properties properties) {
-        super(properties);
-        this.maxLevel = maxLevel;
-        this.type = typeIn;
-    }
+	// TreatItem Attributes
+	private int maxLevel;
+	private Type type;
 
-    @Override
-    public InteractionResult processInteract(AbstractDog dogIn, Level worldIn, Player playerIn, InteractionHand handIn) {
-        if (!dogIn.isTame() || !dogIn.canInteract(playerIn)) {
-            return InteractionResult.FAIL;
-        }
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
 
-        DogLevel dogLevel = dogIn.getDogLevel();
+	public TreatItem(Properties aProperties, int aMaxLevel, Type aType) {
+		super(aProperties);
+		maxLevel = aMaxLevel;
+		type = aType;
+	}
 
-        if (dogIn.getAge() < 0) {
+	// ------------------------
+	// INTERFACE
+	// ------------------------
 
-            if (!worldIn.isClientSide) {
-                worldIn.broadcastEntityEvent(dogIn, Constants.EntityState.WOLF_SMOKE);
-                playerIn.sendSystemMessage(Component.translatable("treat."+this.type.getName()+".too_young"));
-            }
+	public boolean setMaxLevel(int aMaxLevel) {
+		boolean wasSet = false;
+		maxLevel = aMaxLevel;
+		wasSet = true;
+		return wasSet;
+	}
 
-            return InteractionResult.CONSUME;
-        } else if (!dogLevel.canIncrease(this.type)) {
+	public boolean setType(Type aType) {
+		boolean wasSet = false;
+		type = aType;
+		wasSet = true;
+		return wasSet;
+	}
 
-            if (!worldIn.isClientSide) {
-                worldIn.broadcastEntityEvent(dogIn, Constants.EntityState.WOLF_SMOKE);
-                playerIn.sendSystemMessage(Component.translatable("treat."+this.type.getName()+".low_level"));
-            }
+	public int getMaxLevel() {
+		return maxLevel;
+	}
 
-            return InteractionResult.CONSUME;
-        }
-        else if (dogLevel.getLevel(this.type) < this.maxLevel) {
+	public Type getType() {
+		return type;
+	}
 
-            if (!playerIn.level().isClientSide) {
-                if (!playerIn.getAbilities().instabuild) {
-                    playerIn.getItemInHand(handIn).shrink(1);
-                }
+	public void delete() {
+	}
 
-                dogIn.increaseLevel(this.type);
-                dogIn.setOrderedToSit(true);
-                worldIn.broadcastEntityEvent(dogIn, Constants.EntityState.WOLF_HEARTS);
-                playerIn.sendSystemMessage(Component.translatable("treat."+this.type.getName()+".level_up"));
-            }
+	@Override
+	// line 16 "../../../item_dogtreat.ump"
+	public InteractionResult processInteract(AbstractDog dog, Level world, Player player, InteractionHand hand) {
+		if (!dog.isTame() || !dog.canInteract(player)) {
+			return InteractionResult.FAIL;
+		}
 
-            return InteractionResult.SUCCESS;
-        }
-        else {
+		DogLevel dogLevel = dog.getDogLevel();
+		if (dog.getAge() < 0) {
+			if (!world.isClientSide) {
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_SMOKE);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".too_young"));
+			}
 
-            if (!worldIn.isClientSide) {
-                worldIn.broadcastEntityEvent(dogIn, Constants.EntityState.WOLF_SMOKE);
-                playerIn.sendSystemMessage(Component.translatable("treat."+this.type.getName()+".max_level"));
-            }
+			return InteractionResult.CONSUME;
+		} else if (!dogLevel.canIncrease(this.type)) {
+			if (!world.isClientSide) {
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_SMOKE);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".low_level"));
+			}
 
-            return InteractionResult.CONSUME;
-        }
-    }
+			return InteractionResult.CONSUME;
+		} else if (dogLevel.getLevel(this.type) < this.maxLevel) {
+			if (!player.level().isClientSide) {
+				if (!player.getAbilities().instabuild) {
+					player.getItemInHand(hand).shrink(1);
+				}
+
+				dog.increaseLevel(this.type);
+				dog.setOrderedToSit(true);
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_HEARTS);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".level_up"));
+			}
+
+			return InteractionResult.SUCCESS;
+		} else {
+			if (!world.isClientSide) {
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_SMOKE);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".max_level"));
+			}
+
+			return InteractionResult.CONSUME;
+		}
+	}
+
+	public String toString() {
+		return super.toString() + "[" + "maxLevel" + ":" + getMaxLevel() + "]"
+				+ System.getProperties().getProperty("line.separator") + "  " + "type" + "="
+				+ (getType() != null ? !getType().equals(this) ? getType().toString().replaceAll("  ", "    ") : "this"
+						: "null");
+	}
 }

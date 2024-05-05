@@ -1,7 +1,7 @@
 /*PLEASE DO NOT EDIT THIS CODE*/
 /*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
 
-package doggytalents.common.item;
+package doggytalents.common.item.food;
 
 import java.util.List;
 import java.util.function.Function;
@@ -9,6 +9,7 @@ import java.util.function.Function;
 import com.mojang.datafixers.util.Pair;
 
 import doggytalents.api.inferface.AbstractDog;
+import doggytalents.common.item.IDogEddible;
 import doggytalents.common.network.packet.ParticlePackets;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
@@ -22,7 +23,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-// line 2 "../../../item_abstract.ump"
+// line 2 "../../../../food_dogfood.ump"
 public abstract class DogEddibleItem extends Item implements IDogEddible {
 	// ------------------------
 	// STATIC VARIABLES
@@ -87,7 +88,7 @@ public abstract class DogEddibleItem extends Item implements IDogEddible {
 	public void delete() {
 	}
 
-	// line 16 "../../../item_abstract.ump"
+	// line 16 "../../../../food_dogfood.ump"
 	public DogEddibleItem(Properties itemProps, FoodProperties foodProperties) {
 		/* custom constructor */
 		super(itemProps.food(EmptyProperties));
@@ -104,26 +105,26 @@ public abstract class DogEddibleItem extends Item implements IDogEddible {
 		currentFoodProperties = emptyFoodProperties;
 	}
 
-	// line 32 "../../../item_abstract.ump"
+	// line 32 "../../../../food_dogfood.ump"
 	public DogEddibleItem(FoodProperties foodProperties) {
 		/* custom constructor */
 		this(new Properties(), foodProperties);
 	}
 
-	// line 42 "../../../item_abstract.ump"
+	// line 42 "../../../../food_dogfood.ump"
 	public DogEddibleItem(Function<Properties, Properties> itemBuilder, Function<Builder, Builder> foodBuilder) {
 		/* custom constructor */
 		this(itemBuilder.apply(new Properties()), foodBuilder.apply(new Builder()).build());
 	}
 
 	@Override
-	// line 54 "../../../item_abstract.ump"
+	// line 54 "../../../../food_dogfood.ump"
 	public boolean canConsume(AbstractDog dog, ItemStack stackIn, Entity entityIn) {
 		return !dog.isDefeated() && isFood(stackIn);
 	}
 
 	@Override
-	// line 59 "../../../item_abstract.ump"
+	// line 59 "../../../../food_dogfood.ump"
 	public InteractionResult consume(AbstractDog dog, ItemStack stack, Entity entityIn) {
 		if (dog.level().isClientSide)
 			return InteractionResult.SUCCESS;
@@ -162,7 +163,7 @@ public abstract class DogEddibleItem extends Item implements IDogEddible {
 	}
 
 	@Override
-	// line 97 "../../../item_abstract.ump"
+	// line 97 "../../../../food_dogfood.ump"
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
 		if (entity instanceof Player)
 			currentFoodProperties = baseFoodProperties;
@@ -172,19 +173,19 @@ public abstract class DogEddibleItem extends Item implements IDogEddible {
 	}
 
 	@Override
-	// line 106 "../../../item_abstract.ump"
+	// line 106 "../../../../food_dogfood.ump"
 	public float getAddedHungerWhenDogConsume(ItemStack useStack, AbstractDog dog) {
 		return baseFoodProperties.getNutrition() * 5;
 	}
 
 	@Override
-	// line 117 "../../../item_abstract.ump"
+	// line 117 "../../../../food_dogfood.ump"
 	public FoodProperties getFoodProperties() {
 		return this.currentFoodProperties;
 	}
 
 	@Override
-	// line 122 "../../../item_abstract.ump"
+	// line 122 "../../../../food_dogfood.ump"
 	public boolean isFood(ItemStack stack) {
 		return stack.getItem() == this;
 	}
@@ -208,13 +209,13 @@ public abstract class DogEddibleItem extends Item implements IDogEddible {
 	// DEVELOPER CODE - PROVIDED AS-IS
 	// ------------------------
 
-	// line 36 "../../../item_abstract.ump"
+	// line 36 "../../../../food_dogfood.ump"
 	public DogEddibleItem(Function<Builder, FoodProperties.Builder> propsCreator) {
 		/* custom constructor */
 		this(new Properties(), propsCreator.apply(new FoodProperties.Builder()).build());
 	}
 
-// line 110 "../../../item_abstract.ump"
+// line 110 "../../../../food_dogfood.ump"
 	public List<Pair<MobEffectInstance, Float>> getAdditionalEffectsWhenDogConsume(ItemStack useStack,
 			AbstractDog dog) {
 		return baseFoodProperties.getEffects();

@@ -1,19 +1,13 @@
-package doggytalents.common.item;
 
-import java.util.function.Function;
-
-import doggytalents.api.inferface.AbstractDog;
-import doggytalents.common.item.food.DogEddibleItem;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.FoodProperties.Builder;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
-
-public abstract class DogEddibleBowlFoodItem extends DogEddibleItem {
+class DogEddibleBowlFoodItem {
+depend java.util.function.Function;
+depend net.minecraft.world.entity.player.Player;
+depend net.minecraft.world.food.FoodProperties.Builder;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.item.Items;
+depend net.minecraft.world.level.Level;
+isA DogEddibleItem;
+abstract;
 
 	public DogEddibleBowlFoodItem(Properties itemProps, FoodProperties foodProps) {
 		/* custom constructor */

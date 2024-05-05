@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.common.entity.Dog;
+import doggytalents.common.item.food.DogEddibleItem;
 import doggytalents.common.register.DoggyAdvancementTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;

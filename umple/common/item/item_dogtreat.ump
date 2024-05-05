@@ -1,0 +1,58 @@
+
+class TreatItem {
+depend doggytalents.api.feature.DogLevel.Type;
+depend net.minecraft.network.chat.Component;
+depend net.minecraft.world.entity.player.Player;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.level.Level;
+isA Item;
+isA IDogItem;
+
+	Integer maxLevel;
+	Type type;
+
+	@Override
+	public InteractionResult processInteract(AbstractDog dog, Level world, Player player, InteractionHand hand) {
+		if (!dog.isTame() || !dog.canInteract(player)) {
+			return InteractionResult.FAIL;
+		}
+
+		DogLevel dogLevel = dog.getDogLevel();
+		if (dog.getAge() < 0) {
+			if (!world.isClientSide) {
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_SMOKE);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".too_young"));
+			}
+
+			return InteractionResult.CONSUME;
+		} else if (!dogLevel.canIncrease(this.type)) {
+			if (!world.isClientSide) {
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_SMOKE);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".low_level"));
+			}
+
+			return InteractionResult.CONSUME;
+		} else if (dogLevel.getLevel(this.type) < this.maxLevel) {
+			if (!player.level().isClientSide) {
+				if (!player.getAbilities().instabuild) {
+					player.getItemInHand(hand).shrink(1);
+				}
+
+				dog.increaseLevel(this.type);
+				dog.setOrderedToSit(true);
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_HEARTS);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".level_up"));
+			}
+
+			return InteractionResult.SUCCESS;
+		} else {
+			if (!world.isClientSide) {
+				world.broadcastEntityEvent(dog, Constants.EntityState.WOLF_SMOKE);
+				player.sendSystemMessage(Component.translatable("treat." + this.type.getName() + ".max_level"));
+			}
+
+			return InteractionResult.CONSUME;
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+
+namespace doggytalents.common.item;
+use item_api.ump;
+use item_dogtreat.ump;
+use item_throwable.ump;
+use item_whistle.ump;
+namespace-;
+
+namespace doggytalents.common.item.food;
+use food/food_bowldogfood.ump;
+use food/food_dogfood.ump;
+namespace-;

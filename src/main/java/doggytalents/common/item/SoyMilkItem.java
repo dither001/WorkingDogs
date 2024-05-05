@@ -1,6 +1,7 @@
 package doggytalents.common.item;
 
 import doggytalents.api.inferface.AbstractDog;
+import doggytalents.common.item.food.DogEddibleBowlFoodItem;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 

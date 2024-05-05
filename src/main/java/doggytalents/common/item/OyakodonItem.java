@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import com.mojang.datafixers.util.Pair;
 
 import doggytalents.api.inferface.AbstractDog;
+import doggytalents.common.item.food.DogEddibleBowlFoodItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.effect.MobEffectInstance;

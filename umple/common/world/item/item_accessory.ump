@@ -29,35 +29,3 @@ isA Item;
 		return this.type.get().getDefault();
 	}
 }
-
-class DoggyArtifactItem {
-depend java.util.function.Supplier;
-depend net.minecraft.world.item.Item;
-isA Item;
-
-	internal Supplier<DoggyArtifact> supplier;
-
-	DoggyArtifact createArtifact() {
-		return this.supplier.get();
-	}
-
-	public static CompoundTag writeCompound(DoggyArtifactItem item) {
-		var id = ForgeRegistries.ITEMS.getKey(item);
-		if (id == null)
-			return null;
-		var artifactTag = new CompoundTag();
-		artifactTag.putString("type", id.toString());
-		return artifactTag;
-	}
-
-	public static DoggyArtifactItem readCompound(CompoundTag tag) {
-		var id_str = tag.getString("type");
-		var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(id_str));
-		if (item == null)
-			return null;
-		if (!(item instanceof DoggyArtifactItem artifactItem))
-			return null;
-		return artifactItem;
-	}
-
-}

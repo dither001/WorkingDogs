@@ -1,0 +1,42 @@
+
+interface IDogEddible {
+depend java.util.List;
+depend com.mojang.datafixers.util.Pair;
+depend net.minecraft.sounds.SoundEvent;
+isA IDogFoodHandler;
+
+	float getAddedHungerWhenDogConsume(ItemStack useStack, AbstractDog dog);
+
+	default boolean alwaysEatWhenDogConsume(AbstractDog dog) {
+		return false;
+	};
+
+	default List<Pair<MobEffectInstance, Float>> getAdditionalEffectsWhenDogConsume(ItemStack useStack, AbstractDog dog) {
+		return List.of();
+	}
+
+	default SoundEvent getDogEatingSound(AbstractDog dog) {
+		return SoundEvents.GENERIC_EAT;
+	}
+
+	default ItemStack getReturnStackAfterDogConsume(ItemStack useStack, AbstractDog dog) {
+		return ItemStack.EMPTY;
+	};
+
+}
+
+interface IDyeableArmorItem {
+isA DyeableLeatherItem;
+
+	@Override
+	default int getColor(ItemStack stack) {
+		CompoundTag compoundnbt = stack.getTagElement("display");
+		return compoundnbt != null && compoundnbt.contains("color", 99) ? compoundnbt.getInt("color")
+				: this.getDefaultColor(stack);
+	}
+
+	default int getDefaultColor(ItemStack stack) {
+		return 0xFFFFFF;
+	}
+
+}
