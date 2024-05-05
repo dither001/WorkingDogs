@@ -1,7 +1,7 @@
 /*PLEASE DO NOT EDIT THIS CODE*/
 /*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
 
-package doggytalents.common.register;
+package doggytalents.common;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,6 +33,23 @@ import doggytalents.common.entity.WhitelistFoodHandler;
 import doggytalents.common.event.EventHandler;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.network.PacketHandler;
+import doggytalents.common.register.DoggyAccessories;
+import doggytalents.common.register.DoggyAccessoryTypes;
+import doggytalents.common.register.DoggyAdvancementTriggers;
+import doggytalents.common.register.DoggyAttributes;
+import doggytalents.common.register.DoggyBlocks;
+import doggytalents.common.register.DoggyBrewingRecipes;
+import doggytalents.common.register.DoggyContainerTypes;
+import doggytalents.common.register.DoggyEffects;
+import doggytalents.common.register.DoggyEntityTypes;
+import doggytalents.common.register.DoggyItemGroups;
+import doggytalents.common.register.DoggyItems;
+import doggytalents.common.register.DoggyRecipeSerializers;
+import doggytalents.common.register.DoggyRegistries;
+import doggytalents.common.register.DoggySerializers;
+import doggytalents.common.register.DoggySounds;
+import doggytalents.common.register.DoggyTalents;
+import doggytalents.common.register.DoggyTileEntityTypes;
 import doggytalents.common.talent.HappyEaterTalent;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.api.distmarker.Dist;
@@ -111,7 +128,7 @@ public class DoggyTalentsNext {
 		forgeEventBus.register(new EventHandler());
 
 		/* Client Events */
-		DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
 			modEventBus.addListener(DoggyKeybinds::registerDTKeyMapping);
 			modEventBus.addListener(this::clientSetup);
 			modEventBus.addListener(DoggyBlocks::registerBlockColours);

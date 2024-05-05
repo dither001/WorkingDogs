@@ -7,7 +7,7 @@ import doggytalents.api.inferface.IDogAlteration;
 import doggytalents.api.registry.Accessory;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.api.registry.AccessoryType;
-import doggytalents.common.register.DoggyTalentsNext;
+import doggytalents.common.DoggyTalentsNext;
 import doggytalents.common.util.ColourCache;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;

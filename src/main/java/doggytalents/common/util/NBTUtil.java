@@ -6,7 +6,7 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import doggytalents.common.register.DoggyTalentsNext;
+import doggytalents.common.DoggyTalentsNext;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;

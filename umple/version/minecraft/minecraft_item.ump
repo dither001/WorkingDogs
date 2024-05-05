@@ -1,0 +1,4 @@
+
+external Item {
+	Properties properties;
+}

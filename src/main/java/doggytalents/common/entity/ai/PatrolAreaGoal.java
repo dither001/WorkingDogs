@@ -4,9 +4,9 @@ import java.util.EnumSet;
 import java.util.List;
 
 import doggytalents.api.feature.EnumMode;
+import doggytalents.common.DoggyTalentsNext;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.item.PatrolItem;
-import doggytalents.common.register.DoggyTalentsNext;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ai.goal.Goal;

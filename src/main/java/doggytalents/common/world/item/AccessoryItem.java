@@ -1,4 +1,7 @@
-package doggytalents.common.item;
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
+package doggytalents.common.world.item;
 
 import java.util.function.Supplier;
 
@@ -13,21 +16,30 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+// line 2 "../../../../world_item.ump"
 public class AccessoryItem extends Item implements IDogItem {
 
-	public Supplier<? extends Accessory> type;
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
 
-	public AccessoryItem(Properties properties) {
-		super(properties);
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
+
+	public AccessoryItem(Properties aProperties) {
+		super(aProperties);
 	}
 
-	public AccessoryItem(Supplier<? extends Accessory> type, Properties properties) {
-		/* custom constructor */
-		this(properties);
-		this.type = type;
+	// ------------------------
+	// INTERFACE
+	// ------------------------
+
+	public void delete() {
 	}
 
 	@Override
+	// line 20 "../../../../world_item.ump"
 	public InteractionResult processInteract(AbstractDog dogIn, Level worldIn, Player playerIn,
 			InteractionHand handIn) {
 		if (dogIn.canInteract(playerIn)
@@ -39,7 +51,23 @@ public class AccessoryItem extends Item implements IDogItem {
 		return InteractionResult.PASS;
 	}
 
+	// line 29 "../../../../world_item.ump"
 	public AccessoryInstance createInstance(AbstractDog dogIn, ItemStack stack, Player playerIn) {
 		return this.type.get().getDefault();
 	}
+
+	// ------------------------
+	// DEVELOPER CODE - PROVIDED AS-IS
+	// ------------------------
+
+	// line 10 "../../../../world_item.ump"
+	public AccessoryItem(Supplier<? extends Accessory> type, Properties properties) {
+		/* custom constructor */
+		this(properties);
+		this.type = type;
+	}
+
+// line 16 "../../../../world_item.ump"
+	public Supplier<? extends Accessory> type;
+
 }

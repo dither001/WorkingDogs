@@ -25,8 +25,6 @@ import doggytalents.common.entity.accessory.Propellar;
 import doggytalents.common.entity.accessory.TenguMask.TenguMaskItem;
 import doggytalents.common.entity.accessory.Wig;
 import doggytalents.common.item.AburaageItem;
-import doggytalents.common.item.AccessoryItem;
-import doggytalents.common.item.AmnesiaBoneItem;
 import doggytalents.common.item.BandaidItem;
 import doggytalents.common.item.CanineTrackerItem;
 import doggytalents.common.item.ChopinRecordItem;
@@ -34,7 +32,6 @@ import doggytalents.common.item.ConductingBoneItem;
 import doggytalents.common.item.DemonHornsItem;
 import doggytalents.common.item.DogPlushieItem;
 import doggytalents.common.item.DogResizeItem;
-import doggytalents.common.item.DoggyArtifactItem;
 import doggytalents.common.item.DoggyCharmItem;
 import doggytalents.common.item.DoggyContactsItem;
 import doggytalents.common.item.DoubleDyableAccessoryItem;
@@ -89,6 +86,9 @@ import doggytalents.common.item.WhistleItem;
 import doggytalents.common.item.WitchHatItem;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.util.Util;
+import doggytalents.common.world.item.AccessoryItem;
+import doggytalents.common.world.item.AmnesiaBoneItem;
+import doggytalents.common.world.item.DoggyArtifactItem;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeableLeatherItem;
@@ -279,7 +279,7 @@ public class DoggyItems {
 	public static final RegistryObject<Item> DROOL_SCENT_TREAT = register("drool_scent_treat",
 			DroolScentTreatItem::new);
 	public static final RegistryObject<DoggyArtifactItem> FEATHERED_MANTLE = registerWith("feathered_mantle",
-			props -> new DoggyArtifactItem(() -> new FeatheredMantleArtifact(), props), 1);
+			props -> new DoggyArtifactItem(props, () -> new FeatheredMantleArtifact()), 1);
 	public static final RegistryObject<PianoItem> GRAND_PIANO_BLACK = register("grand_piano_black_item",
 			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_BLACK));
 	public static final RegistryObject<PianoItem> GRAND_PIANO_WHITE = register("grand_piano_white_item",

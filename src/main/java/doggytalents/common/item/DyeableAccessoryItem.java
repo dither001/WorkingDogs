@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.common.entity.accessory.DyeableAccessory;
+import doggytalents.common.world.item.AccessoryItem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 

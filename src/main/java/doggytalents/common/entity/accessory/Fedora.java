@@ -7,8 +7,8 @@ import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.client.entity.render.AccessoryModelManager.Entry;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.IAccessoryHasModel;
-import doggytalents.common.item.AccessoryItem;
 import doggytalents.common.register.DoggyAccessoryTypes;
+import doggytalents.common.world.item.AccessoryItem;
 import net.minecraft.world.level.ItemLike;
 
 public class Fedora extends Accessory implements IAccessoryHasModel {

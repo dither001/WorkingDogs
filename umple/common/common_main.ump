@@ -3,6 +3,10 @@ namespace doggytalents.common;
 use common_setup.ump;
 namespace-;
 
+namespace doggytalents.common.advancement;
+use advancement/criterion/drunk_dog.ump;
+namespace-;
+
 namespace doggytalents.common.data.advancement;
 use data/data_advancement.ump;
 namespace-;
@@ -21,4 +25,9 @@ namespace-;
 
 namespace doggytalents.common.register;
 use register/register_main.ump;
+namespace-;
+
+namespace doggytalents.common.world;
+use world/item_skillrespec.ump;
+use world/world_item.ump;
 namespace-;

@@ -1,7 +1,13 @@
 
-/* minecraft 1.20.1 */
-external AdvancementProvider {
-	internal PackOutput packOutput;
-	internal CompletableFuture<HolderLookup.Provider> holderLookupProvider;
-	internal List<AdvancementSubProvider> providerList;
+external AbstractCriterionTriggerInstance {
+	ResourceLocation criterion;
+	ContextAwarePredicate player;
 }
+
+external AdvancementProvider {
+	PackOutput packOutput;
+	CompletableFuture<Provider> provider;
+	List<AdvancementSubProvider> providerList;
+}
+
+external SimpleCriterionTrigger {}

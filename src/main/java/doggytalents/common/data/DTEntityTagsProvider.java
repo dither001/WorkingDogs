@@ -1,13 +1,13 @@
 package doggytalents.common.data;
 
 import java.util.Arrays;
-import java.util.function.Supplier;
-import net.minecraft.core.HolderLookup.Provider;
-
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
+
 import doggytalents.common.lib.Constants;
 import doggytalents.common.register.DoggyTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.TagKey;

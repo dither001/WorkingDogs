@@ -3,8 +3,8 @@ package doggytalents.common.network.packet;
 import java.util.function.Supplier;
 
 import doggytalents.common.entity.Dog;
-import doggytalents.common.item.DoggyArtifactItem;
 import doggytalents.common.network.packet.data.ChangeArtifactData;
+import doggytalents.common.world.item.DoggyArtifactItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.NetworkEvent.Context;

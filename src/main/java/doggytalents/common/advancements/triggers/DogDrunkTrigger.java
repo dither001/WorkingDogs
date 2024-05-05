@@ -11,38 +11,35 @@ import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 
-
 public class DogDrunkTrigger extends SimpleCriterionTrigger<DogDrunkTrigger.TriggerInstance> {
-    
-    public static ResourceLocation ID = Util.getResource("get_dog_drunk");
 
-    @Override
-    public ResourceLocation getId() {
-        return ID;
-    }
+	public static ResourceLocation ID = Util.getResource("get_dog_drunk");
 
-    @Override
-    protected TriggerInstance createInstance(JsonObject json, ContextAwarePredicate player,
-            DeserializationContext context) {
-        return new TriggerInstance(player);
-    }
+	@Override
+	public ResourceLocation getId() {
+		return ID;
+	}
 
-    public void trigger(AbstractDog dog, ServerPlayer player) {
-        this.trigger(player, x -> true);
-    }
+	@Override
+	protected TriggerInstance createInstance(JsonObject json, ContextAwarePredicate player,
+			DeserializationContext context) {
+		return new TriggerInstance(player);
+	}
 
-    public static TriggerInstance getInstance() {
-        return new TriggerInstance(ContextAwarePredicate.ANY);
-    }
+	public void trigger(AbstractDog dog, ServerPlayer player) {
+		this.trigger(player, x -> true);
+	}
 
-    public static class TriggerInstance extends AbstractCriterionTriggerInstance {
+	public static TriggerInstance getInstance() {
+		return new TriggerInstance(ContextAwarePredicate.ANY);
+	}
 
-        public TriggerInstance(ContextAwarePredicate player) {
-            super(ID, player);
-        }
-        
-    }
+	public static class TriggerInstance extends AbstractCriterionTriggerInstance {
 
-    
+		public TriggerInstance(ContextAwarePredicate player) {
+			super(ID, player);
+		}
+
+	}
 
 }

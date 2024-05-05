@@ -7,7 +7,7 @@ import java.util.List;
 import doggytalents.api.feature.DataKey;
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogItem;
-import doggytalents.common.register.DoggyTalentsNext;
+import doggytalents.common.DoggyTalentsNext;
 import doggytalents.common.util.NBTUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

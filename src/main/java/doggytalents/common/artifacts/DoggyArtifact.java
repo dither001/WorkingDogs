@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nonnull;
 
 import doggytalents.api.inferface.IDogAlteration;
-import doggytalents.common.item.DoggyArtifactItem;
+import doggytalents.common.world.item.DoggyArtifactItem;
 
 /**
  * @Author DashieDev

@@ -1,0 +1,37 @@
+
+class DogDrunkTrigger {
+depend com.google.gson.JsonObject;
+isA SimpleCriterionTrigger;
+
+	const ResourceLocation ID = Util.getResource("get_dog_drunk");
+
+	@Override
+	protected TriggerInstance createInstance(JsonObject json, ContextAwarePredicate player,
+			DeserializationContext context) {
+		return new TriggerInstance(player);
+	}
+
+	@Override
+	public ResourceLocation getId() {
+		return ID;
+	}
+
+	void trigger(AbstractDog dog, ServerPlayer player) {
+		this.trigger(player, x -> true);
+	}
+
+	/* */
+	public static TriggerInstance getInstance() {
+		return new TriggerInstance(ContextAwarePredicate.ANY);
+	}
+
+	static class TriggerInstance {
+		isA AbstractCriterionTriggerInstance;
+
+		public TriggerInstance(ContextAwarePredicate player) {
+			super(ID, player);
+		}
+
+	}
+
+}

@@ -1,0 +1,63 @@
+
+class AccessoryItem {
+depend java.util.function.Supplier;
+depend net.minecraft.world.entity.player.Player;
+depend net.minecraft.world.item.Item;
+depend net.minecraft.world.level.Level;
+isA IDogItem;
+isA Item;
+
+	public AccessoryItem(Supplier<? extends Accessory> type, Properties properties) {
+		/* custom constructor */
+		this(properties);
+		this.type = type;
+	}
+
+	public Supplier<? extends Accessory> type;
+
+	@Override
+	public InteractionResult processInteract(AbstractDog dogIn, Level worldIn, Player playerIn, InteractionHand handIn) {
+		if (dogIn.canInteract(playerIn) && dogIn.addAccessory(this.createInstance(dogIn, playerIn.getItemInHand(handIn), playerIn))) {
+			dogIn.consumeItemFromStack(playerIn, playerIn.getItemInHand(handIn));
+			return InteractionResult.SUCCESS;
+		}
+
+		return InteractionResult.PASS;
+	}
+
+	AccessoryInstance createInstance(AbstractDog dogIn, ItemStack stack, Player playerIn) {
+		return this.type.get().getDefault();
+	}
+}
+
+class DoggyArtifactItem {
+depend java.util.function.Supplier;
+depend net.minecraft.world.item.Item;
+isA Item;
+
+	internal Supplier<DoggyArtifact> supplier;
+
+	DoggyArtifact createArtifact() {
+		return this.supplier.get();
+	}
+
+	public static CompoundTag writeCompound(DoggyArtifactItem item) {
+		var id = ForgeRegistries.ITEMS.getKey(item);
+		if (id == null)
+			return null;
+		var artifactTag = new CompoundTag();
+		artifactTag.putString("type", id.toString());
+		return artifactTag;
+	}
+
+	public static DoggyArtifactItem readCompound(CompoundTag tag) {
+		var id_str = tag.getString("type");
+		var item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(id_str));
+		if (item == null)
+			return null;
+		if (!(item instanceof DoggyArtifactItem artifactItem))
+			return null;
+		return artifactItem;
+	}
+
+}

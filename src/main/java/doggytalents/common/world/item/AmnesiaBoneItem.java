@@ -1,9 +1,10 @@
-package doggytalents.common.item;
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
+package doggytalents.common.world.item;
 
 import java.util.List;
 import java.util.UUID;
-
-import javax.annotation.Nullable;
 
 import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.inferface.IDogItem;
@@ -21,13 +22,57 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
+// line 2 "../../../../item_skillrespec.ump"
 public class AmnesiaBoneItem extends Item implements IDogItem {
 
-	public AmnesiaBoneItem(Properties p_41383_) {
-		super(p_41383_);
+	// ------------------------
+	// STATIC VARIABLES
+	// ------------------------
+
+	public static final int MigrateOwnerXPCost = 5;
+	public static final int UntameXPCost = 3;
+	public static final int UseCap = 8;
+
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
+
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
+
+	public AmnesiaBoneItem(Properties aProperties) {
+		super(aProperties);
+	}
+
+	// ------------------------
+	// INTERFACE
+	// ------------------------
+
+	public void delete() {
 	}
 
 	@Override
+	// line 19 "../../../../item_skillrespec.ump"
+	public void appendHoverText(ItemStack stack, Level level, List<Component> components, TooltipFlag flag) {
+		var tag = stack.getTag();
+		if (tag == null)
+			return;
+		if (tag.contains("amnesia_bone_used_time", Tag.TAG_INT)) {
+			components.add(Component.translatable(
+					"item.doggytalents.amnesia_bone.use_status"
+					, UseCap - tag.getInt("amnesia_bone_used_time")
+					, UseCap)
+				.withStyle(ChatFormatting.RED));
+		}
+		if (tag.contains("request_str", Tag.TAG_STRING)) {
+			components.add(Component.translatable("item.doggytalents.amnesia_bone.status", tag.getString("request_str"))
+					.withStyle(ChatFormatting.GRAY));
+		}
+	}
+
+	@Override
+	// line 36 "../../../../item_skillrespec.ump"
 	public InteractionResult processInteract(AbstractDog dog, Level level, Player player, InteractionHand hand) {
 		var ownerUUID = dog.getOwnerUUID();
 		if (ownerUUID == null) {
@@ -41,6 +86,10 @@ public class AmnesiaBoneItem extends Item implements IDogItem {
 		return InteractionResult.SUCCESS;
 	}
 
+	/**
+	 * 
+	 */
+	// line 51 "../../../../item_skillrespec.ump"
 	private void handleOpenScreenOnClient(Level level, AbstractDog dogIn, Player player, InteractionHand hand,
 			UUID dogOwnerUUID) {
 		if (!level.isClientSide)
@@ -59,6 +108,7 @@ public class AmnesiaBoneItem extends Item implements IDogItem {
 		}
 	}
 
+	// line 68 "../../../../item_skillrespec.ump"
 	private void requestOwnership(Level level, UUID ownerUUID, Player player, InteractionHand hand, AbstractDog dog) {
 		if (level.isClientSide)
 			return;
@@ -86,32 +136,7 @@ public class AmnesiaBoneItem extends Item implements IDogItem {
 		tag.putString("request_str", player.getName().getString());
 	}
 
-	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-		var tag = stack.getTag();
-		if (tag == null)
-			return;
-		if (tag.contains("amnesia_bone_used_time", Tag.TAG_INT)) {
-			components.add(Component
-					.translatable("item.doggytalents.amnesia_bone.use_status",
-							getUseCap() - tag.getInt("amnesia_bone_used_time"), getUseCap())
-					.withStyle(ChatFormatting.RED));
-		}
-		if (tag.contains("request_str", Tag.TAG_STRING)) {
-			components.add(Component.translatable("item.doggytalents.amnesia_bone.status", tag.getString("request_str"))
-					.withStyle(ChatFormatting.GRAY));
-		}
-	}
-
-	public static int getUseCap() {
-		return 8;
-	}
-
-	public static int getUntameXPCost() {
-		return 3;
-	}
-
-	public static int getMigrateOwnerXPCost() {
-		return 5;
+	public String toString() {
+		return super.toString() + "[" + "]";
 	}
 }

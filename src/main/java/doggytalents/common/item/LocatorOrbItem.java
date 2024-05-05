@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 import doggytalents.common.entity.accessory.LocatorOrbAccessory;
+import doggytalents.common.world.item.AccessoryItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.ItemStack;

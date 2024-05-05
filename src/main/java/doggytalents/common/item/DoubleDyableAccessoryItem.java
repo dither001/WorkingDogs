@@ -7,6 +7,7 @@ import doggytalents.api.inferface.AbstractDog;
 import doggytalents.api.registry.AccessoryInstance;
 import doggytalents.common.entity.accessory.DoubleDyableAccessory;
 import doggytalents.common.util.Util;
+import doggytalents.common.world.item.AccessoryItem;
 import net.minecraft.nbt.Tag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;

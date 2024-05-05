@@ -124,7 +124,7 @@ depend net.minecraft.world.level.block.Block;
 	const RegistryObject<Item> SCENT_TREAT = register("scent_treat", ScentTreatItem::new);
 	const RegistryObject<Item> DROOL_SCENT_TREAT = register("drool_scent_treat", DroolScentTreatItem::new);
 
-	const RegistryObject<DoggyArtifactItem> FEATHERED_MANTLE = registerWith("feathered_mantle", props -> new DoggyArtifactItem(() -> new FeatheredMantleArtifact(), props), 1);
+	const RegistryObject<DoggyArtifactItem> FEATHERED_MANTLE = registerWith("feathered_mantle", props -> new DoggyArtifactItem(props, () -> new FeatheredMantleArtifact()), 1);
 
 	const RegistryObject<PianoItem> GRAND_PIANO_BLACK = register("grand_piano_black_item", () -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_BLACK));
 	const RegistryObject<PianoItem> GRAND_PIANO_WHITE = register("grand_piano_white_item", () -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_WHITE));

@@ -8,7 +8,7 @@ import doggytalents.client.screen.DogNewInfoScreen.element.view.StyleView.widget
 import doggytalents.client.screen.framework.element.AbstractElement;
 import doggytalents.client.screen.framework.widget.TextOnlyButton;
 import doggytalents.common.entity.Dog;
-import doggytalents.common.item.AccessoryItem;
+import doggytalents.common.world.item.AccessoryItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;

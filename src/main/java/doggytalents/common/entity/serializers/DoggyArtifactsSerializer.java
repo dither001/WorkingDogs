@@ -3,7 +3,7 @@ package doggytalents.common.entity.serializers;
 import java.util.ArrayList;
 import java.util.List;
 
-import doggytalents.common.item.DoggyArtifactItem;
+import doggytalents.common.world.item.DoggyArtifactItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.syncher.EntityDataSerializer;
 import net.minecraftforge.registries.ForgeRegistries;
