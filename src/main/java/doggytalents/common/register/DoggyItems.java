@@ -10,7 +10,6 @@ import javax.annotation.Nullable;
 
 import doggytalents.api.feature.DogLevel;
 import doggytalents.api.registry.Accessory;
-import doggytalents.common.artifacts.FeatheredMantleArtifact;
 import doggytalents.common.entity.accessory.BakerHat;
 import doggytalents.common.entity.accessory.CeremonialGarb;
 import doggytalents.common.entity.accessory.ChefHat;
@@ -88,7 +87,6 @@ import doggytalents.common.lib.Constants;
 import doggytalents.common.util.Util;
 import doggytalents.common.world.item.AccessoryItem;
 import doggytalents.common.world.item.AmnesiaBoneItem;
-import doggytalents.common.world.item.DoggyArtifactItem;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeableLeatherItem;
@@ -278,8 +276,8 @@ public class DoggyItems {
 	public static final RegistryObject<Item> SCENT_TREAT = register("scent_treat", ScentTreatItem::new);
 	public static final RegistryObject<Item> DROOL_SCENT_TREAT = register("drool_scent_treat",
 			DroolScentTreatItem::new);
-	public static final RegistryObject<DoggyArtifactItem> FEATHERED_MANTLE = registerWith("feathered_mantle",
-			props -> new DoggyArtifactItem(props, () -> new FeatheredMantleArtifact()), 1);
+//	public static final RegistryObject<DoggyArtifactItem> FEATHERED_MANTLE = registerWith("feathered_mantle",
+//			props -> new DoggyArtifactItem(props, () -> new FeatheredMantleArtifact()), 1);
 	public static final RegistryObject<PianoItem> GRAND_PIANO_BLACK = register("grand_piano_black_item",
 			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_BLACK));
 	public static final RegistryObject<PianoItem> GRAND_PIANO_WHITE = register("grand_piano_white_item",

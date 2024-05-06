@@ -74,7 +74,7 @@ public class DTItemModelProvider extends ItemModelProvider {
         generated(DoggyItems.BEASTARS_UNIFORM_MALE);
         generated(DoggyItems.EGG_SANDWICH);
         generated(DoggyItems.BANDAID);
-        generated(DoggyItems.FEATHERED_MANTLE);
+//        generated(DoggyItems.FEATHERED_MANTLE);
         generated(DoggyItems.EMPTY_LOCATOR_ORB);
 
         generated(DoggyItems.HOT_DOG);
@@ -170,7 +170,7 @@ public class DTItemModelProvider extends ItemModelProvider {
         blockItem(DoggyBlocks.DOG_BATH);
         blockItem(DoggyBlocks.DOG_BED);
         blockItem(DoggyBlocks.FOOD_BOWL);
-        generated(DoggyBlocks.RICE_MILL);
+//        generated(DoggyBlocks.RICE_MILL);
     }
 
     private ResourceLocation itemTexture(Supplier<? extends ItemLike> item) {

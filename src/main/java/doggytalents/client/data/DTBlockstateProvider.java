@@ -49,7 +49,7 @@ public class DTBlockstateProvider extends BlockStateProvider {
 
         doggyCrops(DoggyBlocks.RICE_CROP);
         doggyCrops(DoggyBlocks.SOY_CROP);
-        particleOnly(DoggyBlocks.RICE_MILL.get(), Blocks.OAK_PLANKS);
+//        particleOnly(DoggyBlocks.RICE_MILL.get(), Blocks.OAK_PLANKS);
     }
 
     // Applies texture to all faces and for the input face culls that direction

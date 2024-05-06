@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-import doggytalents.common.advancements.triggers.DogDrunkTrigger;
-import doggytalents.common.advancements.triggers.OokamikazeTrigger;
 import doggytalents.common.data.DisplayInfoBuilder;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.Util;
@@ -23,7 +21,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
@@ -88,11 +85,11 @@ public class DTAdvancementProvider extends ForgeAdvancementProvider {
 					.addCriterion("get_dog_drunk", DogDrunkTrigger.getInstance())
 					.save(consumer, Util.getResourcePath("default/get_dog_drunk"));
 
-			Advancement ookamikaze_advancement = Advancement.Builder.advancement()
-					.display(DisplayInfoBuilder.create().icon(() -> Items.GUNPOWDER).frame(FrameType.TASK)
-							.translate("ookamikaze_trigger").build())
-					.addCriterion("ookamikaze_trigger", OokamikazeTrigger.getInstance())
-					.save(consumer, Util.getResourcePath("default/ookamikaze_trigger"));
+//			Advancement ookamikaze_advancement = Advancement.Builder.advancement()
+//					.display(DisplayInfoBuilder.create().icon(() -> Items.GUNPOWDER).frame(FrameType.TASK)
+//							.translate("ookamikaze_trigger").build())
+//					.addCriterion("ookamikaze_trigger", OokamikazeTrigger.getInstance())
+//					.save(consumer, Util.getResourcePath("default/ookamikaze_trigger"));
 		}
 	}
 

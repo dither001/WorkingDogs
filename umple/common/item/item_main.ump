@@ -4,6 +4,12 @@ use item_api.ump;
 use item_dogtreat.ump;
 use item_throwable.ump;
 use item_whistle.ump;
+
+class DoggyArtifact {
+isA IDogAlteration;
+	const Integer ARTIFACTS_LIMIT = 3;
+}
+
 namespace-;
 
 namespace doggytalents.common.item.food;

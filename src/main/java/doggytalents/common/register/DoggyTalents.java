@@ -27,7 +27,6 @@ import doggytalents.common.talent.GuardDogTalent;
 import doggytalents.common.talent.HappyEaterTalent;
 import doggytalents.common.talent.HellHoundTalent;
 import doggytalents.common.talent.MobRetrieverTalent;
-import doggytalents.common.talent.OokamiKazeTalent;
 import doggytalents.common.talent.PackPuppyTalent;
 import doggytalents.common.talent.PestFighterTalent;
 import doggytalents.common.talent.PillowPawTalent;
@@ -190,20 +189,20 @@ public class DoggyTalents {
 	);
 
 // line 107 "../../../register_skill.ump"
-	public static final RegistryObject<Talent> OOKAMIKAZE = register("ookamikaze",
-			() -> new Talent(OokamiKazeTalent::new) {
-				@Override
-				public boolean isDogEligible(AbstractDog dog) {
-					return dog.getDogLevel().getLevel(DogLevel.Type.KAMI) > 0;
-				}
-
-				@Override
-				public Optional<String> getNonEligibleTranslationKey(AbstractDog dog) {
-					return Optional.of(DoggyTalents.FLYING_FURBALL.get().getTranslationKey() + ".dog_not_kami");
-				}
-			}
-// line 118 "../../../register_skill.ump"
-	);
+//	public static final RegistryObject<Talent> OOKAMIKAZE = register("ookamikaze",
+//			() -> new Talent(OokamiKazeTalent::new) {
+//				@Override
+//				public boolean isDogEligible(AbstractDog dog) {
+//					return dog.getDogLevel().getLevel(DogLevel.Type.KAMI) > 0;
+//				}
+//
+//				@Override
+//				public Optional<String> getNonEligibleTranslationKey(AbstractDog dog) {
+//					return Optional.of(DoggyTalents.FLYING_FURBALL.get().getTranslationKey() + ".dog_not_kami");
+//				}
+//			}
+//// line 118 "../../../register_skill.ump"
+//	);
 
 // line 125 "../../../register_skill.ump"
 	private static <T extends Talent> RegistryObject<T> register(final String name, final Supplier<T> sup) {

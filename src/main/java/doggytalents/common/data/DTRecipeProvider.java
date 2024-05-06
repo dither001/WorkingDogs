@@ -231,9 +231,9 @@ public class DTRecipeProvider extends RecipeProvider {
 				.requires(DoggyItems.KOJI.get()).requires(Items.BONE_MEAL)
 				.unlockedBy("has_koji", has(DoggyItems.KOJI.get())).save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DoggyItems.FEATHERED_MANTLE.get(), 1).pattern(" FP")
-				.pattern("FTF").pattern("PF ").define('F', Items.FEATHER).define('P', Items.PHANTOM_MEMBRANE)
-				.define('T', DoggyItems.SUPER_TREAT.get()).unlockedBy("has_feather", has(Items.FEATHER)).save(consumer);
+//		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DoggyItems.FEATHERED_MANTLE.get(), 1).pattern(" FP")
+//				.pattern("FTF").pattern("PF ").define('F', Items.FEATHER).define('P', Items.PHANTOM_MEMBRANE)
+//				.define('T', DoggyItems.SUPER_TREAT.get()).unlockedBy("has_feather", has(Items.FEATHER)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DoggyItems.EMPTY_LOCATOR_ORB.get(), 1).pattern(" C ")
 				.pattern("SRS").pattern(" G ").define('C', Items.WHITE_CARPET).define('G', Items.GLASS)
@@ -493,10 +493,10 @@ public class DTRecipeProvider extends RecipeProvider {
 				.define('T', DoggyItems.TRAINING_TREAT.get()).unlockedBy("has_white_wool", has(Items.WHITE_WOOL))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DoggyBlocks.RICE_MILL.get(), 1).pattern("FLF").pattern("LCL")
-				.pattern("FDF").define('F', ItemTags.FENCES).define('L', ItemTags.LOGS)
-				.define('C', Items.COBBLESTONE_SLAB).define('D', DoggyItems.RICE_WHEAT.get())
-				.unlockedBy("has_paddy_rice_dtn", has(DoggyItems.RICE_WHEAT.get())).save(consumer);
+//		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DoggyBlocks.RICE_MILL.get(), 1).pattern("FLF").pattern("LCL")
+//				.pattern("FDF").define('F', ItemTags.FENCES).define('L', ItemTags.LOGS)
+//				.define('C', Items.COBBLESTONE_SLAB).define('D', DoggyItems.RICE_WHEAT.get())
+//				.unlockedBy("has_paddy_rice_dtn", has(DoggyItems.RICE_WHEAT.get())).save(consumer);
 	}
 
 	// ------------------------

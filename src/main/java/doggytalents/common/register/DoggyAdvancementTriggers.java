@@ -6,8 +6,7 @@ package doggytalents.common.register;
 import java.util.HashMap;
 import java.util.Map;
 
-import doggytalents.common.advancements.triggers.DogDrunkTrigger;
-import doggytalents.common.advancements.triggers.OokamikazeTrigger;
+import doggytalents.common.advancement.DogDrunkTrigger;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.resources.ResourceLocation;
@@ -25,7 +24,7 @@ public class DoggyAdvancementTriggers {
 	// ------------------------
 
 	public static final DogDrunkTrigger DOG_DRUNK_TRIGGER = register(new DogDrunkTrigger());
-	public static final OokamikazeTrigger OOKAMIKAZE_TRIGGER = register(new OokamikazeTrigger());
+//	public static final OokamikazeTrigger OOKAMIKAZE_TRIGGER = register(new OokamikazeTrigger());
 
 	// ------------------------
 	// MEMBER VARIABLES

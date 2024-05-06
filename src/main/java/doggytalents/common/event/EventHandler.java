@@ -1,3 +1,6 @@
+/*PLEASE DO NOT EDIT THIS CODE*/
+/*This code was generated using the UMPLE 1.31.1.5860.78bb27cc6 modeling language!*/
+
 package doggytalents.common.event;
 
 import java.util.UUID;
@@ -70,472 +73,511 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.PacketDistributor;
 
+/**
+ * static functions
+ */
+// line 2 "../../../event_handler.ump"
+// line 181 "../../../event_handler.ump"
+// line 338 "../../../event_handler.ump"
 public class EventHandler {
+	// ------------------------
+	// STATIC VARIABLES
+	// ------------------------
 
-    @SubscribeEvent
-    public void onServerTickEnd(final ServerTickEvent event) {
+	private static final Integer CollectRadius = 26;
+	private static final Integer TeleportTriggerMinimumDistance = 400;
 
-        if (event.phase != Phase.END) return;
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
 
-        DogPromiseManager.tick();
-        DogLocationStorage.get(event.getServer()).getOnlineDogsManager().tick();
-    }
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
 
-    @SubscribeEvent
-    public void onServerStop(final ServerStoppingEvent event) {
-        DogPromiseManager.forceStop();
-        DogLocationStorage.get(event.getServer()).onServerStop(event);
-    }
+	public EventHandler() {
+	}
 
-    @SubscribeEvent
-    public void onWolfRightClickWithTreat(final PlayerInteractEvent.EntityInteract event) {
-        var level = event.getLevel();
-        var stack = event.getItemStack();
-        var target = event.getTarget();
-        var owner = event.getEntity();
+	// ------------------------
+	// INTERFACE
+	// ------------------------
 
-        if (stack.getItem() != DoggyItems.TRAINING_TREAT.get()) 
-            return;
-        if (!(target instanceof Wolf wolf)) return;
-        event.setCanceled(true);
-        
-        if (!checkValidWolf(wolf, owner)) {
-            event.setCancellationResult(InteractionResult.FAIL);
-            return;
-        }
+	public void delete() {
+	}
 
-        if (level.isClientSide) {
-            PacketHandler.send(PacketDistributor.SERVER.noArg(), 
-                new TrainWolfToDogData(wolf.getId(), wolf.yBodyRot, wolf.yHeadRot)
-            );
-        }
+	// line 205 "../../../event_handler.ump"
+	private boolean distanceTooShortToTeleport(Vec3 from, Vec3 to) {
+		return from.distanceToSqr(to) < TeleportTriggerMinimumDistance;
+	}
 
-        event.setCancellationResult(InteractionResult.SUCCESS);
-    }
+	// line 209 "../../../event_handler.ump"
+	private boolean isAlliedToDog(LivingEntity entity, LivingEntity owner) {
+		if (owner == null || entity == null)
+			return false;
+		if (entity instanceof TamableAnimal otherDog) {
+			entity = otherDog.getOwner();
+		}
+		if (owner == entity)
+			return true;
+		if (owner.isAlliedTo(entity))
+			return true;
+		if (entity instanceof Player) {
+			if (ConfigHandler.SERVER.ALL_PLAYER_CANNOT_ATTACK_DOG.get())
+				return true;
+		}
+		return false;
+	}
 
-    public static void checkAndTrainWolf(Player trainer, Wolf wolf, float yBodyRot, float yHeadRot) {
-        var level = trainer.level();
-        if (level.isClientSide)
-            return;
-        
-        var stack = trainer.getMainHandItem();
-        if (stack.getItem() != DoggyItems.TRAINING_TREAT.get()) 
-            return;
+	// line 226 "../../../event_handler.ump"
+	private boolean isDogReadyToTeleport(Dog dog, LivingEntity owner) {
+		if (!dog.isDoingFine())
+			return false;
+		if (owner == null || dog.getOwnerUUID() == null)
+			return false;
+		if (ObjectUtils.notEqual(dog.getOwnerUUID(), owner.getUUID()))
+			return false;
+		if (dog.isOrderedToSit())
+			return false;
+		if (!dog.getMode().shouldFollowOwner())
+			return false;
+		return dog.crossOriginTp();
+	}
 
-        if (!checkValidWolf(wolf, trainer))
-            return;
+	// line 240 "../../../event_handler.ump"
+	private boolean isEnableStarterBundle() {
+		final var retMut = new MutableBoolean(false);
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+			if (ConfigHandler.ClientConfig.getConfig(ConfigHandler.CLIENT.ENABLE_STARTER_BUNDLE_BY_DEFAULT))
+				retMut.setTrue();
+		});
+		if (retMut.getValue())
+			return true;
+		return ConfigHandler.ServerConfig.getConfig(ConfigHandler.SERVER.STARTING_ITEMS);
+	}
 
-        if (!isWithinTrainWolfLimit(trainer)) {
-            level.broadcastEntityEvent(wolf, doggytalents.common.lib.Constants.EntityState.WOLF_SMOKE);
-            return;
-        }
+	// line 317 "../../../event_handler.ump"
+	private void onOwnerChangeDimension(EntityTravelToDimensionEvent event, ServerPlayer owner) {
+		if (!(owner.level() instanceof ServerLevel sLevel))
+			return;
+		var mcServer = sLevel.getServer();
+		var fromLevel = sLevel;
+		var toLevel = mcServer.getLevel(event.getDimension());
+		if (fromLevel == toLevel)
+			return;
 
-        if (!trainer.getAbilities().instabuild) {
-            stack.shrink(1);
-        }
+		var crossOriginTpList = fromLevel.getEntitiesOfClass(Dog.class,
+				owner.getBoundingBox().inflate(CollectRadius, 4, CollectRadius), d -> isDogReadyToTeleport(d, owner));
+		if (crossOriginTpList.isEmpty())
+			return;
 
-        rotateWolfIfNecceassary(wolf, yHeadRot, yBodyRot);
-        trainWolf(wolf, trainer, level);
-    }
+		DogPromiseManager
+				.addPromiseWithOwnerAndStartImmediately(new DogBatchTeleportToDimensionPromise(crossOriginTpList,
+						fromLevel, owner.getUUID(), event.getDimension(), d -> isDogReadyToTeleport(d, owner)), owner);
+	}
 
-    private static void rotateWolfIfNecceassary(Wolf wolf, float yHeadRot, float yBodyRot) {
-        float wanted_yBodyRot = yHeadRot;
-        float wanted_dYBodyRot =  Mth.degreesDifference(yBodyRot, wanted_yBodyRot);
-        float approaching_dYBodyRot = Mth.clamp(wanted_dYBodyRot, -25, 25);
-        float approaching_yBodyRot = yBodyRot + approaching_dYBodyRot;
-        approaching_yBodyRot = Mth.wrapDegrees(approaching_yBodyRot);
-        wolf.yBodyRot = approaching_yBodyRot;
-    }
+	// line 341 "../../../event_handler.ump"
+	public static void checkAndTrainWolf(Player trainer, Wolf wolf, float yBodyRot, float yHeadRot) {
+		var level = trainer.level();
+		if (level.isClientSide)
+			return;
 
-    private static boolean checkValidWolf(Wolf wolf, Player owner) {
-        if (!wolf.isAlive()) return false;
-        boolean trainUntamed = !ConfigHandler.SERVER.DISABLE_TRAIN_UNTAMED_WOLF.get();
-        boolean condition1 = trainUntamed && !wolf.isTame();
-        boolean condition2 = wolf.isTame() && wolf.isOwnedBy(owner);
-        
-        return condition1 || condition2;
-    }
+		var stack = trainer.getMainHandItem();
+		if (stack.getItem() != DoggyItems.TRAINING_TREAT.get())
+			return;
 
-    public static boolean isWithinTrainWolfLimit(Player owner) {
-        int limit = ConfigHandler.SERVER.TRAIN_WOLF_LIMIT.get();
-        if (limit <= 0)
-            return true;
-        
-        var server = owner.level().getServer();
-        var locStore = DogLocationStorage.get(server);
-        var respawnStore = DogRespawnStorage.get(server);
-        
-        int locCnt = locStore.getAll().size();
-        int respawnCnt = respawnStore.getAll().size();
-        
-        int totalTrained = locCnt + respawnCnt;
-        if (totalTrained >= limit)
-            return false;
-        
-        return true;
-    }
+		if (!checkValidWolf(wolf, trainer))
+			return;
 
-    public static void trainWolf(Wolf wolf, Player owner, Level level) {
-        Dog dog = DoggyEntityTypes.DOG.get().create(level);
-        if (dog == null) {
-            throw new IllegalStateException("Creator function for the dog returned \"null\"");
-        }
-        dog.tame(owner);
-        dog.maxHealth();
-        dog.setOrderedToSit(false);
-        dog.setAge(wolf.getAge());
-        dog.absMoveTo(wolf.getX(), wolf.getY(), wolf.getZ(), wolf.getYRot(), wolf.getXRot());
-        dog.setYHeadRot(wolf.yBodyRot);
-        dog.setYBodyRot(wolf.yBodyRot);
-        dog.setYRot(wolf.yBodyRot);
+		if (!isWithinTrainWolfLimit(trainer)) {
+			level.broadcastEntityEvent(wolf, doggytalents.common.lib.Constants.EntityState.WOLF_SMOKE);
+			return;
+		}
 
-        var wolf_collar_color = wolf.getCollarColor();
-        var color = Util.srgbArrayToInt(wolf_collar_color.getTextureDiffuseColors());
-        var dog_collar = DoggyAccessories.DYEABLE_COLLAR.get()
-            .create(color);
-        if (dog_collar != null)
-            dog.addAccessory(dog_collar);
-            
-        if (wolf.hasCustomName()) {
-            dog.setDogCustomName(wolf.getCustomName());
-        }
-        
-        var wolf_uuid = wolf.getUUID();
-        wolf.discard();
+		if (!trainer.getAbilities().instabuild) {
+			stack.shrink(1);
+		}
 
-        if (level instanceof ServerLevel sL)
-            migrateUUID(wolf_uuid, dog, sL);
+		rotateWolfIfNecceassary(wolf, yHeadRot, yBodyRot);
+		trainWolf(wolf, trainer, level);
+	}
 
-        level.addFreshEntity(dog);
+	// line 366 "../../../event_handler.ump"
+	public static boolean isWithinTrainWolfLimit(Player owner) {
+		int limit = ConfigHandler.SERVER.TRAIN_WOLF_LIMIT.get();
+		if (limit <= 0)
+			return true;
 
-        dog.triggerAnimationAction(new DogBackFlipAction(dog));
-        dog.getJumpControl().jump();
-    }
+		var server = owner.level().getServer();
+		var locStore = DogLocationStorage.get(server);
+		var respawnStore = DogRespawnStorage.get(server);
 
-    private static void migrateUUID(UUID uuid, Dog dog, ServerLevel level) {
-        if (ConfigHandler.SERVER.DISABLE_PRESERVE_UUID.get())
-            return;
-        if (level.getEntity(uuid) != null)
-            return;
-        dog.setUUID(uuid);
-    }
+		int locCnt = locStore.getAll().size();
+		int respawnCnt = respawnStore.getAll().size();
 
-    @SubscribeEvent
-    public void onEntitySpawn(final EntityJoinLevelEvent event) {
-        Entity entity = event.getEntity();
-        var level = entity.level();
-        if (level.isClientSide)
-            return;
+		int totalTrained = locCnt + respawnCnt;
+		if (totalTrained >= limit)
+			return false;
 
-        if (entity instanceof AbstractSkeleton) {
-            AbstractSkeleton skeleton = (AbstractSkeleton) entity;
-            skeleton.goalSelector.addGoal(3, new AvoidEntityGoal<>(skeleton, Dog.class, 6.0F, 1.0D, 1.2D)); // Same goal as in AbstractSkeletonEntity
-        } else if (entity instanceof Wolf 大神) {
-            大神.goalSelector.addGoal(9, new WolfBegAtTreatGoal(大神, 8));
-        }
-    }
+		return true;
+	}
 
-    @SubscribeEvent
-    public void playerLoggedIn(final PlayerLoggedInEvent event) {
-        if (event.getEntity().level().isClientSide)
-            return;
+	// line 385 "../../../event_handler.ump"
+	public static void trainWolf(Wolf wolf, Player owner, Level level) {
+		Dog dog = DoggyEntityTypes.DOG.get().create(level);
+		if (dog == null) {
+			throw new IllegalStateException("Creator function for the dog returned \"null\"");
+		}
+		dog.tame(owner);
+		dog.maxHealth();
+		dog.setOrderedToSit(false);
+		dog.setAge(wolf.getAge());
+		dog.absMoveTo(wolf.getX(), wolf.getY(), wolf.getZ(), wolf.getYRot(), wolf.getXRot());
+		dog.setYHeadRot(wolf.yBodyRot);
+		dog.setYBodyRot(wolf.yBodyRot);
+		dog.setYRot(wolf.yBodyRot);
 
-        if (isEnableStarterBundle()) {
+		var wolf_collar_color = wolf.getCollarColor();
+		var color = Util.srgbArrayToInt(wolf_collar_color.getTextureDiffuseColors());
+		var dog_collar = DoggyAccessories.DYEABLE_COLLAR.get().create(color);
+		if (dog_collar != null)
+			dog.addAccessory(dog_collar);
 
-            Player player = event.getEntity();
+		if (wolf.hasCustomName()) {
+			dog.setDogCustomName(wolf.getCustomName());
+		}
 
-            CompoundTag tag = player.getPersistentData();
+		var wolf_uuid = wolf.getUUID();
+		wolf.discard();
 
-            if (!tag.contains(Player.PERSISTED_NBT_TAG)) {
-                tag.put(Player.PERSISTED_NBT_TAG, new CompoundTag());
-            }
+		if (level instanceof ServerLevel sL)
+			migrateUUID(wolf_uuid, dog, sL);
 
-            CompoundTag persistTag = tag.getCompound(Player.PERSISTED_NBT_TAG);
+		level.addFreshEntity(dog);
 
-            if (!persistTag.getBoolean("gotDTStartingItems")) {
-                persistTag.putBoolean("gotDTStartingItems", true);
+		dog.triggerAnimationAction(new DogBackFlipAction(dog));
+		dog.getJumpControl().jump();
+	}
 
-                player.getInventory().add(new ItemStack(DoggyItems.STARTER_BUNDLE.get()));
-            }
-        }
-    }
+	/**
+	 * 
+	 */
+	// line 422 "../../../event_handler.ump"
+	private static boolean checkIfArrowShouldNotHurtDog(Dog dog, Entity projectileOnwer, LivingEntity dogOwner) {
+		boolean allPlayerCannotAttackDog = ConfigHandler.ClientConfig
+				.getConfig(ConfigHandler.SERVER.ALL_PLAYER_CANNOT_ATTACK_DOG);
 
-    private boolean isEnableStarterBundle() {
-        final var retMut = new MutableBoolean(false);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-            if (ConfigHandler.ClientConfig
-                .getConfig(ConfigHandler.CLIENT.ENABLE_STARTER_BUNDLE_BY_DEFAULT))
-                retMut.setTrue();
-        });
-        if (retMut.getValue())
-            return true;
-        return ConfigHandler.ServerConfig.getConfig(ConfigHandler.SERVER.STARTING_ITEMS);
-    }
+		if (allPlayerCannotAttackDog && projectileOnwer instanceof Player) {
+			return true;
+		}
 
-    @SubscribeEvent
-    public void onLootDrop(final LootingLevelEvent event) {
-        HunterDogTalent.onLootDrop(event);
-    }
+		if (!dog.canOwnerAttack() && dog.checkIfAttackedFromOwnerOrTeam(dogOwner, projectileOnwer)) {
+			return true;
+		}
 
-    @SubscribeEvent
-    public void onProjectileHit(final ProjectileImpactEvent event) {
-        var levelChecker = event.getProjectile();
-        if (levelChecker == null)
-            return;
-        var level = levelChecker.level();
-        if (level.isClientSide)
-            return;
+		return false;
+	}
 
-        var hitResult = event.getRayTraceResult();
-        if (hitResult instanceof EntityHitResult hitEntity)
-            proccessEntityProjectileHitEvent(event, hitEntity);
-        else if (hitResult instanceof BlockHitResult hitBlock)
-            proccessBlockProjectileHitEvent(event, hitBlock);
-            
-    }
+	// line 437 "../../../event_handler.ump"
+	private static boolean checkValidWolf(Wolf wolf, Player owner) {
+		if (!wolf.isAlive())
+			return false;
+		boolean trainUntamed = !ConfigHandler.SERVER.DISABLE_TRAIN_UNTAMED_WOLF.get();
+		boolean condition1 = trainUntamed && !wolf.isTame();
+		boolean condition2 = wolf.isTame() && wolf.isOwnedBy(owner);
 
-    private void proccessEntityProjectileHitEvent(final ProjectileImpactEvent event, EntityHitResult hit) {
-        if (detectAndCancelIfProjectileFromDogHitAllies(event, hit))
-            return;
-        var entity = hit.getEntity();
-        if (entity instanceof Dog dog) {
-            proccessDogProjectileHitEvent(event, hit, dog);
-        }
-    }
+		return condition1 || condition2;
+	}
 
-    private boolean detectAndCancelIfProjectileFromDogHitAllies(final ProjectileImpactEvent event, EntityHitResult hit) {
-        var projectile = event.getProjectile();
-        var projectileOnwer = projectile.getOwner();
-        if (!(projectileOnwer instanceof Dog dog))
-            return false;
-        var hitEntity = hit.getEntity();
-        if (hitEntity == null || hitEntity == dog)
-            return false;
-        if (!(hitEntity instanceof LivingEntity living))
-            return false;
-        var owner = dog.getOwner();
-        if (owner == null)
-            return false;
-        if (!isAlliedToDog(living, owner))
-            return false;
-        projectile.discard();
-        event.setCanceled(true);
-        return true;
-    }
+	// line 447 "../../../event_handler.ump"
+	private static void migrateUUID(UUID uuid, Dog dog, ServerLevel level) {
+		if (ConfigHandler.SERVER.DISABLE_PRESERVE_UUID.get())
+			return;
+		if (level.getEntity(uuid) != null)
+			return;
+		dog.setUUID(uuid);
+	}
 
-    private boolean isAlliedToDog(LivingEntity entity, LivingEntity owner) {
-        if (owner == null || entity == null)
-            return false;
-        if (entity instanceof TamableAnimal otherDog) {
-            entity = otherDog.getOwner();
-        }
-        if (owner == entity)
-            return true;
-        if (owner.isAlliedTo(entity))
-            return true;
-        if (entity instanceof Player) {
-            if (ConfigHandler.SERVER.ALL_PLAYER_CANNOT_ATTACK_DOG.get())
-                return true;
-        }
-        return false;
-    }
+	// line 455 "../../../event_handler.ump"
+	private static void rotateWolfIfNecceassary(Wolf wolf, float yHeadRot, float yBodyRot) {
+		float wanted_yBodyRot = yHeadRot;
+		float wanted_dYBodyRot = Mth.degreesDifference(yBodyRot, wanted_yBodyRot);
+		float approaching_dYBodyRot = Mth.clamp(wanted_dYBodyRot, -25, 25);
+		float approaching_yBodyRot = yBodyRot + approaching_dYBodyRot;
+		approaching_yBodyRot = Mth.wrapDegrees(approaching_yBodyRot);
+		wolf.yBodyRot = approaching_yBodyRot;
+	}
 
-    private void proccessDogProjectileHitEvent(final ProjectileImpactEvent event, EntityHitResult hit, Dog dog) {
-        var projectile = event.getProjectile();
-        var projectileOnwer = projectile.getOwner();
-        if (projectileOnwer == null) return;
-        var dogOwner = dog.getOwner();
-        
-        if (projectile instanceof Snowball) {
-            if (
-                projectileOnwer == dogOwner
-                && ConfigHandler.ServerConfig.getConfig(ConfigHandler.SERVER.PLAY_TAG_WITH_DOG)
-                && !dog.isBusy()
-                && !dog.isOrderedToSit()
-            ) 
-                dog.triggerAction(new DogPlayTagAction(dog, dogOwner));
-            return;
-        }
+	// ------------------------
+	// DEVELOPER CODE - PROVIDED AS-IS
+	// ------------------------
 
-        boolean flag = 
-            checkIfArrowShouldNotHurtDog(dog, projectileOnwer, dogOwner);
-        if (!flag) return;
+	// line 14 "../../../event_handler.ump"
+	public @SubscribeEvent void onDogPassenegerHurtInWall(LivingHurtEvent event) {
+		/* Prevent passenger suffocate when riding dog. */
+		var entity = event.getEntity();
+		if (entity == null)
+			return;
+		if (!entity.isPassenger())
+			return;
 
-        //Workaround to avoid infinite loop
-        //net.minecraft.world.entity.projectile.AbstractArrow:193
-        //This should not happen by design.
-        if (projectile instanceof AbstractArrow arrow) {
-            if (arrow.getPierceLevel() > 0) {
-                arrow.setPierceLevel((byte) 0);
-            }
-        }
+		var source = event.getSource();
+		if (!source.is(DamageTypes.IN_WALL))
+			return;
 
-        event.setCanceled(true);
-    }
+		var vehicle = entity.getVehicle();
+		if (!(vehicle instanceof Dog dog))
+			return;
 
-    private void proccessBlockProjectileHitEvent(final ProjectileImpactEvent event, BlockHitResult hit) {
-        var projectile = event.getProjectile();
-        if (!(projectile instanceof ThrownEgg))
-            return;
+		event.setAmount(0);
+		event.setCanceled(true);
+	}
 
-        var level = projectile.level();
-        var pos = hit.getBlockPos();
-        var dir = hit.getDirection();
-        if (dir != Direction.UP)
-            return;
+// line 34 "../../../event_handler.ump"
+	public @SubscribeEvent void onEntityChangeDimension(EntityTravelToDimensionEvent event) {
+		var entity = event.getEntity();
+		if (entity.level().isClientSide)
+			return;
+		if ((entity instanceof ServerPlayer owner)) {
+			onOwnerChangeDimension(event, owner);
+		}
+	}
 
-        var state = level.getBlockState(pos);
-        if (!state.is(Blocks.WATER_CAULDRON))
-            return;
-        
-        var state_under = level.getBlockState(pos.below());
-        if (!WalkNodeEvaluator.isBurningBlock(state_under))
-            return;
-        
-        var resultStack = new ItemStack(DoggyItems.ONSEN_TAMAGO.get());
-        var resultEntity = new ItemEntity(
-            level, 
-            pos.getX() + 0.5, 
-            pos.getY() + 1.0, 
-            pos.getZ() + 0.5, resultStack);
-        level.addFreshEntity(resultEntity);
+// line 43 "../../../event_handler.ump"
+	public @SubscribeEvent void onEntitySpawn(final EntityJoinLevelEvent event) {
+		Entity entity = event.getEntity();
+		var level = entity.level();
+		if (level.isClientSide)
+			return;
 
-        projectile.playSound(SoundEvents.TURTLE_EGG_CRACK, 0.5F, 0.9F + 
-            level.random.nextFloat() * 0.2F);
-    }
+		if (entity instanceof AbstractSkeleton) {
+			AbstractSkeleton skeleton = (AbstractSkeleton) entity;
+			/* Same goal as in AbstractSkeletonEntity */
+			skeleton.goalSelector.addGoal(3, new AvoidEntityGoal<>(skeleton, Dog.class, 6.0F, 1.0D, 1.2D));
+		} else if (entity instanceof Wolf w) {
+			w.goalSelector.addGoal(9, new WolfBegAtTreatGoal(w, 8));
+		}
+	}
 
-    private static boolean checkIfArrowShouldNotHurtDog(Dog dog, Entity projectileOnwer, LivingEntity dogOwner) {
-        boolean allPlayerCannotAttackDog = 
-            ConfigHandler.ClientConfig.getConfig(ConfigHandler.SERVER.ALL_PLAYER_CANNOT_ATTACK_DOG);
+// line 58 "../../../event_handler.ump"
+	public @SubscribeEvent void onLevelLoad(LevelEvent.Load event) {
+		var level = event.getLevel();
+		if (level == null)
+			return;
+		var server = level.getServer();
+		if (server == null)
+			return;
+		var level_overworld = server.getLevel(Level.OVERWORLD);
+		if (level != level_overworld)
+			return;
+		DogLocationStorageMigration.checkAndMigrate(level_overworld);
+	}
 
-        if (allPlayerCannotAttackDog && projectileOnwer instanceof Player) {
-            return true;
-        } 
-        
-        if (!dog.canOwnerAttack() && dog.checkIfAttackedFromOwnerOrTeam(dogOwner, projectileOnwer)) {
-            return true;
-        }
+// line 71 "../../../event_handler.ump"
+	public @SubscribeEvent void onLivingDeath(LivingDropsEvent event) {
+		PackPuppyTalent.mayNotifyNearbyPackPuppy(event);
+	}
 
-        return false;
-    }
+// line 75 "../../../event_handler.ump"
+	public @SubscribeEvent void onLootDrop(final LootingLevelEvent event) {
+		HunterDogTalent.onLootDrop(event);
+	}
 
-    public final int COLLECT_RADIUS = 26;
-    @SubscribeEvent
-    public void onEntityChangeDimension(EntityTravelToDimensionEvent event) {
-        var entity = event.getEntity();
-        if (entity.level().isClientSide) return;
-        if ((entity instanceof ServerPlayer owner)) {
-            onOwnerChangeDimension(event, owner);
-        }
-    }
+// line 79 "../../../event_handler.ump"
+	public @SubscribeEvent void onOwnerTeleport(EntityTeleportEvent event) {
+		var entity = event.getEntity();
+		if (!(entity instanceof ServerPlayer owner))
+			return;
+		if (!(owner.level() instanceof ServerLevel sLevel))
+			return;
 
-    private void onOwnerChangeDimension(EntityTravelToDimensionEvent event, ServerPlayer owner) {
-        if (!(owner.level() instanceof ServerLevel sLevel)) return;
-        var mcServer = sLevel.getServer();
-        var fromLevel = sLevel;
-        var toLevel = mcServer.getLevel(event.getDimension());
-        if (fromLevel == toLevel) return;
-        
-        var crossOriginTpList = fromLevel
-            .getEntitiesOfClass(
-                Dog.class, 
-                owner.getBoundingBox().inflate(COLLECT_RADIUS, 4, COLLECT_RADIUS),
-                d -> isDogReadyToTeleport(d, owner)
-            );
-        if (crossOriginTpList.isEmpty()) return;
+		if (this.distanceTooShortToTeleport(event.getPrev(), event.getTarget()))
+			return;
 
-        DogPromiseManager.addPromiseWithOwnerAndStartImmediately(
-            new DogBatchTeleportToDimensionPromise(
-                crossOriginTpList, 
-                fromLevel, owner.getUUID(), event.getDimension(), d -> isDogReadyToTeleport(d, owner))
-            , owner);
-    }
+		var crossOriginTpList = sLevel.getEntitiesOfClass(Dog.class,
+				owner.getBoundingBox().inflate(CollectRadius, 4, CollectRadius), d -> isDogReadyToTeleport(d, owner));
+		if (crossOriginTpList.isEmpty())
+			return;
 
-    public final int MIN_DISTANCE_TO_TRIGGER_TELEPORT_SQR = 400;
-    @SubscribeEvent
-    public void onOwnerTeleport(EntityTeleportEvent event) {
-        var entity = event.getEntity();
-        if (!(entity instanceof ServerPlayer owner)) return;
-        if (!(owner.level() instanceof ServerLevel sLevel)) return;
-        
-        if (this.distanceTooShortToTeleport(event.getPrev(), event.getTarget()))
-            return;
+		DogPromiseManager.addPromiseWithOwnerAndStartImmediately(
+				new DogHoldChunkToTeleportPromise(crossOriginTpList, sLevel), owner);
+	}
 
-        var crossOriginTpList = sLevel
-            .getEntitiesOfClass(
-                Dog.class, 
-                owner.getBoundingBox().inflate(COLLECT_RADIUS, 4, COLLECT_RADIUS),
-                d -> isDogReadyToTeleport(d, owner)
-            );
-        if (crossOriginTpList.isEmpty()) return;
+// line 98 "../../../event_handler.ump"
+	public @SubscribeEvent void onProjectileHit(final ProjectileImpactEvent event) {
+		var levelChecker = event.getProjectile();
+		if (levelChecker == null)
+			return;
+		var level = levelChecker.level();
+		if (level.isClientSide)
+			return;
 
-        DogPromiseManager.addPromiseWithOwnerAndStartImmediately(
-            new DogHoldChunkToTeleportPromise(
-                crossOriginTpList, sLevel
-            )
-            , owner);
-    }
+		var hitResult = event.getRayTraceResult();
+		if (hitResult instanceof EntityHitResult hitEntity)
+			proccessEntityProjectileHitEvent(event, hitEntity);
+		else if (hitResult instanceof BlockHitResult hitBlock)
+			proccessBlockProjectileHitEvent(event, hitBlock);
+	}
 
-    private boolean isDogReadyToTeleport(Dog dog, LivingEntity owner) {
-        if (!dog.isDoingFine()) 
-        return false;
-        if (owner == null || dog.getOwnerUUID() == null)
-            return false;
-        if (ObjectUtils.notEqual(dog.getOwnerUUID(), owner.getUUID()))
-            return false;
-        if (dog.isOrderedToSit())
-            return false;
-        if (!dog.getMode().shouldFollowOwner())
-            return false;
-        return dog.crossOriginTp();
-    }
+// line 113 "../../../event_handler.ump"
+	public @SubscribeEvent void onServerStop(final ServerStoppingEvent event) {
+		DogPromiseManager.forceStop();
+		DogLocationStorage.get(event.getServer()).onServerStop(event);
+	}
 
-    private boolean distanceTooShortToTeleport(Vec3 from, Vec3 to) {
-        return from.distanceToSqr(to) < MIN_DISTANCE_TO_TRIGGER_TELEPORT_SQR;
-    }
+// line 118 "../../../event_handler.ump"
+	public @SubscribeEvent void onServerTickEnd(final ServerTickEvent event) {
+		if (event.phase != Phase.END)
+			return;
 
-    @SubscribeEvent
-    public void onLivingDeath(LivingDropsEvent event) {
-        PackPuppyTalent.mayNotifyNearbyPackPuppy(event);
-    }
+		DogPromiseManager.tick();
+		DogLocationStorage.get(event.getServer()).getOnlineDogsManager().tick();
+	}
 
-    @SubscribeEvent
-    public void onTagsUpdated(TagsUpdatedEvent event) {
-        DogBedMaterialManager.onTagsUpdated(event);
-    }
+// line 126 "../../../event_handler.ump"
+	public @SubscribeEvent void onTagsUpdated(TagsUpdatedEvent event) {
+		DogBedMaterialManager.onTagsUpdated(event);
+	}
 
-    @SubscribeEvent
-    public void onLevelLoad(LevelEvent.Load event) {
-        var level = event.getLevel();
-        if (level == null)
-            return;
-        var server = level.getServer();
-        if (server == null)
-            return;
-        var level_overworld = server.getLevel(Level.OVERWORLD);
-        if (level != level_overworld)
-            return;
-        DogLocationStorageMigration.checkAndMigrate(level_overworld);
-    }
+// line 130 "../../../event_handler.ump"
+	public @SubscribeEvent void onWolfRightClickWithTreat(final PlayerInteractEvent.EntityInteract event) {
+		var level = event.getLevel();
+		var stack = event.getItemStack();
+		var target = event.getTarget();
+		var owner = event.getEntity();
 
-    //Prevent passenger suffocate when riding dog.
-    @SubscribeEvent
-    public void onDogPassenegerHurtInWall(LivingHurtEvent event) {
-        var entity = event.getEntity();
-        if (entity == null)
-            return;
-        if (!entity.isPassenger())
-            return;
-        
-        var source = event.getSource();
-        if (!source.is(DamageTypes.IN_WALL))
-            return;
-        
-        var vehicle = entity.getVehicle();
-        if (!(vehicle instanceof Dog dog))
-            return;
-        
-        event.setAmount(0);
-        event.setCanceled(true);
-    }
+		if (stack.getItem() != DoggyItems.TRAINING_TREAT.get())
+			return;
+		if (!(target instanceof Wolf wolf))
+			return;
+		event.setCanceled(true);
+
+		if (!checkValidWolf(wolf, owner)) {
+			event.setCancellationResult(InteractionResult.FAIL);
+			return;
+		}
+
+		if (level.isClientSide) {
+			PacketHandler.send(PacketDistributor.SERVER.noArg(),
+					new TrainWolfToDogData(wolf.getId(), wolf.yBodyRot, wolf.yHeadRot));
+		}
+
+		event.setCancellationResult(InteractionResult.SUCCESS);
+	}
+
+// line 155 "../../../event_handler.ump"
+	public @SubscribeEvent void playerLoggedIn(final PlayerLoggedInEvent event) {
+		if (event.getEntity().level().isClientSide)
+			return;
+
+		if (isEnableStarterBundle()) {
+
+			Player player = event.getEntity();
+
+			CompoundTag tag = player.getPersistentData();
+
+			if (!tag.contains(Player.PERSISTED_NBT_TAG)) {
+				tag.put(Player.PERSISTED_NBT_TAG, new CompoundTag());
+			}
+
+			CompoundTag persistTag = tag.getCompound(Player.PERSISTED_NBT_TAG);
+
+			if (!persistTag.getBoolean("gotDTStartingItems")) {
+				persistTag.putBoolean("gotDTStartingItems", true);
+
+				player.getInventory().add(new ItemStack(DoggyItems.STARTER_BUNDLE.get()));
+			}
+		}
+	}
+
+// line 183 "../../../event_handler.ump"
+	private boolean detectAndCancelIfProjectileFromDogHitAllies(final ProjectileImpactEvent event,
+			EntityHitResult hit) {
+		var projectile = event.getProjectile();
+		var projectileOnwer = projectile.getOwner();
+		if (!(projectileOnwer instanceof Dog dog))
+			return false;
+		var hitEntity = hit.getEntity();
+		if (hitEntity == null || hitEntity == dog)
+			return false;
+		if (!(hitEntity instanceof LivingEntity living))
+			return false;
+		var owner = dog.getOwner();
+		if (owner == null)
+			return false;
+		if (!isAlliedToDog(living, owner))
+			return false;
+		projectile.discard();
+		event.setCanceled(true);
+		return true;
+	}
+
+// line 250 "../../../event_handler.ump"
+	private void proccessBlockProjectileHitEvent(final ProjectileImpactEvent event, BlockHitResult hit) {
+		var projectile = event.getProjectile();
+		if (!(projectile instanceof ThrownEgg))
+			return;
+
+		var level = projectile.level();
+		var pos = hit.getBlockPos();
+		var dir = hit.getDirection();
+		if (dir != Direction.UP)
+			return;
+
+		var state = level.getBlockState(pos);
+		if (!state.is(Blocks.WATER_CAULDRON))
+			return;
+
+		var state_under = level.getBlockState(pos.below());
+		if (!WalkNodeEvaluator.isBurningBlock(state_under))
+			return;
+
+		var resultStack = new ItemStack(DoggyItems.ONSEN_TAMAGO.get());
+		var resultEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, resultStack);
+		level.addFreshEntity(resultEntity);
+
+		projectile.playSound(SoundEvents.TURTLE_EGG_CRACK, 0.5F, 0.9F + level.random.nextFloat() * 0.2F);
+	}
+
+// line 276 "../../../event_handler.ump"
+	private void proccessDogProjectileHitEvent(final ProjectileImpactEvent event, EntityHitResult hit, Dog dog) {
+		var projectile = event.getProjectile();
+		var projectileOnwer = projectile.getOwner();
+		if (projectileOnwer == null)
+			return;
+		var dogOwner = dog.getOwner();
+
+		if (projectile instanceof Snowball) {
+			if (projectileOnwer == dogOwner
+					&& ConfigHandler.ServerConfig.getConfig(ConfigHandler.SERVER.PLAY_TAG_WITH_DOG) && !dog.isBusy()
+					&& !dog.isOrderedToSit())
+				dog.triggerAction(new DogPlayTagAction(dog, dogOwner));
+			return;
+		}
+
+		boolean flag = checkIfArrowShouldNotHurtDog(dog, projectileOnwer, dogOwner);
+		if (!flag)
+			return;
+
+		// Workaround to avoid infinite loop
+		// net.minecraft.world.entity.projectile.AbstractArrow:193
+		// This should not happen by design.
+		if (projectile instanceof AbstractArrow arrow) {
+			if (arrow.getPierceLevel() > 0) {
+				arrow.setPierceLevel((byte) 0);
+			}
+		}
+
+		event.setCanceled(true);
+	}
+
+// line 307 "../../../event_handler.ump"
+	private void proccessEntityProjectileHitEvent(final ProjectileImpactEvent event, EntityHitResult hit) {
+		if (detectAndCancelIfProjectileFromDogHitAllies(event, hit))
+			return;
+		var entity = hit.getEntity();
+		if (entity instanceof Dog dog) {
+			proccessDogProjectileHitEvent(event, hit, dog);
+		}
+	}
+
 }

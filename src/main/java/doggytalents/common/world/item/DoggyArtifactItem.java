@@ -5,7 +5,7 @@ package doggytalents.common.world.item;
 
 import java.util.function.Supplier;
 
-import doggytalents.common.artifacts.DoggyArtifact;
+import doggytalents.common.item.DoggyArtifact;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

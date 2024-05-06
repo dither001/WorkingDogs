@@ -23,6 +23,10 @@ namespace doggytalents.common.data.tags;
 use data/data_tags.ump;
 namespace-;
 
+namespace doggytalents.common.event;
+use event/event_handler.ump;
+namespace-;
+
 use item/item_main.ump;
 
 namespace doggytalents.common.register;

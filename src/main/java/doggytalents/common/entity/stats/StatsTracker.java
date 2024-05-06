@@ -20,198 +20,191 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class StatsTracker {
 
-    private Map<EntityType<?>, Integer> ENTITY_KILLS = Maps.newHashMap();
-    private float damageDealt = 0;
-    private int distanceOnWater = 0;
-    private int distanceInWater = 0;
-    private int distanceSprinting = 0;
-    private int distanceSneaking = 0;
-    private int distanceWalking = 0;
-    private int distanceRidden = 0;
+	private Map<EntityType<?>, Integer> ENTITY_KILLS = Maps.newHashMap();
+	private float damageDealt = 0;
+	private int distanceOnWater = 0;
+	private int distanceInWater = 0;
+	private int distanceSprinting = 0;
+	private int distanceSneaking = 0;
+	private int distanceWalking = 0;
+	private int distanceRidden = 0;
 
-    // Cache
-    private final Cache<Integer> killCount = Cache.make(this::getTotalKillCountInternal);
+	private final Cache<Integer> killCount = Cache.make(this::getTotalKillCountInternal);
 
-    public void writeAdditional(CompoundTag compound) {
-        ListTag killList = new ListTag();
-        for (Entry<EntityType<?>, Integer> entry : this.ENTITY_KILLS.entrySet()) {
-            CompoundTag stats = new CompoundTag();
-            NBTUtil.putRegistryValue(stats, "type", ForgeRegistries.ENTITY_TYPES.getKey(entry.getKey()));
-            stats.putInt("count", entry.getValue());
-            killList.add(stats);
-        }
-        compound.put("entityKills", killList);
-        compound.putDouble("damageDealt", this.damageDealt);
-        compound.putInt("distanceOnWater", this.distanceOnWater);
-        compound.putInt("distanceInWater", this.distanceInWater);
-        compound.putInt("distanceSprinting", this.distanceSprinting);
-        compound.putInt("distanceSneaking", this.distanceSneaking);
-        compound.putInt("distanceWalking", this.distanceWalking);
-        compound.putInt("distanceRidden", this.distanceRidden);
-    }
+	public void writeAdditional(CompoundTag compound) {
+		ListTag killList = new ListTag();
+		for (Entry<EntityType<?>, Integer> entry : this.ENTITY_KILLS.entrySet()) {
+			CompoundTag stats = new CompoundTag();
+			NBTUtil.putRegistryValue(stats, "type", ForgeRegistries.ENTITY_TYPES.getKey(entry.getKey()));
+			stats.putInt("count", entry.getValue());
+			killList.add(stats);
+		}
+		compound.put("entityKills", killList);
+		compound.putDouble("damageDealt", this.damageDealt);
+		compound.putInt("distanceOnWater", this.distanceOnWater);
+		compound.putInt("distanceInWater", this.distanceInWater);
+		compound.putInt("distanceSprinting", this.distanceSprinting);
+		compound.putInt("distanceSneaking", this.distanceSneaking);
+		compound.putInt("distanceWalking", this.distanceWalking);
+		compound.putInt("distanceRidden", this.distanceRidden);
+	}
 
-    public void readAdditional(CompoundTag compound) {
-        ListTag killList = compound.getList("entityKills", Tag.TAG_COMPOUND);
-        for (int i = 0; i < killList.size(); i++) {
-            CompoundTag stats = killList.getCompound(i);
-            EntityType<?> type = NBTUtil.getRegistryValue(stats, "type", ForgeRegistries.ENTITY_TYPES);
-            this.ENTITY_KILLS.put(type, stats.getInt("count"));
-        }
-        this.damageDealt = compound.getFloat("damageDealt");
-        this.distanceOnWater = compound.getInt("distanceOnWater");
-        this.distanceInWater = compound.getInt("distanceInWater");
-        this.distanceSprinting = compound.getInt("distanceSprinting");
-        this.distanceSneaking = compound.getInt("distanceSneaking");
-        this.distanceWalking = compound.getInt("distanceWalking");
-        this.distanceRidden = compound.getInt("distanceRidden");
-    }
+	public void readAdditional(CompoundTag compound) {
+		ListTag killList = compound.getList("entityKills", Tag.TAG_COMPOUND);
+		for (int i = 0; i < killList.size(); i++) {
+			CompoundTag stats = killList.getCompound(i);
+			EntityType<?> type = NBTUtil.getRegistryValue(stats, "type", ForgeRegistries.ENTITY_TYPES);
+			this.ENTITY_KILLS.put(type, stats.getInt("count"));
+		}
+		this.damageDealt = compound.getFloat("damageDealt");
+		this.distanceOnWater = compound.getInt("distanceOnWater");
+		this.distanceInWater = compound.getInt("distanceInWater");
+		this.distanceSprinting = compound.getInt("distanceSprinting");
+		this.distanceSneaking = compound.getInt("distanceSneaking");
+		this.distanceWalking = compound.getInt("distanceWalking");
+		this.distanceRidden = compound.getInt("distanceRidden");
+	}
 
-    public int getKillCountFor(EntityType<?> type) {
-        return this.ENTITY_KILLS.getOrDefault(type, 0);
-    }
+	public int getKillCountFor(EntityType<?> type) {
+		return this.ENTITY_KILLS.getOrDefault(type, 0);
+	}
 
-    public int getKillCountFor(Predicate<MobCategory> classification) {
-        int total = 0;
-        for (Entry<EntityType<?>, Integer> entry : this.ENTITY_KILLS.entrySet()) {
-            if (classification.test(entry.getKey().getCategory())) {
-                total += entry.getValue();
-            }
-        }
-        return total;
-    }
+	public int getKillCountFor(Predicate<MobCategory> classification) {
+		int total = 0;
+		for (Entry<EntityType<?>, Integer> entry : this.ENTITY_KILLS.entrySet()) {
+			if (classification.test(entry.getKey().getCategory())) {
+				total += entry.getValue();
+			}
+		}
+		return total;
+	}
 
-    private int getTotalKillCountInternal() {
-        int total = 0;
-        for (Entry<EntityType<?>, Integer> entry : this.ENTITY_KILLS.entrySet()) {
-            total += entry.getValue();
-        }
-        return total;
-    }
+	private int getTotalKillCountInternal() {
+		int total = 0;
+		for (Entry<EntityType<?>, Integer> entry : this.ENTITY_KILLS.entrySet()) {
+			total += entry.getValue();
+		}
+		return total;
+	}
 
-    public Map<EntityType<?>, Integer> getAllKillCount() {
-        return Collections.unmodifiableMap(ENTITY_KILLS);
-    }
+	public Map<EntityType<?>, Integer> getAllKillCount() {
+		return Collections.unmodifiableMap(ENTITY_KILLS);
+	}
 
-    public int getTotalKillCount() {
-        return this.killCount.get();
-    }
+	public int getTotalKillCount() {
+		return this.killCount.get();
+	}
 
-    public void incrementKillCount(Entity entity) {
-        this.incrementKillCount(entity.getType());
-    }
+	public void incrementKillCount(Entity entity) {
+		this.incrementKillCount(entity.getType());
+	}
 
-    private void incrementKillCount(EntityType<?> type) {
-        this.ENTITY_KILLS.compute(type, (k, v) -> (v == null ? 0 : v) + 1);
-    }
+	private void incrementKillCount(EntityType<?> type) {
+		this.ENTITY_KILLS.compute(type, (k, v) -> (v == null ? 0 : v) + 1);
+	}
 
-    public void increaseDamageDealt(float damage) {
-        this.damageDealt += damage;
-    }
+	public void increaseDamageDealt(float damage) {
+		this.damageDealt += damage;
+	}
 
-    public void increaseDistanceOnWater(int distance) {
-        this.distanceOnWater += distance;
-    }
+	public void increaseDistanceOnWater(int distance) {
+		this.distanceOnWater += distance;
+	}
 
-    public void increaseDistanceInWater(int distance) {
-        this.distanceInWater += distance;
-    }
+	public void increaseDistanceInWater(int distance) {
+		this.distanceInWater += distance;
+	}
 
-    public void increaseDistanceSprint(int distance) {
-        this.distanceSprinting += distance;
-    }
+	public void increaseDistanceSprint(int distance) {
+		this.distanceSprinting += distance;
+	}
 
-    public void increaseDistanceSneaking(int distance) {
-        this.distanceSneaking += distance;
-    }
+	public void increaseDistanceSneaking(int distance) {
+		this.distanceSneaking += distance;
+	}
 
-    public void increaseDistanceWalk(int distance) {
-        this.distanceWalking += distance;
-    }
+	public void increaseDistanceWalk(int distance) {
+		this.distanceWalking += distance;
+	}
 
-    public void increaseDistanceRidden(int distance) {
-        this.distanceRidden += distance;
-    }
+	public void increaseDistanceRidden(int distance) {
+		this.distanceRidden += distance;
+	}
 
-    
+	public float getDamageDealt() {
+		return damageDealt;
+	}
 
-    public float getDamageDealt() {
-        return damageDealt;
-    }
+	public int getDistanceOnWater() {
+		return distanceOnWater;
+	}
 
-    public int getDistanceOnWater() {
-        return distanceOnWater;
-    }
+	public int getDistanceInWater() {
+		return distanceInWater;
+	}
 
-    public int getDistanceInWater() {
-        return distanceInWater;
-    }
+	public int getDistanceSprint() {
+		return distanceSprinting;
+	}
 
-    public int getDistanceSprint() {
-        return distanceSprinting;
-    }
+	public int getDistanceSneaking() {
+		return distanceSneaking;
+	}
 
-    public int getDistanceSneaking() {
-        return distanceSneaking;
-    }
+	public int getDistanceWalk() {
+		return distanceWalking;
+	}
 
-    public int getDistanceWalk() {
-        return distanceWalking;
-    }
+	public int getDistanceRidden() {
+		return distanceRidden;
+	}
 
-    public int getDistanceRidden() {
-        return distanceRidden;
-    }
+	public void serializeToBuf(FriendlyByteBuf buf) {
+		buf.writeFloat(damageDealt);
+		buf.writeInt(distanceOnWater);
+		buf.writeInt(distanceInWater);
+		buf.writeInt(distanceSprinting);
+		buf.writeInt(distanceSneaking);
+		buf.writeInt(distanceWalking);
+		buf.writeInt(distanceRidden);
 
-    public void serializeToBuf(FriendlyByteBuf buf) {
+		int mapSize = this.ENTITY_KILLS.size();
+		buf.writeInt(mapSize);
+		for (var entry : this.ENTITY_KILLS.entrySet()) {
+			var typeId = ForgeRegistries.ENTITY_TYPES.getKey(entry.getKey());
+			var killCount = entry.getValue();
+			buf.writeResourceLocation(typeId);
+			buf.writeInt(killCount);
+		}
+	}
 
-        buf.writeFloat(damageDealt);
+	public void deserializeFromBuf(FriendlyByteBuf buf) {
+		this.damageDealt = buf.readFloat();
+		this.distanceOnWater = buf.readInt();
+		this.distanceInWater = buf.readInt();
+		this.distanceSprinting = buf.readInt();
+		this.distanceSneaking = buf.readInt();
+		this.distanceWalking = buf.readInt();
+		this.distanceRidden = buf.readInt();
 
-        buf.writeInt(distanceOnWater);
-        buf.writeInt(distanceInWater);
-        buf.writeInt(distanceSprinting);
-        buf.writeInt(distanceSneaking);
-        buf.writeInt(distanceWalking);
-        buf.writeInt(distanceRidden);
+		this.ENTITY_KILLS.clear();
+		int mapSize = buf.readInt();
+		for (int i = 0; i < mapSize; ++i) {
+			var typeId = buf.readResourceLocation();
+			var killCount = buf.readInt();
+			var type = ForgeRegistries.ENTITY_TYPES.getValue(typeId);
+			this.ENTITY_KILLS.put(type, killCount);
+		}
+	}
 
-
-        int mapSize = this.ENTITY_KILLS.size();
-        buf.writeInt(mapSize);
-        for (var entry : this.ENTITY_KILLS.entrySet()) {
-            var typeId = ForgeRegistries.ENTITY_TYPES.getKey(entry.getKey());
-            var killCount = entry.getValue();
-            buf.writeResourceLocation(typeId);
-            buf.writeInt(killCount);
-        }
-    }
-
-    public void deserializeFromBuf(FriendlyByteBuf buf) {
-
-        this.damageDealt = buf.readFloat();
-        this.distanceOnWater = buf.readInt();
-        this.distanceInWater = buf.readInt();
-        this.distanceSprinting = buf.readInt();
-        this.distanceSneaking = buf.readInt();
-        this.distanceWalking = buf.readInt();
-        this.distanceRidden = buf.readInt();
-
-        this.ENTITY_KILLS.clear();
-        int mapSize = buf.readInt();
-        for (int i = 0; i < mapSize; ++i) {
-            var typeId = buf.readResourceLocation();
-            var killCount = buf.readInt();
-            var type = ForgeRegistries.ENTITY_TYPES.getValue(typeId);
-            this.ENTITY_KILLS.put(type, killCount);
-        }
-    }
-
-    public void shallowCopyFrom(StatsTracker stats) {
-        this.ENTITY_KILLS = stats.ENTITY_KILLS;
-        this.damageDealt = stats.damageDealt;
-        this.distanceOnWater = stats.distanceOnWater;
-        this.distanceInWater = stats.distanceInWater;
-        this.distanceSprinting = stats.distanceSprinting;
-        this.distanceSneaking = stats.distanceSneaking;
-        this.distanceWalking = stats.distanceWalking;
-        this.distanceRidden = stats.distanceRidden;
-    }
+	public void shallowCopyFrom(StatsTracker stats) {
+		this.ENTITY_KILLS = stats.ENTITY_KILLS;
+		this.damageDealt = stats.damageDealt;
+		this.distanceOnWater = stats.distanceOnWater;
+		this.distanceInWater = stats.distanceInWater;
+		this.distanceSprinting = stats.distanceSprinting;
+		this.distanceSneaking = stats.distanceSneaking;
+		this.distanceWalking = stats.distanceWalking;
+		this.distanceRidden = stats.distanceRidden;
+	}
 }

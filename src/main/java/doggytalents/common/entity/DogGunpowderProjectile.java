@@ -3,7 +3,6 @@ package doggytalents.common.entity;
 import doggytalents.common.network.packet.ParticlePackets;
 import doggytalents.common.register.DoggyEntityTypes;
 import doggytalents.common.register.DoggyTalents;
-import doggytalents.common.talent.OokamiKazeTalent;
 import doggytalents.common.util.DogUtil;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -81,24 +80,24 @@ public class DogGunpowderProjectile extends ThrowableProjectile {
                 minDist = dist;
             }
         }
-        var talentInst = nearestDog.getTalent(DoggyTalents.OOKAMIKAZE)
-            .map(inst -> inst.cast(OokamiKazeTalent.class))
-            .orElse(null);
-        if (talentInst == null)
-            return;
-        if (!talentInst.canExplode())
-            return;
-        var dy = this.position().y - nearestDog.position().y;
-        var minDistXZ = new Vec3(
-            this.position().x - nearestDog.position().x,
-            0,
-            this.position().z - nearestDog.position().z   
-        ).lengthSqr();
-        if (minDist < 4) {
-            nearestDog.triggerAction(talentInst.actionCreator(nearestDog, null));
-            this.feedDog(nearestDog);
-        } else if (dy >= 1.5 && minDistXZ >= 10)
-            nearestDog.triggerAction(talentInst.actionCreator(nearestDog, this));
+//        var talentInst = nearestDog.getTalent(DoggyTalents.OOKAMIKAZE)
+//            .map(inst -> inst.cast(OokamiKazeTalent.class))
+//            .orElse(null);
+//        if (talentInst == null)
+//            return;
+//        if (!talentInst.canExplode())
+//            return;
+//        var dy = this.position().y - nearestDog.position().y;
+//        var minDistXZ = new Vec3(
+//            this.position().x - nearestDog.position().x,
+//            0,
+//            this.position().z - nearestDog.position().z   
+//        ).lengthSqr();
+//        if (minDist < 4) {
+//            nearestDog.triggerAction(talentInst.actionCreator(nearestDog, null));
+//            this.feedDog(nearestDog);
+//        } else if (dy >= 1.5 && minDistXZ >= 10)
+//            nearestDog.triggerAction(talentInst.actionCreator(nearestDog, this));
     }
 
     private boolean isValidDog(Dog dog, Vec3 lookVecXZ) {
@@ -113,7 +112,7 @@ public class DogGunpowderProjectile extends ThrowableProjectile {
         if (!dog.readyForNonTrivialAction())
             return false;
         
-        return dog.getDogLevel(DoggyTalents.OOKAMIKAZE.get()) > 0;
+        return false; // dog.getDogLevel(DoggyTalents.OOKAMIKAZE.get()) > 0;
     }
 
     private boolean checkIfDogCanCatch(Dog dog, Vec3 lookVecXZ) {

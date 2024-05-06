@@ -7,7 +7,6 @@ import java.util.function.Supplier;
 
 import doggytalents.common.block.tileentity.DogBedTileEntity;
 import doggytalents.common.block.tileentity.FoodBowlTileEntity;
-import doggytalents.common.block.tileentity.RiceMillBlockEntity;
 import doggytalents.common.lib.Constants;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -29,8 +28,8 @@ public class DoggyTileEntityTypes {
 			DogBedTileEntity::new, DoggyBlocks.DOG_BED);
 	public static final RegistryObject<BlockEntityType<FoodBowlTileEntity>> FOOD_BOWL = register("food_bowl",
 			FoodBowlTileEntity::new, DoggyBlocks.FOOD_BOWL);
-	public static final RegistryObject<BlockEntityType<RiceMillBlockEntity>> RICE_MILL = register("rice_mill",
-			RiceMillBlockEntity::new, DoggyBlocks.RICE_MILL);
+//	public static final RegistryObject<BlockEntityType<RiceMillBlockEntity>> RICE_MILL = register("rice_mill",
+//			RiceMillBlockEntity::new, DoggyBlocks.RICE_MILL);
 
 	// ------------------------
 	// MEMBER VARIABLES

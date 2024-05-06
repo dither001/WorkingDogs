@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 import doggytalents.common.entity.Dog;
 import doggytalents.common.network.IPacket;
 import doggytalents.common.network.packet.data.DogExplosionData;
-import doggytalents.common.talent.OokamiKazeTalent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.phys.Vec3;
@@ -48,7 +47,7 @@ public class DogExplosionPacket implements IPacket<DogExplosionData> {
                 var mc = Minecraft.getInstance();
                 var e = mc.level.getEntity(data.dogId);
                 if (e instanceof Dog dog) {
-                    OokamiKazeTalent.explodeClient(dog);
+//                    OokamiKazeTalent.explodeClient(dog);
                     data.knockback().ifPresent(x -> {
                         var player = mc.player;
                         if (player == null)
