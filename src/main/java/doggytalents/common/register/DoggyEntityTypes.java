@@ -11,9 +11,6 @@ import doggytalents.common.entity.DogFoodProjectile;
 import doggytalents.common.entity.DogGunpowderProjectile;
 import doggytalents.common.entity.DoggyBeamEntity;
 import doggytalents.common.entity.misc.DogPlushie;
-import doggytalents.common.entity.misc.Piano;
-import doggytalents.common.entity.misc.Piano.PianoColor;
-import doggytalents.common.entity.misc.Piano.PianoType;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.util.Util;
 import net.minecraft.world.entity.Entity;
@@ -41,18 +38,18 @@ public class DoggyEntityTypes {
 			DoggyBeamEntity::new, MobCategory.MISC,
 			(b) -> b.sized(0.25F, 0.25F).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(true)
 					.setCustomClientFactory(DoggyBeamEntity::new).noSummon());
-	public static final RegistryObject<EntityType<Piano>> GRAND_PIANO_BLACK = register("grand_piano_black", Piano::new,
-			MobCategory.MISC,
-			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
-	public static final RegistryObject<EntityType<Piano>> GRAND_PIANO_WHITE = register("grand_piano_white",
-			(type, level) -> new Piano(type, level, PianoType.GRAND, PianoColor.WHITE), MobCategory.MISC,
-			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
-	public static final RegistryObject<EntityType<Piano>> UPRIGHT_PIANO_BLACK = register("upright_piano_black",
-			(type, level) -> new Piano(type, level, PianoType.UPRIGHT, PianoColor.BLACK), MobCategory.MISC,
-			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
-	public static final RegistryObject<EntityType<Piano>> UPRIGHT_PIANO_BROWN = register("upright_piano_brown",
-			(type, level) -> new Piano(type, level, PianoType.UPRIGHT, PianoColor.BROWN), MobCategory.MISC,
-			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
+//	public static final RegistryObject<EntityType<Piano>> GRAND_PIANO_BLACK = register("grand_piano_black", Piano::new,
+//			MobCategory.MISC,
+//			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
+//	public static final RegistryObject<EntityType<Piano>> GRAND_PIANO_WHITE = register("grand_piano_white",
+//			(type, level) -> new Piano(type, level, PianoType.GRAND, PianoColor.WHITE), MobCategory.MISC,
+//			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
+//	public static final RegistryObject<EntityType<Piano>> UPRIGHT_PIANO_BLACK = register("upright_piano_black",
+//			(type, level) -> new Piano(type, level, PianoType.UPRIGHT, PianoColor.BLACK), MobCategory.MISC,
+//			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
+//	public static final RegistryObject<EntityType<Piano>> UPRIGHT_PIANO_BROWN = register("upright_piano_brown",
+//			(type, level) -> new Piano(type, level, PianoType.UPRIGHT, PianoColor.BROWN), MobCategory.MISC,
+//			b -> b.sized(3f, 3f).setUpdateInterval(4).setTrackingRange(10).setShouldReceiveVelocityUpdates(false));
 	public static final RegistryObject<EntityType<DogPlushie>> DOG_PLUSHIE_TOY = register("dog_plushie_toy",
 			(type, level) -> new DogPlushie(type, level), MobCategory.MISC,
 			b -> b.sized(0.5f, 0.5f).setUpdateInterval(3).setTrackingRange(10).setShouldReceiveVelocityUpdates(true));

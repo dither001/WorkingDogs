@@ -75,8 +75,6 @@ import doggytalents.client.entity.model.dog.kusa.TakeModel;
 import doggytalents.client.entity.model.dog.kusa.TeiModel;
 import doggytalents.client.entity.model.dog.kusa.UmeModel;
 import doggytalents.client.entity.model.misc.DogPlushieModel;
-import doggytalents.client.entity.model.misc.GrandPianoModel;
-import doggytalents.client.entity.model.misc.UprightPianoModel;
 import doggytalents.client.entity.render.AccessoryModelManager;
 import doggytalents.client.entity.render.CollarRenderManager;
 import doggytalents.client.entity.render.DogFoodProjectileRenderer;
@@ -94,7 +92,6 @@ import doggytalents.client.entity.render.layer.accessory.DoggyArmorRenderer;
 import doggytalents.client.entity.render.layer.accessory.IncapacitatedRenderer;
 import doggytalents.client.entity.render.layer.accessory.modelrenderentry.AccessoryModelRenderEntries;
 import doggytalents.client.entity.render.misc.DogPlushieRenderer;
-import doggytalents.client.entity.render.misc.PianoRenderer;
 import doggytalents.client.screen.DogArmorScreen;
 import doggytalents.client.screen.DogInventoriesScreen;
 import doggytalents.client.screen.DoggyToolsScreen;
@@ -285,8 +282,8 @@ public class ClientSetup {
         
         event.registerLayerDefinition(DOG_NULL, NullDogModel::createBodyLayer);
 
-        event.registerLayerDefinition(PIANO, GrandPianoModel::creatPianoLayer);
-        event.registerLayerDefinition(PIANO_UPRIGHT, UprightPianoModel::createPianoLayer);
+//        event.registerLayerDefinition(PIANO, GrandPianoModel::creatPianoLayer);
+//        event.registerLayerDefinition(PIANO_UPRIGHT, UprightPianoModel::createPianoLayer);
         event.registerLayerDefinition(DOG_PLUSHIE, DogPlushieModel::createBodyLayer);
 //        event.registerLayerDefinition(RICE_MILL, RiceMillModel::createLayer);
 
@@ -316,10 +313,10 @@ public class ClientSetup {
         event.registerEntityRenderer(DoggyEntityTypes.DOG_BEAM.get(), DoggyBeamRenderer::new);
         event.registerBlockEntityRenderer(DoggyTileEntityTypes.DOG_BED.get(), DogBedRenderer::new);
 
-        event.registerEntityRenderer(DoggyEntityTypes.GRAND_PIANO_BLACK.get(), PianoRenderer::new);
-        event.registerEntityRenderer(DoggyEntityTypes.GRAND_PIANO_WHITE.get(), PianoRenderer::new);
-        event.registerEntityRenderer(DoggyEntityTypes.UPRIGHT_PIANO_BLACK.get(), PianoRenderer::new);
-        event.registerEntityRenderer(DoggyEntityTypes.UPRIGHT_PIANO_BROWN.get(), PianoRenderer::new);
+//        event.registerEntityRenderer(DoggyEntityTypes.GRAND_PIANO_BLACK.get(), PianoRenderer::new);
+//        event.registerEntityRenderer(DoggyEntityTypes.GRAND_PIANO_WHITE.get(), PianoRenderer::new);
+//        event.registerEntityRenderer(DoggyEntityTypes.UPRIGHT_PIANO_BLACK.get(), PianoRenderer::new);
+//        event.registerEntityRenderer(DoggyEntityTypes.UPRIGHT_PIANO_BROWN.get(), PianoRenderer::new);
         event.registerEntityRenderer(DoggyEntityTypes.DOG_PLUSHIE_TOY.get(), DogPlushieRenderer::new);
     }
 

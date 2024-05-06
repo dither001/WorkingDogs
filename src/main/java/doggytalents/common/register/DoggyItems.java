@@ -44,7 +44,6 @@ import doggytalents.common.item.FrisbeeDroolItem;
 import doggytalents.common.item.FrisbeeItem;
 import doggytalents.common.item.GenderBoneItem;
 import doggytalents.common.item.GiantStickAccessoryItem;
-import doggytalents.common.item.GyudonItem;
 import doggytalents.common.item.HeadBandItem;
 import doggytalents.common.item.HotDogAccessoryItem;
 //import doggytalents.common.item.KojiItem;
@@ -53,7 +52,6 @@ import doggytalents.common.item.LocatorOrbItem;
 //import doggytalents.common.item.MisoSoupItem;
 //import doggytalents.common.item.NattoRiceItem;
 //import doggytalents.common.item.OyakodonItem;
-import doggytalents.common.item.PianoItem;
 import doggytalents.common.item.PlagueDoctorMaskItem;
 //import doggytalents.common.item.RiceBowlItem;
 //import doggytalents.common.item.RiceGrainsItem;
@@ -267,14 +265,14 @@ public class DoggyItems {
 			DroolScentTreatItem::new);
 //	public static final RegistryObject<DoggyArtifactItem> FEATHERED_MANTLE = registerWith("feathered_mantle",
 //			props -> new DoggyArtifactItem(props, () -> new FeatheredMantleArtifact()), 1);
-	public static final RegistryObject<PianoItem> GRAND_PIANO_BLACK = register("grand_piano_black_item",
-			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_BLACK));
-	public static final RegistryObject<PianoItem> GRAND_PIANO_WHITE = register("grand_piano_white_item",
-			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_WHITE));
-	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BLACK = register("upright_piano_black_item",
-			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BLACK));
-	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BROWN = register("upright_piano_brown_item",
-			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BROWN));
+//	public static final RegistryObject<PianoItem> GRAND_PIANO_BLACK = register("grand_piano_black_item",
+//			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_BLACK));
+//	public static final RegistryObject<PianoItem> GRAND_PIANO_WHITE = register("grand_piano_white_item",
+//			() -> new PianoItem(DoggyEntityTypes.GRAND_PIANO_WHITE));
+//	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BLACK = register("upright_piano_black_item",
+//			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BLACK));
+//	public static final RegistryObject<PianoItem> UPRIGHT_PIANO_BROWN = register("upright_piano_brown_item",
+//			() -> new PianoItem(DoggyEntityTypes.UPRIGHT_PIANO_BROWN));
 	public static final RegistryObject<DogPlushieItem> DOG_PLUSHIE_TOY = register("dog_plushie_toy_item",
 			() -> new DogPlushieItem());
 

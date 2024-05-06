@@ -160,10 +160,10 @@ public class DTItemModelProvider extends ItemModelProvider {
 		generated(DoggyItems.SCENT_TREAT);
 		scentTreatDrooled(DoggyItems.DROOL_SCENT_TREAT, DoggyItems.SCENT_TREAT);
 
-		generated(DoggyItems.GRAND_PIANO_BLACK);
-		generated(DoggyItems.GRAND_PIANO_WHITE);
-		generated(DoggyItems.UPRIGHT_PIANO_BLACK);
-		generated(DoggyItems.UPRIGHT_PIANO_BROWN);
+//		generated(DoggyItems.GRAND_PIANO_BLACK);
+//		generated(DoggyItems.GRAND_PIANO_WHITE);
+//		generated(DoggyItems.UPRIGHT_PIANO_BLACK);
+//		generated(DoggyItems.UPRIGHT_PIANO_BROWN);
 		plushieToy(DoggyItems.DOG_PLUSHIE_TOY);
 
 		blockItem(DoggyBlocks.DOG_BATH);
