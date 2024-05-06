@@ -23,7 +23,7 @@ public class StarterBundleItem extends Item {
     public static List<Supplier<? extends Item>> STARTER_ITEMS = List.of(
         DoggyItems.DOGGY_CHARM,
         DoggyItems.WHISTLE,
-        DoggyItems.RADIO_COLLAR,
+//        DoggyItems.RADIO_COLLAR,
         DoggyItems.CANINE_TRACKER,
         () -> Items.STICK,
         () -> Items.BONE

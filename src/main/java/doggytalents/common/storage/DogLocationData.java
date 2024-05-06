@@ -7,7 +7,6 @@ import javax.annotation.Nullable;
 
 import doggytalents.api.feature.EnumGender;
 import doggytalents.common.entity.Dog;
-import doggytalents.common.entity.accessory.LocatorOrbAccessory;
 import doggytalents.common.register.DoggyAccessoryTypes;
 import doggytalents.common.register.DoggyItems;
 import doggytalents.common.util.NBTUtil;
@@ -99,10 +98,10 @@ public class DogLocationData implements IDogData {
         this.hasRadarCollar = locatorOptional.isPresent();
         if (!this.hasRadarCollar) 
             return;
-        var locator = locatorOptional.get();
-        if (locator.getAccessory() instanceof LocatorOrbAccessory orb) {
-            this.locateColor = orb.getOrbColor();
-        }
+//        var locator = locatorOptional.get();
+//        if (locator.getAccessory() instanceof LocatorOrbAccessory orb) {
+//            this.locateColor = orb.getOrbColor();
+//        }
     }
 
 

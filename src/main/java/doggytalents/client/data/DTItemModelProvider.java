@@ -30,8 +30,8 @@ public class DTItemModelProvider extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		handheld(DoggyItems.SHRINKING_MALLET);
-		handheld(DoggyItems.MAGNIFYING_BONE);
+//		handheld(DoggyItems.SHRINKING_MALLET);
+//		handheld(DoggyItems.MAGNIFYING_BONE);
 
 		handheld(DoggyItems.TRAINING_TREAT);
 		handheld(DoggyItems.SUPER_TREAT);
@@ -44,17 +44,17 @@ public class DTItemModelProvider extends ItemModelProvider {
 		generated(DoggyItems.CREATIVE_CANINE_TRACKER);
 		generated(DoggyItems.CANINE_TRACKER);
 
-		generated(DoggyItems.TANTAN_CAPE);
-		generated(DoggyItems.CAPE_COLOURED);
+//		generated(DoggyItems.TANTAN_CAPE);
+//		generated(DoggyItems.CAPE_COLOURED);
 		generated(DoggyItems.CREATIVE_COLLAR);
 		generated(DoggyItems.DOGGY_CHARM);
-		generated(DoggyItems.GUARD_SUIT);
-		generated(DoggyItems.LEATHER_JACKET);
+//		generated(DoggyItems.GUARD_SUIT);
+//		generated(DoggyItems.LEATHER_JACKET);
 		generated(DoggyItems.MULTICOLOURED_COLLAR);
 		generated(DoggyItems.AMNESIA_BONE);
-		generated(DoggyItems.RADIO_COLLAR);
+//		generated(DoggyItems.RADIO_COLLAR);
 		generated(DoggyItems.SPOTTED_COLLAR);
-		generated(DoggyItems.SUNGLASSES);
+//		generated(DoggyItems.SUNGLASSES);
 		generated(DoggyItems.THROW_BONE);
 		generated(DoggyItems.THROW_BONE_WET);
 		generated(DoggyItems.THROW_STICK);
@@ -63,76 +63,76 @@ public class DTItemModelProvider extends ItemModelProvider {
 		generated(DoggyItems.WHISTLE);
 		generated(DoggyItems.WOOL_COLLAR);
 		generated(DoggyItems.WOOL_COLLAR_THICC);
-		generated(DoggyItems.BOWTIE);
-		generated(DoggyItems.PIANIST_SUIT);
-		generated(DoggyItems.SMARTY_GLASSES);
-		generated(DoggyItems.WIG);
-		generated(DoggyItems.BACH_WIG);
-		generated(DoggyItems.DEATH_HOOD);
-		generated(DoggyItems.CONAN_SUIT);
-		generated(DoggyItems.BEASTARS_UNIFORM_FEMALE);
-		generated(DoggyItems.BEASTARS_UNIFORM_MALE);
+//		generated(DoggyItems.BOWTIE);
+//		generated(DoggyItems.PIANIST_SUIT);
+//		generated(DoggyItems.SMARTY_GLASSES);
+//		generated(DoggyItems.WIG);
+//		generated(DoggyItems.BACH_WIG);
+//		generated(DoggyItems.DEATH_HOOD);
+//		generated(DoggyItems.CONAN_SUIT);
+//		generated(DoggyItems.BEASTARS_UNIFORM_FEMALE);
+//		generated(DoggyItems.BEASTARS_UNIFORM_MALE);
 //        generated(DoggyItems.EGG_SANDWICH);
 		generated(DoggyItems.BANDAID);
 //        generated(DoggyItems.FEATHERED_MANTLE);
-		generated(DoggyItems.EMPTY_LOCATOR_ORB);
+//		generated(DoggyItems.EMPTY_LOCATOR_ORB);
 
-		generated(DoggyItems.HOT_DOG);
-		generated(DoggyItems.GIANT_STICK);
+//		generated(DoggyItems.HOT_DOG);
+//		generated(DoggyItems.GIANT_STICK);
 //        generated(DoggyItems.GOLDEN_A_FIVE_WAGYU);
-		generated(DoggyItems.SUSSY_SICKLE);
-		generated(DoggyItems.SNORKEL);
-		generated(DoggyItems.TENGU_MASK);
-		generated(DoggyItems.KITSUNE_MASK);
-		generated(DoggyItems.DEMON_HORNS);
-		generated(DoggyItems.WITCH_HAT);
-		generated(DoggyItems.PLAGUE_DOC_MASK);
-		generated(DoggyItems.BAKER_HAT);
-		generated(DoggyItems.CHEF_HAT);
+//		generated(DoggyItems.SUSSY_SICKLE);
+//		generated(DoggyItems.SNORKEL);
+//		generated(DoggyItems.TENGU_MASK);
+//		generated(DoggyItems.KITSUNE_MASK);
+//		generated(DoggyItems.DEMON_HORNS);
+//		generated(DoggyItems.WITCH_HAT);
+//		generated(DoggyItems.PLAGUE_DOC_MASK);
+//		generated(DoggyItems.BAKER_HAT);
+//		generated(DoggyItems.CHEF_HAT);
 		generated(DoggyItems.SAUSAGE);
-		generated(DoggyItems.LAB_COAT);
-		contactLens(DoggyItems.DOGGY_CONTACTS);
+//		generated(DoggyItems.LAB_COAT);
+//		contactLens(DoggyItems.DOGGY_CONTACTS);
 
 //        generated(DoggyItems.RICE_BOWL);
 //        generated(DoggyItems.SALMON_SUSHI);
 //        generated(DoggyItems.ONIGIRI);
 
-		generated(DoggyItems.CHI_ORB);
-		generated(DoggyItems.CHU_ORB);
-		generated(DoggyItems.KO_ORB);
-		generated(DoggyItems.GI_ORB);
-		generated(DoggyItems.TEI_ORB);
-		generated(DoggyItems.REI_ORB);
-		generated(DoggyItems.SHIN_ORB);
-		generated(DoggyItems.JIN_ORB);
+//		generated(DoggyItems.CHI_ORB);
+//		generated(DoggyItems.CHU_ORB);
+//		generated(DoggyItems.KO_ORB);
+//		generated(DoggyItems.GI_ORB);
+//		generated(DoggyItems.TEI_ORB);
+//		generated(DoggyItems.REI_ORB);
+//		generated(DoggyItems.SHIN_ORB);
+//		generated(DoggyItems.JIN_ORB);
 
 		generated(DoggyItems.GENDER_BONE);
 		generated(DoggyItems.STARTER_BUNDLE);
 
-		generated(DoggyItems.HEAD_BAND_BLANK);
-		generated(DoggyItems.HEAD_BAND_MYSTERY);
-		generated(DoggyItems.HEAD_BAND_HIGHHH);
+//		generated(DoggyItems.HEAD_BAND_BLANK);
+//		generated(DoggyItems.HEAD_BAND_MYSTERY);
+//		generated(DoggyItems.HEAD_BAND_HIGHHH);
 
-		generated(DoggyItems.SUPERDOG_SUIT);
-		generated(DoggyItems.FLYING_CAPE);
-		generated(DoggyItems.BAT_WINGS);
-		generated(DoggyItems.CROW_WINGS);
-		generated(DoggyItems.DIVINE_RETRIBUTON);
-		generated(DoggyItems.SOUL_REFLECTOR);
+//		generated(DoggyItems.SUPERDOG_SUIT);
+//		generated(DoggyItems.FLYING_CAPE);
+//		generated(DoggyItems.BAT_WINGS);
+//		generated(DoggyItems.CROW_WINGS);
+//		generated(DoggyItems.DIVINE_RETRIBUTON);
+//		generated(DoggyItems.SOUL_REFLECTOR);
 
-		generated(DoggyItems.MUSIC_DISC_BWV_849_FUGUE_KIMIKO);
-		generated(DoggyItems.MUSIC_DISC_BWV_1080_FUGUE_11_KIMIKO);
-		generated(DoggyItems.MUSIC_DISC_OKAMI_1);
-		generated(DoggyItems.MUSIC_DISC_CHOPIN_OP64_NO1);
+//		generated(DoggyItems.MUSIC_DISC_BWV_849_FUGUE_KIMIKO);
+//		generated(DoggyItems.MUSIC_DISC_BWV_1080_FUGUE_11_KIMIKO);
+//		generated(DoggyItems.MUSIC_DISC_OKAMI_1);
+//		generated(DoggyItems.MUSIC_DISC_CHOPIN_OP64_NO1);
 
 		generated(DoggyItems.FRISBEE);
 		wetFrisbee(DoggyItems.FRISBEE_WET);
-		birthdayHat(DoggyItems.BIRTHDAY_HAT);
-		generated(DoggyItems.PROPELLER_HAT);
-		generated(DoggyItems.FEDORA);
-		generated(DoggyItems.FLATCAP);
+//		birthdayHat(DoggyItems.BIRTHDAY_HAT);
+//		generated(DoggyItems.PROPELLER_HAT);
+//		generated(DoggyItems.FEDORA);
+//		generated(DoggyItems.FLATCAP);
 
-		ceremonialGarb(DoggyItems.CERE_GARB);
+//		ceremonialGarb(DoggyItems.CERE_GARB);
 
 //        generated(DoggyItems.RICE_GRAINS);
 //        generated(DoggyItems.RICE_WHEAT);
