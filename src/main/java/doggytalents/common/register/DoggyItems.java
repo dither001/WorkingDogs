@@ -23,7 +23,6 @@ import doggytalents.common.entity.accessory.LocatorOrbAccessory;
 import doggytalents.common.entity.accessory.Propellar;
 import doggytalents.common.entity.accessory.TenguMask.TenguMaskItem;
 import doggytalents.common.entity.accessory.Wig;
-import doggytalents.common.item.AburaageItem;
 import doggytalents.common.item.BandaidItem;
 import doggytalents.common.item.CanineTrackerItem;
 import doggytalents.common.item.ChopinRecordItem;
@@ -38,9 +37,6 @@ import doggytalents.common.item.DroolBoneItem;
 import doggytalents.common.item.DroolScentTreatItem;
 import doggytalents.common.item.DyableBirthdayHatItem;
 import doggytalents.common.item.DyeableAccessoryItem;
-import doggytalents.common.item.EdamameItem;
-import doggytalents.common.item.EdamameUnpoddedItem;
-import doggytalents.common.item.EggSandwichItem;
 import doggytalents.common.item.EmptyLocatorOrbItem;
 import doggytalents.common.item.EnergizerStick;
 import doggytalents.common.item.FieryReflectorItem;
@@ -48,39 +44,32 @@ import doggytalents.common.item.FrisbeeDroolItem;
 import doggytalents.common.item.FrisbeeItem;
 import doggytalents.common.item.GenderBoneItem;
 import doggytalents.common.item.GiantStickAccessoryItem;
-import doggytalents.common.item.GoldenAFiveWagyuItem;
 import doggytalents.common.item.GyudonItem;
 import doggytalents.common.item.HeadBandItem;
 import doggytalents.common.item.HotDogAccessoryItem;
-import doggytalents.common.item.KojiItem;
+//import doggytalents.common.item.KojiItem;
 import doggytalents.common.item.LocatorOrbItem;
-import doggytalents.common.item.MisoPasteItem;
-import doggytalents.common.item.MisoSoupItem;
-import doggytalents.common.item.NattoItem;
-import doggytalents.common.item.NattoRiceItem;
-import doggytalents.common.item.OnigiriItem;
-import doggytalents.common.item.OnsenTamagoItem;
-import doggytalents.common.item.OyakodonItem;
+//import doggytalents.common.item.MisoPasteItem;
+//import doggytalents.common.item.MisoSoupItem;
+//import doggytalents.common.item.NattoRiceItem;
+//import doggytalents.common.item.OyakodonItem;
 import doggytalents.common.item.PianoItem;
 import doggytalents.common.item.PlagueDoctorMaskItem;
-import doggytalents.common.item.RiceBowlItem;
-import doggytalents.common.item.RiceGrainsItem;
-import doggytalents.common.item.RiceWheatItem;
-import doggytalents.common.item.SakeItem;
-import doggytalents.common.item.SalmonSushiItem;
+//import doggytalents.common.item.RiceBowlItem;
+//import doggytalents.common.item.RiceGrainsItem;
+//import doggytalents.common.item.RiceWheatItem;
 import doggytalents.common.item.SausageItem;
 import doggytalents.common.item.ScentTreatItem;
 import doggytalents.common.item.SnorkelAccessoryItem;
-import doggytalents.common.item.SoyMilkItem;
-import doggytalents.common.item.SoyPodsDriedItem;
-import doggytalents.common.item.SoyPodsItem;
+//import doggytalents.common.item.SoyMilkItem;
+//import doggytalents.common.item.SoyPodsDriedItem;
+//import doggytalents.common.item.SoyPodsItem;
 import doggytalents.common.item.StarterBundleItem;
 import doggytalents.common.item.SussySickleItem;
 import doggytalents.common.item.ThrowableItem;
-import doggytalents.common.item.TofuItem;
 import doggytalents.common.item.TreatBagItem;
 import doggytalents.common.item.TreatItem;
-import doggytalents.common.item.UncookedRiceBowlItem;
+//import doggytalents.common.item.UncookedRiceBowlItem;
 import doggytalents.common.item.WhistleItem;
 import doggytalents.common.item.WitchHatItem;
 import doggytalents.common.lib.Constants;
@@ -139,12 +128,12 @@ public class DoggyItems {
 	public static final RegistryObject<WhistleItem> WHISTLE = registerWith("whistle", WhistleItem::new, 1);
 	public static final RegistryObject<Item> TREAT_BAG = registerWith("treat_bag", TreatBagItem::new, 1);
 	public static final RegistryObject<Item> ENERGIZER_STICK = register("energizer_stick", EnergizerStick::new);
-	public static final RegistryObject<Item> EGG_SANDWICH = register("egg_sandwich", EggSandwichItem::new);
-	public static final RegistryObject<Item> RICE_BOWL = register("rice_bowl", RiceBowlItem::new);
-	public static final RegistryObject<Item> UNCOOKED_RICE_BOWL = register("uncooked_rice_bowl",
-			UncookedRiceBowlItem::new);
-	public static final RegistryObject<Item> SALMON_SUSHI = register("salmon_sushi", SalmonSushiItem::new);
-	public static final RegistryObject<Item> ONIGIRI = register("onigiri", OnigiriItem::new);
+//	public static final RegistryObject<Item> EGG_SANDWICH = register("egg_sandwich", EggSandwichItem::new);
+//	public static final RegistryObject<Item> RICE_BOWL = register("rice_bowl", RiceBowlItem::new);
+//	public static final RegistryObject<Item> UNCOOKED_RICE_BOWL = register("uncooked_rice_bowl",
+//			UncookedRiceBowlItem::new);
+//	public static final RegistryObject<Item> SALMON_SUSHI = register("salmon_sushi", SalmonSushiItem::new);
+//	public static final RegistryObject<Item> ONIGIRI = register("onigiri", OnigiriItem::new);
 	public static final RegistryObject<Item> SAUSAGE = register("sausage", SausageItem::new);
 	public static final RegistryObject<Item> BANDAID = register("bandaid", BandaidItem::new);
 	public static final RegistryObject<AccessoryItem> TANTAN_CAPE = registerAccessory("tantan_cape",
@@ -197,8 +186,8 @@ public class DoggyItems {
 	public static final RegistryObject<AccessoryItem> JIN_ORB = registerLocatorOrb("locator_orb_jin",
 			DoggyAccessories.JIN_ORB);
 	public static final RegistryObject<Item> GENDER_BONE = registerTool("gender_bone", GenderBoneItem::new, 10);
-	public static final RegistryObject<Item> GOLDEN_A_FIVE_WAGYU = register("golden_a_five_wagyu",
-			GoldenAFiveWagyuItem::new);
+//	public static final RegistryObject<Item> GOLDEN_A_FIVE_WAGYU = register("golden_a_five_wagyu",
+//			GoldenAFiveWagyuItem::new);
 	public static final RegistryObject<SwordItem> SUSSY_SICKLE = register("sussy_sickle", SussySickleItem::new);
 	public static final RegistryObject<AccessoryItem> SNORKEL = registerSnorkel("snorkel", DoggyAccessories.SNORKEL);
 	public static final RegistryObject<Item> STARTER_BUNDLE = registerWith("starter_bundle", StarterBundleItem::new, 1);
@@ -250,29 +239,29 @@ public class DoggyItems {
 	public static final RegistryObject<Item> FRISBEE_WET = registerFrisbeeWet("frisbee_wet");
 //	public static final RegistryObject<Item> RICE_GRAINS = register("rice_grains",
 //			() -> new RiceGrainsItem(DoggyBlocks.RICE_CROP.get(), createInitialProp()));
-	public static final RegistryObject<Item> RICE_WHEAT = register("rice_wheat",
-			() -> new RiceWheatItem(createInitialProp()));
-	public static final RegistryObject<Item> KOJI = register("koji", KojiItem::new);
+//	public static final RegistryObject<Item> RICE_WHEAT = register("rice_wheat",
+//			() -> new RiceWheatItem(createInitialProp()));
+//	public static final RegistryObject<Item> KOJI = register("koji", KojiItem::new);
 //	public static final RegistryObject<Item> SOY_BEANS = register("soy_beans",
 //			() -> new BlockItem(DoggyBlocks.SOY_CROP.get(), createInitialProp()));
-	public static final RegistryObject<Item> SOY_PODS = register("soy_pods",
-			() -> new SoyPodsItem(createInitialProp()));
-	public static final RegistryObject<Item> UNCOOKED_RICE = register("uncooked_rice");
-	public static final RegistryObject<Item> SOY_PODS_DRIED = register("soy_pods_dried", SoyPodsDriedItem::new);
-	public static final RegistryObject<Item> SOY_BEANS_DRIED = register("soy_beans_dried");
-	public static final RegistryObject<Item> EDAMAME = register("edamame", EdamameItem::new);
-	public static final RegistryObject<Item> EDAMAME_UNPODDED = register("edamame_unpodded", EdamameUnpoddedItem::new);
-	public static final RegistryObject<Item> MISO_PASTE = register("miso_paste", MisoPasteItem::new);
-	public static final RegistryObject<Item> MISO_SOUP = register("miso_soup", MisoSoupItem::new);
-	public static final RegistryObject<Item> SOY_MILK = register("soy_milk", SoyMilkItem::new);
-	public static final RegistryObject<Item> TOFU = register("tofu", TofuItem::new);
-	public static final RegistryObject<Item> ABURAAGE = register("aburaage", AburaageItem::new);
-	public static final RegistryObject<Item> NATTO = register("natto", NattoItem::new);
-	public static final RegistryObject<Item> NATTO_RICE = register("natto_rice", NattoRiceItem::new);
-	public static final RegistryObject<Item> ONSEN_TAMAGO = register("onsen_tamago", OnsenTamagoItem::new);
-	public static final RegistryObject<Item> GYUDON = register("gyudon", GyudonItem::new);
-	public static final RegistryObject<Item> OYAKODON = register("oyakodon", OyakodonItem::new);
-	public static final RegistryObject<Item> SAKE = register("sake", SakeItem::new);
+//	public static final RegistryObject<Item> SOY_PODS = register("soy_pods",
+//			() -> new SoyPodsItem(createInitialProp()));
+//	public static final RegistryObject<Item> UNCOOKED_RICE = register("uncooked_rice");
+//	public static final RegistryObject<Item> SOY_PODS_DRIED = register("soy_pods_dried", SoyPodsDriedItem::new);
+//	public static final RegistryObject<Item> SOY_BEANS_DRIED = register("soy_beans_dried");
+//	public static final RegistryObject<Item> EDAMAME = register("edamame", EdamameItem::new);
+//	public static final RegistryObject<Item> EDAMAME_UNPODDED = register("edamame_unpodded", EdamameUnpoddedItem::new);
+//	public static final RegistryObject<Item> MISO_PASTE = register("miso_paste", MisoPasteItem::new);
+//	public static final RegistryObject<Item> MISO_SOUP = register("miso_soup", MisoSoupItem::new);
+//	public static final RegistryObject<Item> SOY_MILK = register("soy_milk", SoyMilkItem::new);
+//	public static final RegistryObject<Item> TOFU = register("tofu", TofuItem::new);
+//	public static final RegistryObject<Item> ABURAAGE = register("aburaage", AburaageItem::new);
+//	public static final RegistryObject<Item> NATTO = register("natto", NattoItem::new);
+//	public static final RegistryObject<Item> NATTO_RICE = register("natto_rice", NattoRiceItem::new);
+//	public static final RegistryObject<Item> ONSEN_TAMAGO = register("onsen_tamago", OnsenTamagoItem::new);
+//	public static final RegistryObject<Item> GYUDON = register("gyudon", GyudonItem::new);
+//	public static final RegistryObject<Item> OYAKODON = register("oyakodon", OyakodonItem::new);
+//	public static final RegistryObject<Item> SAKE = register("sake", SakeItem::new);
 	public static final RegistryObject<Item> SCENT_TREAT = register("scent_treat", ScentTreatItem::new);
 	public static final RegistryObject<Item> DROOL_SCENT_TREAT = register("drool_scent_treat",
 			DroolScentTreatItem::new);

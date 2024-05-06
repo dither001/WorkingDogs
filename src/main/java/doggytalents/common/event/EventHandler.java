@@ -531,9 +531,9 @@ public class EventHandler {
 		if (!WalkNodeEvaluator.isBurningBlock(state_under))
 			return;
 
-		var resultStack = new ItemStack(DoggyItems.ONSEN_TAMAGO.get());
-		var resultEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, resultStack);
-		level.addFreshEntity(resultEntity);
+//		var resultStack = new ItemStack(DoggyItems.ONSEN_TAMAGO.get());
+//		var resultEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, resultStack);
+//		level.addFreshEntity(resultEntity);
 
 		projectile.playSound(SoundEvents.TURTLE_EGG_CRACK, 0.5F, 0.9F + level.random.nextFloat() * 0.2F);
 	}

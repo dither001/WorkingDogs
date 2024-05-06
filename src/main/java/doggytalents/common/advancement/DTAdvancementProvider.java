@@ -79,11 +79,11 @@ public class DTAdvancementProvider extends ForgeAdvancementProvider {
 									EntityPredicate.wrap(EntityPredicate.Builder.entity().of(EntityType.WOLF).build())))
 					.save(consumer, Util.getResourcePath("dtn_core/train_dog"));
 
-			Advancement sake_advancement = Advancement.Builder.advancement()
-					.display(DisplayInfoBuilder.create().icon(DoggyItems.SAKE).frame(FrameType.TASK)
-							.translate("get_dog_drunk").build())
-					.addCriterion("get_dog_drunk", DogDrunkTrigger.getInstance())
-					.save(consumer, Util.getResourcePath("default/get_dog_drunk"));
+//			Advancement sake_advancement = Advancement.Builder.advancement()
+//					.display(DisplayInfoBuilder.create().icon(DoggyItems.SAKE).frame(FrameType.TASK)
+//							.translate("get_dog_drunk").build())
+//					.addCriterion("get_dog_drunk", DogDrunkTrigger.getInstance())
+//					.save(consumer, Util.getResourcePath("default/get_dog_drunk"));
 
 //			Advancement ookamikaze_advancement = Advancement.Builder.advancement()
 //					.display(DisplayInfoBuilder.create().icon(() -> Items.GUNPOWDER).frame(FrameType.TASK)

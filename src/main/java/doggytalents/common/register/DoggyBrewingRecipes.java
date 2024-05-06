@@ -24,8 +24,8 @@ public class DoggyBrewingRecipes {
 	// STATIC VARIABLES
 	// ------------------------
 
-	public static final Supplier<BrewingRecipe> SAKE_BREW = register(() -> new BrewingRecipe(
-			Ingredient.of(Items.POTION), Ingredient.of(DoggyItems.KOJI.get()), new ItemStack(DoggyItems.SAKE.get())));
+//	public static final Supplier<BrewingRecipe> SAKE_BREW = register(() -> new BrewingRecipe(
+//			Ingredient.of(Items.POTION), Ingredient.of(DoggyItems.KOJI.get()), new ItemStack(DoggyItems.SAKE.get())));
 
 	// ------------------------
 	// MEMBER VARIABLES
