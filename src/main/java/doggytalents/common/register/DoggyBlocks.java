@@ -12,8 +12,6 @@ import doggytalents.common.DoggyTalentsNext;
 import doggytalents.common.block.DogBathBlock;
 import doggytalents.common.block.DogBedBlock;
 import doggytalents.common.block.FoodBowlBlock;
-import doggytalents.common.block.crops.RiceCropBlock;
-import doggytalents.common.block.crops.SoyCropBlock;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.util.Util;
 import net.minecraft.client.color.block.BlockColors;
@@ -41,8 +39,8 @@ public class DoggyBlocks {
 	public static final RegistryObject<DogBathBlock> DOG_BATH = registerWithItem("dog_bath", DogBathBlock::new);
 	public static final RegistryObject<FoodBowlBlock> FOOD_BOWL = registerWithItem("food_bowl", FoodBowlBlock::new);
 //	public static final RegistryObject<RiceMillBlock> RICE_MILL = registerWithItem("rice_mill", RiceMillBlock::new);
-	public static final RegistryObject<RiceCropBlock> RICE_CROP = register("rice_crop", RiceCropBlock::new);
-	public static final RegistryObject<SoyCropBlock> SOY_CROP = register("soy_crop", SoyCropBlock::new);
+//	public static final RegistryObject<RiceCropBlock> RICE_CROP = register("rice_crop", RiceCropBlock::new);
+//	public static final RegistryObject<SoyCropBlock> SOY_CROP = register("soy_crop", SoyCropBlock::new);
 
 	// ------------------------
 	// MEMBER VARIABLES

@@ -37,15 +37,15 @@ public class SoyPodsItem extends Item{
         
         float r = player.getRandom().nextFloat();
         int amount = r < 0.4f ? 3 : 2;
-        var retStack = new ItemStack(DoggyItems.SOY_BEANS.get(), amount);
+//        var retStack = new ItemStack(DoggyItems.SOY_BEANS.get(), amount);
 
         var inv = player.getInventory();
         int freeSlot = inv.getFreeSlot();
-        if (freeSlot >= 0) {
-            inv.add(retStack);
-        } else {
-            player.spawnAtLocation(retStack);
-        }
+//        if (freeSlot >= 0) {
+//            inv.add(retStack);
+//        } else {
+//            player.spawnAtLocation(retStack);
+//        }
 
         if (!player.getAbilities().instabuild) {
             stack.shrink(1);

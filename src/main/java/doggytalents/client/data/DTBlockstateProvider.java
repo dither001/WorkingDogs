@@ -5,7 +5,6 @@ import java.util.function.BiFunction;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-import doggytalents.common.block.crops.DogCropBlock;
 import doggytalents.common.lib.Constants;
 import doggytalents.common.register.DoggyBlocks;
 import net.minecraft.core.Direction;
@@ -47,8 +46,8 @@ public class DTBlockstateProvider extends BlockStateProvider {
         dogBed(DoggyBlocks.DOG_BED);
         createFromShape(DoggyBlocks.FOOD_BOWL, new AABB(1.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D));
 
-        doggyCrops(DoggyBlocks.RICE_CROP);
-        doggyCrops(DoggyBlocks.SOY_CROP);
+//        doggyCrops(DoggyBlocks.RICE_CROP);
+//        doggyCrops(DoggyBlocks.SOY_CROP);
 //        particleOnly(DoggyBlocks.RICE_MILL.get(), Blocks.OAK_PLANKS);
     }
 
@@ -164,36 +163,36 @@ public class DTBlockstateProvider extends BlockStateProvider {
         this.simpleBlock(blockIn.get(), model);
     }
 
-    private void doggyCrops(Supplier<? extends DogCropBlock> cropBlockSup) {
-      var cropBlock = cropBlockSup.get();
-      var variantBuilder = this.getVariantBuilder(cropBlock);
-      var ageProp = cropBlock.getAgeProperty();
-      var possibleAges = ageProp.getAllValues().collect(Collectors.toList());
-
-      for (var age : possibleAges) {
-        var partialState = variantBuilder.partialState()
-          .with(ageProp, age.value());
-        var modelName = cropState(cropBlock, age.value());
-        var modelTexture = cropTexture(cropBlock, age.value());
-        var model = this.models()
-          .crop(modelName, modelTexture)
-          .renderType(RENDERTYPE_CUTOUT);
-        
-        variantBuilder.addModels(partialState, new ConfiguredModel(model));
-      }
-    }
+//    private void doggyCrops(Supplier<? extends DogCropBlock> cropBlockSup) {
+//      var cropBlock = cropBlockSup.get();
+//      var variantBuilder = this.getVariantBuilder(cropBlock);
+//      var ageProp = cropBlock.getAgeProperty();
+//      var possibleAges = ageProp.getAllValues().collect(Collectors.toList());
+//
+//      for (var age : possibleAges) {
+//        var partialState = variantBuilder.partialState()
+//          .with(ageProp, age.value());
+//        var modelName = cropState(cropBlock, age.value());
+//        var modelTexture = cropTexture(cropBlock, age.value());
+//        var model = this.models()
+//          .crop(modelName, modelTexture)
+//          .renderType(RENDERTYPE_CUTOUT);
+//        
+//        variantBuilder.addModels(partialState, new ConfiguredModel(model));
+//      }
+//    }
 
     private String name(Block block) {
         return ForgeRegistries.BLOCKS.getKey(block).getPath();
     }
 
-    private String cropState(DogCropBlock block, int age) {
-      return name(block) + "/stage_" + age;
-    }
-
-    private ResourceLocation cropTexture(DogCropBlock block, int age) {
-      return extend(blockTexture(block), "/stage_" + age);
-    }
+//    private String cropState(DogCropBlock block, int age) {
+//      return name(block) + "/stage_" + age;
+//    }
+//
+//    private ResourceLocation cropTexture(DogCropBlock block, int age) {
+//      return extend(blockTexture(block), "/stage_" + age);
+//    }
 
     public ResourceLocation blockTexture(Block block) {
         ResourceLocation base = ForgeRegistries.BLOCKS.getKey(block);

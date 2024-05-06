@@ -112,7 +112,7 @@ public class DTLootModifierProvider extends GlobalLootModifierProvider {
         @Override
         protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot,
                 LootContext context) {
-            generatedLoot.add(new ItemStack(DoggyItems.RICE_GRAINS.get()));
+//            generatedLoot.add(new ItemStack(DoggyItems.RICE_GRAINS.get()));
             return generatedLoot;
         }
 
@@ -138,7 +138,7 @@ public class DTLootModifierProvider extends GlobalLootModifierProvider {
         protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot,
                 LootContext context) {
             int r = 1 + context.getRandom().nextInt(3);
-            generatedLoot.add(new ItemStack(DoggyItems.SOY_BEANS.get(), r));
+//            generatedLoot.add(new ItemStack(DoggyItems.SOY_BEANS.get(), r));
             return generatedLoot;
         }
 

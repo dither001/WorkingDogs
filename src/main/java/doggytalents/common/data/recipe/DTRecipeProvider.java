@@ -85,10 +85,10 @@ public class DTRecipeProvider extends RecipeProvider {
 				.requires(DoggyItems.SUPER_TREAT.get(), 5).requires(Items.DIAMOND, 1)
 				.unlockedBy("has_master_treat", has(DoggyItems.SUPER_TREAT.get())).save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.TRAINING_TREAT.get(), 3).requires(Items.STRING)
-				.requires(Items.BONE).requires(Items.GUNPOWDER).requires(Items.SUGAR)
-				.requires(DoggyItems.RICE_BOWL.get())
-				.unlockedBy("has_dtn_rice_grains", has(DoggyItems.RICE_GRAINS.get())).save(consumer);
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.TRAINING_TREAT.get(), 3).requires(Items.STRING)
+//				.requires(Items.BONE).requires(Items.GUNPOWDER).requires(Items.SUGAR)
+//				.requires(DoggyItems.RICE_BOWL.get())
+//				.unlockedBy("has_dtn_rice_grains", has(DoggyItems.RICE_GRAINS.get())).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DoggyItems.WHISTLE.get(), 1).pattern("IRI").pattern("II ")
 				.define('I', Items.IRON_INGOT).define('R', Items.REDSTONE)
@@ -337,9 +337,9 @@ public class DTRecipeProvider extends RecipeProvider {
 				.define('R', Items.NETHER_WART).define('B', Items.BLACK_DYE)
 				.unlockedBy("has_leather_helmet", has(Items.LEATHER_HELMET)).save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.UNCOOKED_RICE_BOWL.get(), 1)
-				.requires(Items.BOWL).requires(DoggyItems.UNCOOKED_RICE.get(), 5)
-				.unlockedBy("has_dtn_rice_grains", has(DoggyItems.RICE_GRAINS.get())).save(consumer);
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.UNCOOKED_RICE_BOWL.get(), 1)
+//				.requires(Items.BOWL).requires(DoggyItems.UNCOOKED_RICE.get(), 5)
+//				.unlockedBy("has_dtn_rice_grains", has(DoggyItems.RICE_GRAINS.get())).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DoggyItems.PLAGUE_DOC_MASK.get(), 1).pattern("CWC")
 				.pattern(" S ").pattern("LFL").define('C', Items.BLACK_CARPET).define('W', Items.BLACK_WOOL)
@@ -402,30 +402,30 @@ public class DTRecipeProvider extends RecipeProvider {
 				.pattern("WDW").pattern("WWW").define('W', Blocks.SPRUCE_PLANKS).define('D', Blocks.WHITE_WOOL)
 				.unlockedBy("has_wool", has(ItemTags.WOOL)).save(consumer, Util.getResource("dog_bed_def"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DoggyItems.SOY_MILK.get(), 1).pattern("SSS").pattern("SBS")
-				.define('S', DoggyItems.SOY_BEANS_DRIED.get()).define('B', Items.BOWL)
-				.unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get())).save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DoggyItems.TOFU.get(), 8).pattern("SSS").pattern("SSS")
-				.define('S', DoggyItems.SOY_MILK.get()).unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get()))
-				.save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.MISO_PASTE.get(), 1)
-				.requires(DoggyItems.SOY_BEANS.get()).requires(DoggyItems.KOJI.get()).requires(Items.RED_MUSHROOM)
-				.unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get())).save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.NATTO.get(), 1)
-				.requires(DoggyItems.SOY_BEANS.get()).requires(DoggyItems.KOJI.get()).requires(Items.BROWN_MUSHROOM)
-				.unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get())).save(consumer);
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DoggyItems.SOY_MILK.get(), 1).pattern("SSS").pattern("SBS")
+//				.define('S', DoggyItems.SOY_BEANS_DRIED.get()).define('B', Items.BOWL)
+//				.unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get())).save(consumer);
+//
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DoggyItems.TOFU.get(), 8).pattern("SSS").pattern("SSS")
+//				.define('S', DoggyItems.SOY_MILK.get()).unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get()))
+//				.save(consumer);
+//
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.MISO_PASTE.get(), 1)
+//				.requires(DoggyItems.SOY_BEANS.get()).requires(DoggyItems.KOJI.get()).requires(Items.RED_MUSHROOM)
+//				.unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get())).save(consumer);
+//
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.NATTO.get(), 1)
+//				.requires(DoggyItems.SOY_BEANS.get()).requires(DoggyItems.KOJI.get()).requires(Items.BROWN_MUSHROOM)
+//				.unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get())).save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.KOJI.get(), 3).requires(DoggyItems.KOJI.get())
 				.requires(DoggyItems.UNCOOKED_RICE.get()).requires(Items.SUGAR)
 				.unlockedBy("has_dtn_koji", has(DoggyItems.KOJI.get())).save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.MISO_SOUP.get(), 1)
-				.requires(DoggyItems.MISO_PASTE.get()).requires(DoggyItems.TOFU.get()).requires(Items.BOWL)
-				.requires(Items.DRIED_KELP).unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get()))
-				.save(consumer);
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.MISO_SOUP.get(), 1)
+//				.requires(DoggyItems.MISO_PASTE.get()).requires(DoggyItems.TOFU.get()).requires(Items.BOWL)
+//				.requires(Items.DRIED_KELP).unlockedBy("has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get()))
+//				.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.EDAMAME.get(), 3)
 				.requires(DoggyItems.SOY_PODS.get(), 3).requires(Items.SUGAR)
@@ -434,8 +434,8 @@ public class DTRecipeProvider extends RecipeProvider {
 		registerTripleCooking(consumer, Ingredient.of(DoggyItems.SOY_PODS.get()), DoggyItems.SOY_PODS_DRIED.get(),
 				0.35F, 200, "has_dtn_soy_pods", has(DoggyItems.SOY_PODS.get()));
 
-		registerTripleCooking(consumer, Ingredient.of(DoggyItems.SOY_BEANS.get()), DoggyItems.SOY_BEANS_DRIED.get(),
-				0.1F, 100, "has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get()));
+//		registerTripleCooking(consumer, Ingredient.of(DoggyItems.SOY_BEANS.get()), DoggyItems.SOY_BEANS_DRIED.get(),
+//				0.1F, 100, "has_dtn_soy_beans", has(DoggyItems.SOY_BEANS.get()));
 
 		registerTripleCooking(consumer, Ingredient.of(DoggyItems.UNCOOKED_RICE_BOWL.get()), DoggyItems.RICE_BOWL.get(),
 				0.1F, 100, "has_dtn_uncooked_rice_bowl", has(DoggyItems.UNCOOKED_RICE_BOWL.get()));
@@ -443,9 +443,9 @@ public class DTRecipeProvider extends RecipeProvider {
 		registerTripleCooking(consumer, Ingredient.of(DoggyItems.TOFU.get()), DoggyItems.ABURAAGE.get(), 0.1F, 100,
 				"has_dtn_tofu", has(DoggyItems.TOFU.get()));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.RICE_GRAINS.get(), 3)
-				.requires(DoggyItems.RICE_WHEAT.get())
-				.unlockedBy("has_dtn_rice_wheat", has(DoggyItems.RICE_WHEAT.get())).save(consumer);
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DoggyItems.RICE_GRAINS.get(), 3)
+//				.requires(DoggyItems.RICE_WHEAT.get())
+//				.unlockedBy("has_dtn_rice_wheat", has(DoggyItems.RICE_WHEAT.get())).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DoggyItems.GYUDON.get(), 1).pattern("BOB").pattern(" R ")
 				.define('R', DoggyItems.RICE_BOWL.get()).define('B', Items.COOKED_BEEF)

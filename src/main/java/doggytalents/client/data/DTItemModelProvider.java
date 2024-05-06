@@ -135,12 +135,12 @@ public class DTItemModelProvider extends ItemModelProvider {
         
         ceremonialGarb(DoggyItems.CERE_GARB);
 
-        generated(DoggyItems.RICE_GRAINS);
+//        generated(DoggyItems.RICE_GRAINS);
         generated(DoggyItems.RICE_WHEAT);
         generated(DoggyItems.KOJI);
         generated(DoggyItems.UNCOOKED_RICE);
         generated(DoggyItems.UNCOOKED_RICE_BOWL);
-        generated(DoggyItems.SOY_BEANS);
+//        generated(DoggyItems.SOY_BEANS);
         generated(DoggyItems.SOY_PODS);
         generated(DoggyItems.SOY_BEANS_DRIED);
         generated(DoggyItems.SOY_PODS_DRIED);

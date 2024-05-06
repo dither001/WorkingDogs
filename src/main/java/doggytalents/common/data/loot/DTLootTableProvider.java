@@ -119,28 +119,28 @@ public class DTLootTableProvider extends LootTableProvider {
 			dropsSelf(DoggyBlocks.FOOD_BOWL); // Drop with the name of the dog bowl
 //			dropsSelf(DoggyBlocks.RICE_MILL);
 
-			final var RICE_LOOT_CONDITION = LootItemBlockStatePropertyCondition
-					.hasBlockStateProperties(DoggyBlocks.RICE_CROP.get()).setProperties(StatePropertiesPredicate.Builder
-							.properties().hasProperty(DoggyBlocks.RICE_CROP.get().getAgeProperty(), 7));
-			final var KOJI_LOOT_CONDITION = LootItemRandomChanceCondition.randomChance(0.05f).and(RICE_LOOT_CONDITION);
-
-			final var KOJI_LOOT_POOL = LootPool.lootPool().when(KOJI_LOOT_CONDITION)
-					.add(LootItem.lootTableItem(DoggyItems.KOJI.get())).apply(ApplyBonusCount
-							.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3));
-
-			final var RICE_LOOTABLE = LootTable.lootTable()
-					.withPool(LootPool.lootPool().add(LootItem.lootTableItem(DoggyItems.RICE_WHEAT.get())
-							.apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
-							.when(RICE_LOOT_CONDITION).otherwise(LootItem.lootTableItem(DoggyItems.RICE_GRAINS.get()))))
-					.withPool(KOJI_LOOT_POOL).apply(ApplyExplosionDecay.explosionDecay());
-
-			this.add(DoggyBlocks.RICE_CROP.get(), RICE_LOOTABLE);
-
-			final var SOY_LOOT_CONDITION = LootItemBlockStatePropertyCondition
-					.hasBlockStateProperties(DoggyBlocks.SOY_CROP.get()).setProperties(StatePropertiesPredicate.Builder
-							.properties().hasProperty(DoggyBlocks.SOY_CROP.get().getAgeProperty(), 7));
-			this.add(DoggyBlocks.SOY_CROP.get(), this.createCropDrops(DoggyBlocks.SOY_CROP.get(),
-					DoggyItems.SOY_PODS.get(), DoggyItems.SOY_BEANS.get(), SOY_LOOT_CONDITION));
+//			final var RICE_LOOT_CONDITION = LootItemBlockStatePropertyCondition
+//					.hasBlockStateProperties(DoggyBlocks.RICE_CROP.get()).setProperties(StatePropertiesPredicate.Builder
+//							.properties().hasProperty(DoggyBlocks.RICE_CROP.get().getAgeProperty(), 7));
+//			final var KOJI_LOOT_CONDITION = LootItemRandomChanceCondition.randomChance(0.05f).and(RICE_LOOT_CONDITION);
+//
+//			final var KOJI_LOOT_POOL = LootPool.lootPool().when(KOJI_LOOT_CONDITION)
+//					.add(LootItem.lootTableItem(DoggyItems.KOJI.get())).apply(ApplyBonusCount
+//							.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3));
+//
+//			final var RICE_LOOTABLE = LootTable.lootTable()
+//					.withPool(LootPool.lootPool().add(LootItem.lootTableItem(DoggyItems.RICE_WHEAT.get())
+//							.apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
+//							.when(RICE_LOOT_CONDITION).otherwise(LootItem.lootTableItem(DoggyItems.RICE_GRAINS.get()))))
+//					.withPool(KOJI_LOOT_POOL).apply(ApplyExplosionDecay.explosionDecay());
+//
+//			this.add(DoggyBlocks.RICE_CROP.get(), RICE_LOOTABLE);
+//
+//			final var SOY_LOOT_CONDITION = LootItemBlockStatePropertyCondition
+//					.hasBlockStateProperties(DoggyBlocks.SOY_CROP.get()).setProperties(StatePropertiesPredicate.Builder
+//							.properties().hasProperty(DoggyBlocks.SOY_CROP.get().getAgeProperty(), 7));
+//			this.add(DoggyBlocks.SOY_CROP.get(), this.createCropDrops(DoggyBlocks.SOY_CROP.get(),
+//					DoggyItems.SOY_PODS.get(), DoggyItems.SOY_BEANS.get(), SOY_LOOT_CONDITION));
 		}
 	}
 
